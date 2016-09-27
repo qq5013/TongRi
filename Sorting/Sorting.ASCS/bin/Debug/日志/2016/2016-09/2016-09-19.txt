@@ -1,0 +1,15 @@
+2016/9/19 9:17:19 [ERROR] 2016/9/19 9:17:19 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 11:36:13 [ERROR] 2016/9/19 11:36:13 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 11:36:59 [ERROR] 2016/9/19 11:36:59 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 11:37:42 [ERROR] 2016/9/19 11:37:42 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 11:39:31 [ERROR] 2016/9/19 11:39:31 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 13:13:33 [ERROR] 2016/9/19 13:13:33 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 13:13:47 [ERROR] 2016/9/19 13:13:47 操作作业失败！原因：列名 'CIGARETTECODE' 无效。
+列名 'CIGARETTENAME' 无效。
+列名 'CIGARETTECODE' 无效。
+2016/9/19 13:29:08 [ERROR] 2016/9/19 13:29:08 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/19 13:29:18 [INFO] 2016/9/19 13:29:18 数据优化开始
+2016/9/19 13:51:36 [INFO] 2016/9/19 13:51:36 优化过程出现错误，信息:列名 'AREACODE' 无效。
+列名 'AREACODE' 无效。
+列名 'SORTID' 无效。
+列名 'LINECODE' 无效。

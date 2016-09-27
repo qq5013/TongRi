@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Application>
+	<Caption MinBox="true" MaxBox="true"/>
+	<Title Text="罗伯泰克自动化科技(苏州)有限公司" Visible="false"/>
+	<MenuBar Width="180"/>
+	<MenuItem Height="22"/>
+  <Menus Name="基础信息">
+    <Menu Name="分拣线路" Type="Sorting.Dispatching.View.Base.frmLine,Sorting.Dispatching.dll"/>
+    <Menu Name="配送线路" Type="Sorting.Dispatching.View.Base.frmRoute,Sorting.Dispatching.dll"/>
+    <Menu Name="客户资料" Type="Sorting.Dispatching.View.Base.frmCustomer,Sorting.Dispatching.dll"/>
+    <Menu Name="产品资料" Type="Sorting.Dispatching.View.Base.frmProduct,Sorting.Dispatching.dll"/>
+    <Menu Name="分拣货仓" Type="Sorting.Dispatching.View.Base.frmSortChannel,Sorting.Dispatching.dll"/>
+  </Menus>
+  <Menus Name="批次管理">
+    <Menu Name="订单批次管理" Type="Sorting.Dispatching.View.OrderBatchForm,Sorting.Dispatching.dll"/>
+    <Menu Name="订单批次明细" Type="Sorting.Dispatching.View.OrderBatchDetailForm,Sorting.Dispatching.dll"/>
+    <Menu Name="分拣故障统计" Type="Sorting.Dispatching.View.OrderBatchTotalForm,Sorting.Dispatching.dll"/>
+  </Menus>
+	<Menus Name="统计查询">
+		<Menu Name="分拣订单查询" Type="Sorting.Dispatching.View.OrderQueryForm,Sorting.Dispatching.dll"/>
+    <Menu Name="手工分拣查询" Type="Sorting.Dispatching.View.HandSortQueryForm,Sorting.Dispatching.dll"/>
+		<Menu Name="营销订单查询" Type="Sorting.Dispatching.View.InitialOrderQueryForm,Sorting.Dispatching.dll"/>
+    <Menu Name="营销订单统计" Type="Sorting.Dispatching.View.InitialOrderTotalForm,Sorting.Dispatching.dll"/>
+    <Menu Name="营销异形明细" Type="Sorting.Dispatching.View.AbnormityOrderForm,Sorting.Dispatching.dll"/>
+    <Menu Name="营销异形统计" Type="Sorting.Dispatching.View.AbnormityTotalForm,Sorting.Dispatching.dll"/>
+		<Menu Name="分拣烟道查询" Type="Sorting.Dispatching.View.ChannelQueryForm,Sorting.Dispatching.dll"/>
+		<Menu Name="分拣烟道盘点" Type="Sorting.Dispatching.View.CheckQueryForm,Sorting.Dispatching.dll"/>
+    <Menu Name="分拣烟道余量" Type="Sorting.Dispatching.View.ChannelBalanceForm,Sorting.Dispatching.dll"/>
+	</Menus>	
+	<Menus Name="系统">
+		<Menu Name="参数设置" Type="Sorting.Dispatching.View.ParameterForm,Sorting.Dispatching.dll"/>
+	</Menus>
+</Application>

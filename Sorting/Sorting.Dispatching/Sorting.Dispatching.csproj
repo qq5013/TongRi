@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C262527-51F1-4586-B590-9F2AD56EDAAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sorting.Dispatching</RootNamespace>
+    <AssemblyName>Sorting.Dispatching</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxSEND232OCXLib">
+      <HintPath>..\..\Lib\AxSEND232OCXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewAutoFilter">
+      <HintPath>..\Libraries\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DB.Util">
+      <HintPath>..\..\Lib\DB.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>..\..\Lib\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MCP">
+      <HintPath>..\..\Lib\MCP.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OpView">
+      <HintPath>..\..\Lib\OpView.dll</HintPath>
+    </Reference>
+    <Reference Include="ParamUtil">
+      <HintPath>..\..\Lib\ParamUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="SEND232OCXLib">
+      <HintPath>..\..\Lib\SEND232OCXLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPanderControl, Version=1.2.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\XPanderControl.dll</HintPath>
+    </Reference>
+    <Reference Include="XPExplorerBar, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\XPExplorerBar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\AbnormityCigaretteDal.cs" />
+    <Compile Include="Dal\AreaDal.cs" />
+    <Compile Include="Dal\BatchDal.cs" />
+    <Compile Include="Dal\ChannelDal.cs" />
+    <Compile Include="Dal\ChannelScheduleDal.cs" />
+    <Compile Include="Dal\ProductDal.cs" />
+    <Compile Include="Dal\CustomerDal.cs" />
+    <Compile Include="Dal\DepartmentDal.cs" />
+    <Compile Include="Dal\DialogDataDal.cs" />
+    <Compile Include="Dal\EmployeeDal.cs" />
+    <Compile Include="Dal\HandleSortOrderDal.cs" />
+    <Compile Include="Dal\LineInfoDal.cs" />
+    <Compile Include="Dal\LineScheduleDal.cs" />
+    <Compile Include="Dal\OrderDal.cs" />
+    <Compile Include="Dal\OrderScheduleDal.cs" />
+    <Compile Include="Dal\ParameterDal.cs" />
+    <Compile Include="Dal\RouteDal.cs" />
+    <Compile Include="Dal\StockChannelDal.cs" />
+    <Compile Include="Dal\SysGroupDal.cs" />
+    <Compile Include="Dal\SysParameterDal.cs" />
+    <Compile Include="Dal\SysUserDal.cs" />
+    <Compile Include="Dal\UploadDataDal.cs" />
+    <Compile Include="Dal\UploadSortingDal.cs" />
+    <Compile Include="Dao\AbnormityCigaretteDao.cs" />
+    <Compile Include="Dao\AreaDao.cs" />
+    <Compile Include="Dao\BatchDao.cs" />
+    <Compile Include="Dao\ChannelDao.cs" />
+    <Compile Include="Dao\ChannelScheduleDao.cs" />
+    <Compile Include="Dao\CigaretteDao.cs" />
+    <Compile Include="Dao\CustomerDao.cs" />
+    <Compile Include="Dao\DepartmentDao.cs" />
+    <Compile Include="Dao\EmployeeDao.cs" />
+    <Compile Include="Dao\HandleSortOrderDao.cs" />
+    <Compile Include="Dao\HandleSupplyDao.cs" />
+    <Compile Include="Dao\LineDeviceDao.cs" />
+    <Compile Include="Dao\LineInfoDao.cs" />
+    <Compile Include="Dao\LineScheduleDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\OrderScheduleDao.cs" />
+    <Compile Include="Dao\PalletDao.cs" />
+    <Compile Include="Dao\RouteDao.cs" />
+    <Compile Include="Dao\SalesSystemDao.cs" />
+    <Compile Include="Dao\ScOrderDao.cs" />
+    <Compile Include="Dao\ServerDao.cs" />
+    <Compile Include="Dao\SortStatusDao.cs" />
+    <Compile Include="Dao\StockChannelDao.cs" />
+    <Compile Include="Dao\StockDao.cs" />
+    <Compile Include="Dao\SupplyDao.cs" />
+    <Compile Include="Dao\SysConfigPlanDao.cs" />
+    <Compile Include="Dao\SysGroupDao.cs" />
+    <Compile Include="Dao\SysOperatorLogDao.cs" />
+    <Compile Include="Dao\SysParameterDao.cs" />
+    <Compile Include="Dao\SysSelectDialogDao.cs" />
+    <Compile Include="Dao\SysSystemParameterDao.cs" />
+    <Compile Include="Dao\SysUserConfigPlanDao.cs" />
+    <Compile Include="Dao\SysUserDao.cs" />
+    <Compile Include="Dao\UploadDataDao.cs" />
+    <Compile Include="Dao\UploadSortingDao.cs" />
+    <Compile Include="DRProxy.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="Process\CacheOrderProcess.cs" />
+    <Compile Include="Process\BreakRecordProcess.cs" />
+    <Compile Include="Process\OrderTimeRequestProcess.cs" />
+    <Compile Include="Process\MergeBreakRequestProcess.cs" />
+    <Compile Include="Process\EmptyBreakProcess.cs" />
+    <Compile Include="Process\MergeRequestProcess.cs" />
+    <Compile Include="Process\CreatePackAndPrintDataProcess.cs" />
+    <Compile Include="Process\CurrentOrderProcess.cs" />
+    <Compile Include="Process\LEDProcess.cs" />
+    <Compile Include="Process\BreakSortingProcess.cs" />
+    <Compile Include="Process\OrderRequestProcess.cs" />
+    <Compile Include="Process\PackRequestProcess.cs" />
+    <Compile Include="Process\SortingOrderProcess.cs" />
+    <Compile Include="Process\SortRunStatusProcess.cs" />
+    <Compile Include="Process\SortStatusProcess.cs" />
+    <Compile Include="Process\ViewProcess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RefreshData.cs" />
+    <Compile Include="Schedule\AutoSchedule.cs" />
+    <Compile Include="Schedule\DownLoadData.cs" />
+    <Compile Include="Schedule\HashTableHandle.cs" />
+    <Compile Include="Schedule\ProcessState.cs" />
+    <Compile Include="Schedule\ScheduleEventArgs.cs" />
+    <Compile Include="Schedule\UploadData.cs" />
+    <Compile Include="Schedule\UploadSortingData.cs" />
+    <Compile Include="UnZipFloClass.cs" />
+    <Compile Include="Util\LEDUtil2015.cs" />
+    <Compile Include="Util\DataStruct.cs" />
+    <Compile Include="Util\EQ2008_DataStruct.cs" />
+    <Compile Include="Util\GraphicsUtil.cs" />
+    <Compile Include="Util\GridUtil.cs" />
+    <Compile Include="Util\LED2008.cs" />
+    <Compile Include="Util\LED2015.cs" />
+    <Compile Include="Util\LedCollection.cs" />
+    <Compile Include="Util\LEDUtil.cs" />
+    <Compile Include="Util\LogFile.cs" />
+    <Compile Include="Util\SerializableUtil.cs" />
+    <Compile Include="Util\SetUtil.cs" />
+    <Compile Include="Util\SpeakerUtil.cs" />
+    <Compile Include="Util\StringUtil.cs" />
+    <Compile Include="View\Base\frmArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmArea.Designer.cs">
+      <DependentUpon>frmArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmAreaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmAreaEdit.Designer.cs">
+      <DependentUpon>frmAreaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmChannelParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmChannelParameter.Designer.cs">
+      <DependentUpon>frmChannelParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmProductEdit.Designer.cs">
+      <DependentUpon>frmProductEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmProductQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmProductQuery.Designer.cs">
+      <DependentUpon>frmProductQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmCustomerEdit.Designer.cs">
+      <DependentUpon>frmCustomerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmHandSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmHandSort.Designer.cs">
+      <DependentUpon>frmHandSort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmHandSortEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmHandSortEdit.Designer.cs">
+      <DependentUpon>frmHandSortEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmLine.Designer.cs">
+      <DependentUpon>frmLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmRoute.Designer.cs">
+      <DependentUpon>frmRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmRouteEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmRouteEdit.Designer.cs">
+      <DependentUpon>frmRouteEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmSortChannel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmSortChannel.Designer.cs">
+      <DependentUpon>frmSortChannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmSortChannelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmSortChannelEdit.Designer.cs">
+      <DependentUpon>frmSortChannelEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmSupplyChannel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmSupplyChannel.Designer.cs">
+      <DependentUpon>frmSupplyChannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmSupplyChannelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmSupplyChannelEdit.Designer.cs">
+      <DependentUpon>frmSupplyChannelEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\ButtonArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Control\ButtonArea.Designer.cs">
+      <DependentUpon>ButtonArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\frmOrderDateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Control\frmOrderDateDialog.Designer.cs">
+      <DependentUpon>frmOrderDateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\frmOrderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Control\frmOrderDialog.Designer.cs">
+      <DependentUpon>frmOrderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\SortingStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Control\SortingStatus.designer.cs">
+      <DependentUpon>SortingStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\ChannelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\ChannelDialog.Designer.cs">
+      <DependentUpon>ChannelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\ChannelGroupDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\ChannelGroupDialog.Designer.cs">
+      <DependentUpon>ChannelGroupDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\CigaretteQueryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\CigaretteQueryDialog.Designer.cs">
+      <DependentUpon>CigaretteQueryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\OrderBatchEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\OrderBatchEdit.Designer.cs">
+      <DependentUpon>OrderBatchEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\SelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\SelectDialog.designer.cs">
+      <DependentUpon>SelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\SortNoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\SortNoDialog.Designer.cs">
+      <DependentUpon>SortNoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\CacheOrderQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\CacheOrderQueryForm.Designer.cs">
+      <DependentUpon>CacheOrderQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\ChannelQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\ChannelQueryForm.Designer.cs">
+      <DependentUpon>ChannelQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\CheckQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\CheckQueryForm.Designer.cs">
+      <DependentUpon>CheckQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\AbnormityOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\AbnormityOrderForm.Designer.cs">
+      <DependentUpon>AbnormityOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\ChannelBalanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\ChannelBalanceForm.Designer.cs">
+      <DependentUpon>ChannelBalanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\AbnormityTotalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\AbnormityTotalForm.Designer.cs">
+      <DependentUpon>AbnormityTotalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\OrderBatchTotalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\OrderBatchTotalForm.Designer.cs">
+      <DependentUpon>OrderBatchTotalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\OrderBatchDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\OrderBatchDetailForm.Designer.cs">
+      <DependentUpon>OrderBatchDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\OrderBatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\OrderBatchForm.Designer.cs">
+      <DependentUpon>OrderBatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\InitialOrderTotalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\InitialOrderTotalForm.Designer.cs">
+      <DependentUpon>InitialOrderTotalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\HandSortQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\HandSortQueryForm.Designer.cs">
+      <DependentUpon>HandSortQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\InitialOrderQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\InitialOrderQueryForm.Designer.cs">
+      <DependentUpon>InitialOrderQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\CustomerOrderQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\CustomerOrderQueryForm.designer.cs">
+      <DependentUpon>CustomerOrderQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\OrderQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\OrderQueryForm.Designer.cs">
+      <DependentUpon>OrderQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\ParameterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\ParameterForm.designer.cs">
+      <DependentUpon>ParameterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\OrderSortNoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\OrderSortNoDialog.Designer.cs">
+      <DependentUpon>OrderSortNoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\UploadDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\UploadDataForm.Designer.cs">
+      <DependentUpon>UploadDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XmlDatasetConvert.cs" />
+    <Compile Include="Zip.cs" />
+    <Compile Include="ZipFloClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmArea.resx">
+      <DependentUpon>frmArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmAreaEdit.resx">
+      <DependentUpon>frmAreaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmChannelParameter.resx">
+      <DependentUpon>frmChannelParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmProductEdit.resx">
+      <DependentUpon>frmProductEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmProductQuery.resx">
+      <DependentUpon>frmProductQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmHandSort.resx">
+      <DependentUpon>frmHandSort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmHandSortEdit.resx">
+      <DependentUpon>frmHandSortEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmLine.resx">
+      <DependentUpon>frmLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmRoute.resx">
+      <DependentUpon>frmRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmRouteEdit.resx">
+      <DependentUpon>frmRouteEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmSortChannel.resx">
+      <DependentUpon>frmSortChannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmSortChannelEdit.resx">
+      <DependentUpon>frmSortChannelEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmSupplyChannel.resx">
+      <DependentUpon>frmSupplyChannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmSupplyChannelEdit.resx">
+      <DependentUpon>frmSupplyChannelEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Control\ButtonArea.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ButtonArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Control\frmOrderDateDialog.resx">
+      <DependentUpon>frmOrderDateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Control\frmOrderDialog.resx">
+      <DependentUpon>frmOrderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Control\SortingStatus.resx">
+      <DependentUpon>SortingStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\ChannelDialog.resx">
+      <DependentUpon>ChannelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\ChannelGroupDialog.resx">
+      <DependentUpon>ChannelGroupDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\CigaretteQueryDialog.resx">
+      <DependentUpon>CigaretteQueryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\OrderBatchEdit.resx">
+      <DependentUpon>OrderBatchEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\SelectDialog.resx">
+      <DependentUpon>SelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\SortNoDialog.resx">
+      <DependentUpon>SortNoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\CacheOrderQueryForm.resx">
+      <DependentUpon>CacheOrderQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\ChannelQueryForm.resx">
+      <DependentUpon>ChannelQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\CheckQueryForm.resx">
+      <DependentUpon>CheckQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\AbnormityOrderForm.resx">
+      <DependentUpon>AbnormityOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\ChannelBalanceForm.resx">
+      <DependentUpon>ChannelBalanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\AbnormityTotalForm.resx">
+      <DependentUpon>AbnormityTotalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\OrderBatchTotalForm.resx">
+      <DependentUpon>OrderBatchTotalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\OrderBatchDetailForm.resx">
+      <DependentUpon>OrderBatchDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\OrderBatchForm.resx">
+      <DependentUpon>OrderBatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\InitialOrderTotalForm.resx">
+      <DependentUpon>InitialOrderTotalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\HandSortQueryForm.resx">
+      <DependentUpon>HandSortQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\InitialOrderQueryForm.resx">
+      <DependentUpon>InitialOrderQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\CustomerOrderQueryForm.resx">
+      <DependentUpon>CustomerOrderQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\OrderQueryForm.resx">
+      <DependentUpon>OrderQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\ParameterForm.resx">
+      <DependentUpon>ParameterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\OrderSortNoDialog.resx">
+      <DependentUpon>OrderSortNoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\UploadDataForm.resx">
+      <DependentUpon>UploadDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Report\Channel.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sorting.Optimize\Sorting.Optimize.csproj">
+      <Project>{B0AC8947-EB5A-4A14-8C29-346040BCCC58}</Project>
+      <Name>Sorting.Optimize</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\banner.jpg" />
+    <Content Include="Image\indicator.png" />
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\applications.png" />
+    <Content Include="Resources\back.png" />
+    <Content Include="Resources\calculator.png" />
+    <Content Include="Resources\calendar.png" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\CD.png" />
+    <Content Include="Resources\CD_add.png" />
+    <Content Include="Resources\CD_delete.png" />
+    <Content Include="Resources\check.png" />
+    <Content Include="Resources\clock.png" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\document.png" />
+    <Content Include="Resources\document_add.png" />
+    <Content Include="Resources\document_delete.png" />
+    <Content Include="Resources\document_edit.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\email.png" />
+    <Content Include="Resources\favorites.png" />
+    <Content Include="Resources\favorites_add.png" />
+    <Content Include="Resources\favorites_delete.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\folder_add.png" />
+    <Content Include="Resources\folder_delete.png" />
+    <Content Include="Resources\folder_open.png" />
+    <Content Include="Resources\go.png" />
+    <Content Include="Resources\group.png" />
+    <Content Include="Resources\help.png" />
+    <Content Include="Resources\home.png" />
+    <Content Include="Resources\info.png" />
+    <Content Include="Resources\lock.png" />
+    <Content Include="Resources\movie.png" />
+    <Content Include="Resources\paste.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\report.png" />
+    <Content Include="Resources\unlock.png" />
+    <Content Include="Resources\up.png" />
+    <Content Include="Resources\user.png" />
+    <Content Include="Resources\user_add.png" />
+    <Content Include="Resources\user_black.png" />
+    <Content Include="Resources\user_delete.png" />
+    <Content Include="Resources\user_white.png" />
+    <Content Include="Resources\web.png" />
+    <Content Include="Resources\zoom.png" />
+    <Content Include="Resources\zoom_in.png" />
+    <Content Include="Resources\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

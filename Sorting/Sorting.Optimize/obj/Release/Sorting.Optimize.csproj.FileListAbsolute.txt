@@ -1,0 +1,5 @@
+E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\bin\Release\Sorting.Optimize.dll
+E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\bin\Release\Sorting.Optimize.pdb
+E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\obj\Release\Sorting.Optimize.dll
+E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\obj\Release\Sorting.Optimize.pdb
+E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\obj\Release\ResolveAssemblyReference.cache

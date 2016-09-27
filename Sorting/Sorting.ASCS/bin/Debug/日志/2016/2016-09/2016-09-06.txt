@@ -1,0 +1,32 @@
+2016/9/6 13:10:32 [ERROR] 2016/9/6 13:10:32 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 13:46:59 [ERROR] 2016/9/6 13:46:59 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 13:53:56 [ERROR] 2016/9/6 13:53:56 操作作业失败！原因：列名 'BATCHNO' 无效。
+2016/9/6 13:54:37 [ERROR] 2016/9/6 13:54:37 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 14:05:13 [ERROR] 2016/9/6 14:05:13 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 14:15:25 [ERROR] 2016/9/6 14:15:25 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 14:55:17 [ERROR] 2016/9/6 14:55:17 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:30:11 [ERROR] 2016/9/6 15:30:11 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:30:58 [ERROR] 2016/9/6 15:30:58 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:31:07 [ERROR] 2016/9/6 15:31:07 操作作业失败！原因：列名 'CIGARETTECODE' 无效。
+2016/9/6 15:33:57 [ERROR] 2016/9/6 15:33:57 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:35:14 [ERROR] 2016/9/6 15:35:14 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:36:11 [ERROR] 2016/9/6 15:36:11 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:37:38 [ERROR] 2016/9/6 15:37:38 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:39:43 [ERROR] 2016/9/6 15:39:43 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:40:36 [ERROR] 2016/9/6 15:40:36 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:42:07 [ERROR] 2016/9/6 15:42:07 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:43:32 [ERROR] 2016/9/6 15:43:32 操作作业失败！原因：列名 'CIGARETTECODE' 无效。
+列名 'CIGARETTECODE' 无效。
+列名 'CIGARETTECODE' 无效。
+列名 'CIGARETTECODE' 无效。
+列名 'CIGARETTENAME' 无效。
+列名 'CIGARETTECODE' 无效。
+2016/9/6 15:53:07 [ERROR] 2016/9/6 15:53:07 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 15:57:06 [ERROR] 2016/9/6 15:57:06 操作作业失败！原因：列名 'SORTID' 无效。
+列名 'CUSTOMERDESC' 无效。
+列名 'SORTID' 无效。
+2016/9/6 16:04:02 [ERROR] 2016/9/6 16:04:02 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 16:09:18 [ERROR] 2016/9/6 16:09:18 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 16:19:03 [ERROR] 2016/9/6 16:19:03 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 16:19:52 [ERROR] 2016/9/6 16:19:52 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/9/6 16:32:27 [ERROR] 2016/9/6 16:32:27 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.

@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' ?>
+<Config>
+  <OPCServer ConnectionString="OPC.SimaticNET">
+    <OPCGroup GroupName="PLCGroup" GroupString="S7:[@LOCALSERVER]" UpdateRate="350">
+    <!--<OPCGroup GroupName="DefaultGroup" GroupString="S7:[S701]" UpdateRate="350">-->
+      <OPCItem ItemName="abc" ClientHandler="60" OPCItemName="DB9,INT100,1" ItemType="READ"/>
+      <OPCItem ItemName="OrderData3" ClientHandler="1" OPCItemName="DB2,INT0,27"  ItemType="WRITE"/>
+      <OPCItem ItemName="OrderRequest3" ClientHandler="2" OPCItemName="DB9,INT0,1" ItemType="READ"/>
+      <OPCItem ItemName="OrderRequest2" ClientHandler="3" OPCItemName="DB9,INT10,1" ItemType="READ"/>
+      <OPCItem ItemName="OrderData2" ClientHandler="4" OPCItemName="DB1,INT0,82"  ItemType="WRITE"/>
+      <OPCItem ItemName="LastOrder3" ClientHandler="5" OPCItemName="DB9,INT18,1" ItemType="WRITE"/>
+      <OPCItem ItemName="LastOrder2" ClientHandler="6" OPCItemName="DB9,INT32,1" ItemType="WRITE"/>
+      <OPCItem ItemName="RestartData" ClientHandler="7" OPCItemName="DB30,INT0,1" ItemType="WRITE"/>
+      <OPCItem ItemName="LastOrder" ClientHandler="8" OPCItemName="DB32,INT0,1" ItemType="WRITE"/>
+      <OPCItem ItemName="BreakSorting3" ClientHandler="9" OPCItemName="DB9,INT16,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting2" ClientHandler="10" OPCItemName="DB9,INT34,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting31" ClientHandler="11" OPCItemName="DB9,INT14,1" ItemType="WRITE"/>
+      <OPCItem ItemName="BreakSorting21" ClientHandler="12" OPCItemName="DB9,INT36,1" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderFinish3" ClientHandler="13" OPCItemName="DB9,INT20,1" ItemType="READ"/>
+      <OPCItem ItemName="OrderFinish2" ClientHandler="14" OPCItemName="DB9,INT22,1" ItemType="READ"/>
+      <OPCItem ItemName="Empty31" ClientHandler="15" OPCItemName="DB120,INT4,1" ItemType="READ"/>
+      <OPCItem ItemName="Empty32" ClientHandler="16" OPCItemName="DB120,INT6,1" ItemType="READ"/>
+      <OPCItem ItemName="Empty2" ClientHandler="17" OPCItemName="DB120,INT0,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakDown31" ClientHandler="19" OPCItemName="DB120,INT8,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakDown32" ClientHandler="20" OPCItemName="DB120,INT10,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="BreakDown33" ClientHandler="21" OPCItemName="DB120,INT12,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="BreakDown34" ClientHandler="22" OPCItemName="DB120,INT22,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="BreakDown35" ClientHandler="23" OPCItemName="DB120,INT24,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="BreakDown36" ClientHandler="24" OPCItemName="DB120,INT26,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="BreakDown2" ClientHandler="25" OPCItemName="DB120,INT2,1" ItemType="READ"/>
+      <OPCItem ItemName="MergeRequest" ClientHandler="26" OPCItemName="DB9,INT2,1" ItemType="READ"/>
+      <OPCItem ItemName="MergeOrderData1" ClientHandler="27" OPCItemName="DB4,INT0,11"  ItemType="WRITE"/>
+      <OPCItem ItemName="MergeOrderData2" ClientHandler="28" OPCItemName="DB4,INT22,1"  ItemType="WRITE"/>
+      <OPCItem ItemName="StopOrderRequest" ClientHandler="29" OPCItemName="DB9,INT38,1"  ItemType="WRITE"/>      
+      <OPCItem ItemName="MergeBreakRequest" ClientHandler="30" OPCItemName="DB9,INT46,1" ItemType="READ"/>
+      <OPCItem ItemName="MergeBreakSortNo" ClientHandler="31" OPCItemName="DB9,INT40,1" ItemType="READ"/>
+      <OPCItem ItemName="MergeBreakCount3" ClientHandler="32" OPCItemName="DB9,INT42,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="MergeBreakCount2" ClientHandler="33" OPCItemName="DB9,INT44,1" ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="MergeBreakFinish" ClientHandler="34" OPCItemName="DB9,INT48,1"  ItemType="WRITE"/>
+      <OPCItem ItemName="MergeFinish" ClientHandler="35" OPCItemName="DB9,INT50,1"  ItemType="WRITE"/>
+      <OPCItem ItemName="LastChannelSortNo" ClientHandler="36" OPCItemName="DB29,INT0,15"  ItemType="WRITE"/>
+      <OPCItem ItemName="ClearBalance31" ClientHandler="37" OPCItemName="DB39,INT0,15"  ItemType="WRITE"/>
+      <OPCItem ItemName="ClearBalance32" ClientHandler="38" OPCItemName="DB39,INT30,1"  ItemType="WRITE"/>
+      <OPCItem ItemName="ClearBalance21" ClientHandler="39" OPCItemName="DB49,INT0,70"  ItemType="WRITE"/>
+      <OPCItem ItemName="ClearBalance22" ClientHandler="40" OPCItemName="DB49,INT140,1"  ItemType="WRITE"/>
+      <OPCItem ItemName="BreakSorting01" ClientHandler="41" OPCItemName="DB59,INT0,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting02" ClientHandler="42" OPCItemName="DB59,INT2,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting03" ClientHandler="43" OPCItemName="DB59,INT4,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting04" ClientHandler="44" OPCItemName="DB59,INT6,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting05" ClientHandler="45" OPCItemName="DB59,INT8,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting06" ClientHandler="46" OPCItemName="DB59,INT10,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting07" ClientHandler="47" OPCItemName="DB59,INT12,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting08" ClientHandler="48" OPCItemName="DB59,INT14,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting09" ClientHandler="49" OPCItemName="DB59,INT16,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting10" ClientHandler="50" OPCItemName="DB59,INT18,1" ItemType="READ"/>
+      <OPCItem ItemName="BreakSorting11" ClientHandler="51" OPCItemName="DB59,INT20,1" ItemType="READ"/>
+      
+      <OPCItem ItemName="SortingFlag" ClientHandler="53" OPCItemName="DB59,INT30,1" ItemType="READ" IsActive="false"/>
+	</OPCGroup>
+</OPCServer>
+</Config>

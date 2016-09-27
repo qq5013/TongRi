@@ -1,0 +1,7 @@
+2016/8/15 20:04:35 [ERROR] 2016/8/15 20:04:35 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/8/15 20:07:04 [ERROR] 2016/8/15 20:07:04 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/8/15 20:08:30 [ERROR] 2016/8/15 20:08:30 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/8/15 20:34:32 [ERROR] 2016/8/15 20:34:32 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/8/15 21:02:50 [ERROR] 2016/8/15 21:02:50 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
+2016/8/15 21:18:19 [ERROR] 2016/8/15 21:18:19 操作作业失败！原因：'01' 附近有语法错误。
+字符串 ') AND BATCHNO=A.BATCHNO AND BEGINTIME IS NOT NULL AND ENDTIME IS NOT NULL),0)) /60.0)) EFFICIENCY,(SELECT COUNT(*) FROM AS_BI_BATCH_DETAIL WHERE BATCHNO=A.BATCHNO) BREAKCOUNT,ISNULL((SELECT SUM(DATEDIFF(minute,BEGINTIME,ENDTIME)) FROM AS_BI_BATCH_DETAIL WHERE BATCHNO=A.BATCHNO AND BEGINTIME IS NOT NULL AND ENDTIME IS NOT NULL),0) BREAKTIME FROM AS_BI_BATCH A LEFT JOIN V_SC_ORDER_MASTER B ON A.BATCHNO=B.BATCHNO ORDER BY ORDERDATE DESC,BATCHNO' 后的引号不完整。

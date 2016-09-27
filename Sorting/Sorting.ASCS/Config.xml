@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <LogLevel>DEBUG</LogLevel>
+  <Attributes>
+    <Attribute Name="LineCode" Value="3" />
+    <Attribute Name="LogisticsUrl" Value="http://10.141.191.237:8080/lms/services/LmsSortDataService" />
+    <Attribute Name="LedCOM" Value="4" />
+    <Attribute Name="LedTextLength" Value="5" />
+    <Attribute Name="AppendPara" Value="64" />
+    <Attribute Name="FontColor" Value="1" />
+    <Attribute Name="FontColorEmpty" Value="2" />
+    <Attribute Name="FontColorBreak" Value="3" />
+    <Attribute Name="SpeakCount" Value="5" />
+    <Attribute Name="MinBalance" Value="50" />
+  </Attributes>
+  <Services>
+    <Service Name="SortPLC" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="SortPLC.xml" />
+  </Services>
+  <Processes>
+    <Process Name="OrderRequestProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.OrderRequestProcess" Suspend="true">
+      <Item ServiceName="SortPLC" ItemName="abc" />
+      <Item ServiceName="SortPLC" ItemName="OrderRequest3" />
+      <Item ServiceName="SortPLC" ItemName="OrderRequest2" />
+    </Process>
+    <Process Name="OrderTimeRequestProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.OrderTimeRequestProcess">
+      
+    </Process>
+    <Process Name="MergeRequestProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.MergeRequestProcess" Suspend="true">
+      <Item ServiceName="SortPLC" ItemName="MergeRequest" />
+      <Item ServiceName="SortPLC" ItemName="MergeBreakRequest" />
+      <Item ServiceName="SortPLC" ItemName="MergeBreakSortNo" />
+    </Process>
+    <Process Name="SortingOrderProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.SortingOrderProcess">
+      <Item ServiceName="SortPLC" ItemName="SortingOrderA" />
+      <Item ServiceName="SortPLC" ItemName="SortingOrderB" />
+    </Process>
+    <Process Name="CurrentOrderProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.CurrentOrderProcess">
+      <Item ServiceName="SortPLC" ItemName="OrderFinish3" />
+      <Item ServiceName="SortPLC" ItemName="OrderFinish2" />
+    </Process>
+    <Process Name="BreakSortingProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.BreakSortingProcess">
+      <Item ServiceName="SortPLC" ItemName="BreakSorting3" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting2" />
+    </Process>
+    <!--<Process Name="MergeBreakRequestProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.MergeBreakRequestProcess">
+      <Item ServiceName="SortPLC" ItemName="MergeBreakRequest" />
+    </Process>-->
+    <!--<Process Name="ViewProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.ViewProcess" />
+    <Process Name="SortingStatus" Type="Sorting.Dispatching.dll, Sorting.Dispatching.View.SortingStatus"/>
+    <Process Name="CreatePackAndPrintDataProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.CreatePackAndPrintDataProcess" />-->
+    <Process Name="LEDProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.LEDProcess">
+      <Item ServiceName="SortPLC" ItemName="Empty31" />
+      <Item ServiceName="SortPLC" ItemName="Empty32" />
+      <Item ServiceName="SortPLC" ItemName="Empty2" />
+      <Item ServiceName="SortPLC" ItemName="BreakDown31" />
+      <Item ServiceName="SortPLC" ItemName="BreakDown2" />
+    </Process>
+    <Process Name="BreakRecordProcess" Type="Sorting.Dispatching.dll, Sorting.Dispatching.Process.BreakRecordProcess">
+      <Item ServiceName="SortPLC" ItemName="BreakSorting01" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting02" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting03" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting04" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting05" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting06" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting07" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting08" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting09" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting10" />
+      <Item ServiceName="SortPLC" ItemName="BreakSorting11" />
+    </Process>
+  </Processes>
+</Configuration>
