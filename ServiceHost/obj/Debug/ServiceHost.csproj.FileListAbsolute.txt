@@ -31,7 +31,6 @@ D:\Work\TongRi\ServiceHost\bin\Services.dll
 D:\Work\TongRi\ServiceHost\bin\SQLDAL.dll
 D:\Work\TongRi\ServiceHost\bin\Util.dll
 D:\Work\TongRi\ServiceHost\bin\SQLDAL.pdb
-D:\Work\TongRi\ServiceHost\obj\Debug\ServiceHost.csprojResolveAssemblyReference.cache
 D:\Work\TongRi\ServiceHost\obj\Debug\ServiceHost.dll
 D:\Work\TongRi\ServiceHost\obj\Debug\ServiceHost.pdb
 D:\Code\TongRi\ServiceHost\bin\ServiceHost.dll
@@ -46,3 +45,4 @@ D:\Code\TongRi\ServiceHost\bin\SQLDAL.pdb
 D:\Code\TongRi\ServiceHost\obj\Debug\ServiceHost.dll
 D:\Code\TongRi\ServiceHost\obj\Debug\ServiceHost.pdb
 D:\Code\TongRi\ServiceHost\obj\Debug\ServiceHost.csprojResolveAssemblyReference.cache
+D:\Work\TongRi\ServiceHost\obj\Debug\ResolveAssemblyReference.cache

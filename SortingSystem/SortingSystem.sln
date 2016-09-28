@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SortingSystem", "D:\Code\TongRi\SortingSystem\", "{357A6071-42D6-4B82-A410-4EC215BB267C}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SortingSystem", ".", "{357A6071-42D6-4B82-A410-4EC215BB267C}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/SortingSystem"
@@ -21,9 +21,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SortingSystem", "D:\Code\To
 		VWDPort = "3996"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "D:\Code\TongRi\ServiceHost\ServiceHost.csproj", "{ABD63901-876D-4F98-8B47-A3EC620DFAE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "..\ServiceHost\ServiceHost.csproj", "{ABD63901-876D-4F98-8B47-A3EC620DFAE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDAL", "D:\Code\TongRi\SQLDAL\SQLDAL.csproj", "{3D2E8955-A851-42EC-BE68-F1EB02B7834B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDAL", "..\SQLDAL\SQLDAL.csproj", "{3D2E8955-A851-42EC-BE68-F1EB02B7834B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

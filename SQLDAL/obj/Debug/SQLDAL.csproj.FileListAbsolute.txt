@@ -22,10 +22,8 @@ D:\Work\TongRi\SQLDAL\bin\Debug\SQLDAL.pdb
 D:\Work\TongRi\SQLDAL\bin\Debug\IDAL.dll
 D:\Work\TongRi\SQLDAL\bin\Debug\Util.dll
 D:\Work\TongRi\SQLDAL\obj\Debug\SQLDAL.Properties.Resources.resources
-D:\Work\TongRi\SQLDAL\obj\Debug\SQLDAL.csproj.GenerateResource.Cache
 D:\Work\TongRi\SQLDAL\obj\Debug\SQLDAL.dll
 D:\Work\TongRi\SQLDAL\obj\Debug\SQLDAL.pdb
-D:\Work\TongRi\SQLDAL\obj\Debug\SQLDAL.csprojResolveAssemblyReference.cache
 D:\Code\TongRi\SQLDAL\bin\Debug\SQLDAL.dll
 D:\Code\TongRi\SQLDAL\bin\Debug\SQLDAL.pdb
 D:\Code\TongRi\SQLDAL\bin\Debug\IDAL.dll
@@ -35,3 +33,6 @@ D:\Code\TongRi\SQLDAL\obj\Debug\SQLDAL.dll
 D:\Code\TongRi\SQLDAL\obj\Debug\SQLDAL.pdb
 D:\Code\TongRi\SQLDAL\obj\Debug\SQLDAL.csprojResolveAssemblyReference.cache
 D:\Code\TongRi\SQLDAL\obj\Debug\SQLDAL.csproj.GenerateResource.Cache
+D:\Work\TongRi\SQLDAL\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\TongRi\SQLDAL\obj\Debug\GenerateResource.read.1.tlog
+D:\Work\TongRi\SQLDAL\obj\Debug\GenerateResource.write.1.tlog
