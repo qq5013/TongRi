@@ -163,7 +163,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据记录保存成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -176,7 +176,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据修改成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -202,7 +202,6 @@
                 if (result.status == 1) {
                     ReloadGrid('dg');
                     $('#BatchWin').window('close');
-                    $.messager.alert('提示', '产品编号变更成功。');
                 } else {
                     $.messager.alert('错误', result.msg, 'error');
                 }
@@ -243,7 +242,7 @@
                             if (result.status == 1) {
                                 ReloadGrid('dg');
                                
-                                $.messager.alert('提示', '数据删除成功！');
+                                
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }

@@ -241,7 +241,6 @@
                     if (result.status == 1) {
                         ReloadGrid("dg");
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据记录保存成功。');
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -297,7 +296,6 @@
                     if (result.status == 1) {
                         ReloadGrid("dg");
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据修改成功。');
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -333,8 +331,6 @@
                         $.post(url, data, function (result) {
                             if (result.status == 1) {
                                 ReloadGrid("dg");
-
-                                $.messager.alert('提示', '数据删除成功！');
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }

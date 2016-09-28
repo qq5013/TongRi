@@ -117,7 +117,7 @@
                 if (result.status == 1) {
                     ReloadGrid('dg');
                     $('#AddWin').window('close');
-                    $.messager.alert('提示', '数据修改成功。');
+                    
                 } else {
                     $.messager.alert('错误', result.msg, 'error');
                 }
