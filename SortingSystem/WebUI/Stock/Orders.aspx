@@ -370,6 +370,11 @@
                 $('#txtDeliveryAdd').textbox('setValue', RowData.Address);
             }
         }
+
+        function DblClickRow(rowIndex, rowData) {
+            DblSingleClickRow('SelectCustWin', rowIndex, rowData);
+        }
+
         function BindSelectUrl(objName) {
 
             var Comd = "Cmd.SelectCustomer";
@@ -694,7 +699,7 @@
     <div  id="SelectCustWin" style="width:800px;height:500px">
              <table id="dgCust"  class="easyui-datagrid" 
             data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#divCustBtn',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectSingleCheckRow,onUncheck:SelectSingleUnCheckRow,onLoadSuccess:SelectLoadSelectSuccess"> 
+                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#divCustBtn',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectSingleCheckRow,onUncheck:SelectSingleUnCheckRow,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
              <thead>
 		        <tr>
                     <th data-options="field:'',checkbox:true"></th> 

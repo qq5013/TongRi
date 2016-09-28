@@ -230,6 +230,15 @@ function SelectCheckRow(rowIndex, rowData) {
     if (!bln)
         ReturnValue.push(rowData);
 }
+
+
+
+function DblSingleClickRow(objName, rowIndex, rowData) {
+    ReturnValue = [];
+    SelectWin.window('close');
+    AddRow(objName, rowData);
+}
+
 function SelectSingleCheckRow(rowIndex, rowData) {
     ReturnValue = [];
     ReturnValue.push(rowData);

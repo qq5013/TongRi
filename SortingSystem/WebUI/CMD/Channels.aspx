@@ -125,6 +125,11 @@
 
 
         }
+
+        function DblClickRow(rowIndex, rowData) {
+            DblSingleClickRow('', rowIndex, rowData);
+        }
+
         function CheckRow(rowIndex, rowData) {
             CheckSelectRow('dg', rowIndex, rowData);
         }
@@ -265,7 +270,7 @@
     <div  id="SelectWin" style="width:800px;height:500px">
              <table id="dgSelect"  class="easyui-datagrid" 
             data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectCheckRow,onUncheck:SelectUnCheckRow,onCheckAll:SelectCheckRowAll,onUncheckAll:SelectUnCheckRowAll,onLoadSuccess:SelectLoadSelectSuccess"> 
+                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectCheckRow,onUncheck:SelectUnCheckRow,onCheckAll:SelectCheckRowAll,onUncheckAll:SelectUnCheckRowAll,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
             <thead data-options="frozen:true">
 			    <tr>
 				    <th data-options="field:'',checkbox:true"></th> 
@@ -304,7 +309,7 @@
                         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="ReloadGrid('dgSelect')">查询</a> 
                     </td>
                     <td>
-                         <a href="javascript:void(0)" onclick="closeSelectWin('SelectWin')" class="easyui-linkbutton" data-options="iconCls:'icon-return',plain:true">取回</a>  
+                         <a href="javascript:void(0)" onclick="closeSelectWin('SelectWin')" class="easyui-linkbutton" data-options="iconCls:'icon-return'">取回</a>  
                     </td>
                 </tr>
             </table>

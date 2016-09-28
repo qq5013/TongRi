@@ -253,6 +253,11 @@
                 });
             }
         }
+
+        function DblClickRow(rowIndex, rowData) {
+            DblSingleClickRow('', rowIndex, rowData);
+        }
+
         function CheckRow(rowIndex, rowData) {
             CheckSelectRow('dg', rowIndex, rowData);
         }
@@ -538,7 +543,7 @@
     <div  id="SelectWin" style="width:650px;height:300px">
              <table id="dgSelect"  class="easyui-datagrid" 
             data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectSingleCheckRow,onUncheck:SelectSingleUnCheckRow,onLoadSuccess:SelectLoadSelectSuccess"> 
+                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectSingleCheckRow,onUncheck:SelectSingleUnCheckRow,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
             <thead data-options="frozen:true">
 			    <tr>
 				    <th data-options="field:'',checkbox:true"></th> 
