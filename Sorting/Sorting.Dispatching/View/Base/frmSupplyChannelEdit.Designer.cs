@@ -159,7 +159,7 @@
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(53, 12);
             this.lblCode.TabIndex = 52;
-            this.lblCode.Text = "烟道代码";
+            this.lblCode.Text = "货仓代码";
             // 
             // txtChannelName
             // 
@@ -177,7 +177,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 64;
-            this.label2.Text = "烟道名称";
+            this.label2.Text = "货仓名称";
             // 
             // txtChannelOrder
             // 
@@ -222,7 +222,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSupplyChannelEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "补货烟道编辑";
+            this.Text = "补货货仓编辑";
             this.ResumeLayout(false);
             this.PerformLayout();
 

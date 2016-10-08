@@ -27,7 +27,7 @@ namespace Sorting.Dispatching.View.Base
             }
             catch (Exception exp)
             {
-                MessageBox.Show("读取补货烟道信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("读取补货货仓信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Sorting.Dispatching.View.Base
             //    }
             //    catch (Exception exp)
             //    {
-            //        MessageBox.Show("新增补货烟道信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show("新增补货货仓信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    }
             //}
         }
@@ -98,7 +98,7 @@ namespace Sorting.Dispatching.View.Base
             //    }
             //    catch (Exception exp)
             //    {
-            //        MessageBox.Show("删除补货烟道信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show("删除补货货仓信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    }
 
             //}
@@ -118,9 +118,9 @@ namespace Sorting.Dispatching.View.Base
             if (e.ColumnIndex == 2)
             {
                 if (e.Value.ToString() == "3")
-                    e.Value = "混合烟道";
+                    e.Value = "混合货仓";
                 else
-                    e.Value = "单一烟道";
+                    e.Value = "单一货仓";
             }
             if (e.ColumnIndex == 5)
             {

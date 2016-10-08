@@ -27,7 +27,7 @@ namespace Sorting.Dispatching.View.Base
             }
             catch (Exception exp)
             {
-                MessageBox.Show("读取分拣烟道信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("读取分拣货仓信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Sorting.Dispatching.View.Base
             //    }
             //    catch (Exception exp)
             //    {
-            //        MessageBox.Show("新增分拣烟道信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show("新增分拣货仓信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    }
             //}
         }
@@ -98,7 +98,7 @@ namespace Sorting.Dispatching.View.Base
             //    }
             //    catch (Exception exp)
             //    {
-            //        MessageBox.Show("删除分拣烟道信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show("删除分拣货仓信息失败，原因" + exp.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    }
             //}
         }
@@ -135,7 +135,7 @@ namespace Sorting.Dispatching.View.Base
             frmChannelParameter f = new frmChannelParameter();
             if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("烟道参数设置成功,请重新优化!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("货仓参数设置成功,请重新优化!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

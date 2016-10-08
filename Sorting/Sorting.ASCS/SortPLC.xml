@@ -4,9 +4,11 @@
     <OPCGroup GroupName="PLCGroup" GroupString="S7:[@LOCALSERVER]" UpdateRate="350">
     <!--<OPCGroup GroupName="DefaultGroup" GroupString="S7:[S701]" UpdateRate="350">-->
       <OPCItem ItemName="abc" ClientHandler="60" OPCItemName="DB9,INT100,1" ItemType="READ"/>
-      <OPCItem ItemName="OrderData3" ClientHandler="1" OPCItemName="DB2,INT0,27"  ItemType="WRITE"/>
-      <OPCItem ItemName="OrderRequest3" ClientHandler="2" OPCItemName="DB9,INT0,1" ItemType="READ"/>
-      <OPCItem ItemName="OrderRequest2" ClientHandler="3" OPCItemName="DB9,INT10,1" ItemType="READ"/>
+      <OPCItem ItemName="RestartSign" ClientHandler="1" OPCItemName="DB400,INT0,27"  ItemType="WRITE"/>
+      <OPCItem ItemName="ASortOrderFlag" ClientHandler="2" OPCItemName="DB500,INT498,1" ItemType="READ"/>
+      <OPCItem ItemName="ASortOrder" ClientHandler="3" OPCItemName="DB500,INT0,250" ItemType="WRITE"/>
+      <OPCItem ItemName="BSortOrderFlag" ClientHandler="4" OPCItemName="DB600,INT498,1" ItemType="READ"/>
+      <OPCItem ItemName="BSortOrder" ClientHandler="5" OPCItemName="DB600,INT0,250" ItemType="WRITE"/>
       <OPCItem ItemName="OrderData2" ClientHandler="4" OPCItemName="DB1,INT0,82"  ItemType="WRITE"/>
       <OPCItem ItemName="LastOrder3" ClientHandler="5" OPCItemName="DB9,INT18,1" ItemType="WRITE"/>
       <OPCItem ItemName="LastOrder2" ClientHandler="6" OPCItemName="DB9,INT32,1" ItemType="WRITE"/>

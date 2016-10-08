@@ -40,14 +40,14 @@ namespace Sorting.Dispatching.View
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.dgvMaster = new System.Windows.Forms.DataGridView();
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
-            this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIGARETTECODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIGARETTENAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewAutoFilterTextBoxColumn1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.MAINORDERID = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.PACKAGE1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRODUCTCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRODUCTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -179,75 +179,6 @@ namespace Sorting.Dispatching.View
             this.dgvMaster.TabIndex = 0;
             this.dgvMaster.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaster_RowEnter);
             // 
-            // dgvDetail
-            // 
-            this.dgvDetail.AllowUserToAddRows = false;
-            this.dgvDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lavender;
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDetail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SORTNO,
-            this.CIGARETTECODE,
-            this.CIGARETTENAME,
-            this.QUANTITY});
-            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvDetail.MultiSelect = false;
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.ReadOnly = true;
-            this.dgvDetail.RowHeadersWidth = 30;
-            this.dgvDetail.RowTemplate.Height = 23;
-            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(1044, 210);
-            this.dgvDetail.TabIndex = 0;
-            // 
-            // SORTNO
-            // 
-            this.SORTNO.DataPropertyName = "BATCHNO";
-            this.SORTNO.HeaderText = "批次号";
-            this.SORTNO.Name = "SORTNO";
-            this.SORTNO.ReadOnly = true;
-            this.SORTNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SORTNO.Width = 120;
-            // 
-            // CIGARETTECODE
-            // 
-            this.CIGARETTECODE.DataPropertyName = "CIGARETTECODE";
-            this.CIGARETTECODE.HeaderText = "卷烟代码";
-            this.CIGARETTECODE.Name = "CIGARETTECODE";
-            this.CIGARETTECODE.ReadOnly = true;
-            this.CIGARETTECODE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CIGARETTENAME
-            // 
-            this.CIGARETTENAME.DataPropertyName = "CIGARETTENAME";
-            this.CIGARETTENAME.HeaderText = "卷烟名称";
-            this.CIGARETTENAME.Name = "CIGARETTENAME";
-            this.CIGARETTENAME.ReadOnly = true;
-            this.CIGARETTENAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CIGARETTENAME.Width = 200;
-            // 
-            // QUANTITY
-            // 
-            this.QUANTITY.DataPropertyName = "QUANTITY";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle5;
-            this.QUANTITY.HeaderText = "数量";
-            this.QUANTITY.Name = "QUANTITY";
-            this.QUANTITY.ReadOnly = true;
-            this.QUANTITY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.QUANTITY.Width = 80;
-            // 
             // dataGridViewAutoFilterTextBoxColumn1
             // 
             this.dataGridViewAutoFilterTextBoxColumn1.DataPropertyName = "ORDERDATE";
@@ -275,6 +206,75 @@ namespace Sorting.Dispatching.View
             this.PACKAGE1.ReadOnly = true;
             this.PACKAGE1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PACKAGE1.Width = 113;
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.AllowUserToAddRows = false;
+            this.dgvDetail.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lavender;
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDetail.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SORTNO,
+            this.PRODUCTCODE,
+            this.PRODUCTNAME,
+            this.QUANTITY});
+            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
+            this.dgvDetail.MultiSelect = false;
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.RowHeadersWidth = 30;
+            this.dgvDetail.RowTemplate.Height = 23;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetail.Size = new System.Drawing.Size(1044, 210);
+            this.dgvDetail.TabIndex = 0;
+            // 
+            // SORTNO
+            // 
+            this.SORTNO.DataPropertyName = "BATCHNO";
+            this.SORTNO.HeaderText = "批次号";
+            this.SORTNO.Name = "SORTNO";
+            this.SORTNO.ReadOnly = true;
+            this.SORTNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SORTNO.Width = 120;
+            // 
+            // PRODUCTCODE
+            // 
+            this.PRODUCTCODE.DataPropertyName = "PRODUCTCODE";
+            this.PRODUCTCODE.HeaderText = "产品代码";
+            this.PRODUCTCODE.Name = "PRODUCTCODE";
+            this.PRODUCTCODE.ReadOnly = true;
+            this.PRODUCTCODE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PRODUCTNAME
+            // 
+            this.PRODUCTNAME.DataPropertyName = "PRODUCTNAME";
+            this.PRODUCTNAME.HeaderText = "产品名称";
+            this.PRODUCTNAME.Name = "PRODUCTNAME";
+            this.PRODUCTNAME.ReadOnly = true;
+            this.PRODUCTNAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PRODUCTNAME.Width = 200;
+            // 
+            // QUANTITY
+            // 
+            this.QUANTITY.DataPropertyName = "QUANTITY";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle5;
+            this.QUANTITY.HeaderText = "数量";
+            this.QUANTITY.Name = "QUANTITY";
+            this.QUANTITY.ReadOnly = true;
+            this.QUANTITY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QUANTITY.Width = 80;
             // 
             // AbnormityTotalForm
             // 
@@ -305,12 +305,12 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.SplitContainer scMain;
         private System.Windows.Forms.DataGridView dgvMaster;
         private System.Windows.Forms.DataGridView dgvDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTECODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTENAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn dataGridViewAutoFilterTextBoxColumn1;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn MAINORDERID;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn PACKAGE1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRODUCTCODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRODUCTNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
     }
 }

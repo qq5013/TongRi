@@ -11,7 +11,7 @@
     <Attribute Name="FontColorEmpty" Value="2" />
     <Attribute Name="FontColorBreak" Value="3" />
     <Attribute Name="SpeakCount" Value="5" />
-    <Attribute Name="MinBalance" Value="50" />
+    <Attribute Name="OrderCount" Value="25" />
   </Attributes>
   <Services>
     <Service Name="SortPLC" Type="MCP.Service.Siemens.dll, MCP.Service.Siemens.OPCService" ConfigFile="SortPLC.xml" />

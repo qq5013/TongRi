@@ -189,7 +189,7 @@
             // 
             this.Column2.DataPropertyName = "CHANNELCODE";
             this.Column2.FilteringEnabled = false;
-            this.Column2.HeaderText = "烟道代码";
+            this.Column2.HeaderText = "货仓代码";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -198,7 +198,7 @@
             // 
             this.Column4.DataPropertyName = "CHANNELNAME";
             this.Column4.FilteringEnabled = false;
-            this.Column4.HeaderText = "烟道名称";
+            this.Column4.HeaderText = "货仓名称";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -208,7 +208,7 @@
             // 
             this.Column7.DataPropertyName = "CHANNELTYPE";
             this.Column7.FilteringEnabled = false;
-            this.Column7.HeaderText = "烟道类型";
+            this.Column7.HeaderText = "货仓类型";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -255,7 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 430);
             this.Name = "frmSupplyChannel";
-            this.Text = "补货烟道";
+            this.Text = "补货货仓";
             this.pnlTool.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);

@@ -159,7 +159,7 @@ namespace Sorting.Dispatching.View
             // Column1
             // 
             this.Column1.DataPropertyName = "CHANNELNAME";
-            this.Column1.HeaderText = "烟道名称";
+            this.Column1.HeaderText = "货仓名称";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 80;
@@ -169,7 +169,7 @@ namespace Sorting.Dispatching.View
             this.Column2.DataPropertyName = "CHANNELTYPE";
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column2.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column2.HeaderText = "烟道类型";
+            this.Column2.HeaderText = "货仓类型";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 80;
@@ -394,7 +394,7 @@ namespace Sorting.Dispatching.View
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "CHANNELNAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "烟道名称";
+            this.dataGridViewTextBoxColumn2.HeaderText = "货仓名称";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 80;
@@ -404,22 +404,22 @@ namespace Sorting.Dispatching.View
             this.dataGridViewTextBoxColumn3.DataPropertyName = "CHANNELTYPE";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn3.HeaderText = "烟道类型";
+            this.dataGridViewTextBoxColumn3.HeaderText = "货仓类型";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 80;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CIGARETTECODE";
-            this.dataGridViewTextBoxColumn4.HeaderText = "卷烟代码";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PRODUCTCODE";
+            this.dataGridViewTextBoxColumn4.HeaderText = "产品代码";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CIGARETTENAME";
-            this.dataGridViewTextBoxColumn5.HeaderText = "卷烟名称";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PRODUCTNAME";
+            this.dataGridViewTextBoxColumn5.HeaderText = "产品名称";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 150;
@@ -469,7 +469,7 @@ namespace Sorting.Dispatching.View
             this.dataGridViewTextBoxColumn10.DataPropertyName = "ITEMQUANTITY";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn10.HeaderText = "剩余条数";
+            this.dataGridViewTextBoxColumn10.HeaderText = "剩余数量";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 80;

@@ -401,7 +401,7 @@ namespace Sorting.Dispatching.View
                         //SC_CHANNELUSED
                         ChannelScheduleDao csDao = new ChannelScheduleDao();
                         csDao.DeleteHistory(historyDate);
-                        Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除历史烟道数据", 14, 3));
+                        Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除历史货仓数据", 14, 3));
 
                         //SC_LINE
                         LineScheduleDao lsDao = new LineScheduleDao();
@@ -420,7 +420,7 @@ namespace Sorting.Dispatching.View
                         //SC_STOCKMIXCHANNEL
                         StockChannelDao scDao = new StockChannelDao();
                         scDao.DeleteHistory(historyDate);
-                        Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除补货烟道历史数据", 14, 7));
+                        Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除补货货仓历史数据", 14, 7));
 
                         //SC_SUPPLY
                         SupplyDao supplyDao = new SupplyDao();
@@ -440,7 +440,7 @@ namespace Sorting.Dispatching.View
                         //AreaDao areaDao = new AreaDao();
                         //DataTable areaTable = ssDao.FindArea();
                         //areaDao.SynchronizeArea(areaTable);
-                        //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("下载烟道表", 14, 10));                    
+                        //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("下载货仓表", 14, 10));                    
 
                         //下载配送线路表
                         Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("下载配送路线[" + BatchNo + "]", 14, 11));

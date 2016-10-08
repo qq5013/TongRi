@@ -27,7 +27,7 @@ namespace Sorting.Dispatching.View
         /// 打码段和摆动段数据显示
         /// </summary>
         /// <param name="deviceNo">设备号</param>
-        /// <param name="channelGroup">烟道组号</param>
+        /// <param name="channelGroup">货仓组号</param>
         /// <param name="sortNo">分拣流水号</param>
         public CacheOrderQueryForm(int deviceNo, int channelGroup, int sortNo)
         {
@@ -68,7 +68,7 @@ namespace Sorting.Dispatching.View
         /// 窗体加载重载方法查询出多沟带缓存段的所有订单数据
         /// </summary>
         /// <param name="deviceNo">设备号</param>
-        /// <param name="channelGroup">烟道组号</param>
+        /// <param name="channelGroup">货仓组号</param>
         /// <param name="sortNoStart">开始流水号</param>
         /// <param name="beforeQuantity">小皮带数量</param>
         /// <param name="afterQuantity">后端数量</param>
@@ -183,7 +183,7 @@ namespace Sorting.Dispatching.View
         /// <param name="exportNo">包装机号</param>
         /// <param name="deviceNo">设备号（仅作为方法重载区分字段，没太大意义）</param>
         /// <param name="sortNo">流水号</param>
-        /// <param name="channelGroup">烟道组号</param>
+        /// <param name="channelGroup">货仓组号</param>
         public CacheOrderQueryForm(int exportNo, int deviceNo, int sortNo, int channelGroup)
         {
             InitializeComponent();

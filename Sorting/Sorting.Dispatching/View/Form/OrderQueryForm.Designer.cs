@@ -30,14 +30,20 @@ namespace Sorting.Dispatching.View
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.dgvMaster = new System.Windows.Forms.DataGridView();
+            this.bsMaster = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEnd = new System.Windows.Forms.Button();
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.BATCHNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.MAINSORTNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -51,12 +57,8 @@ namespace Sorting.Dispatching.View
             this.STATUS = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.STATUS1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.PACKAGE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.PACKAGE1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.bsMaster = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PackNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHANNELNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHANNELTYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +66,6 @@ namespace Sorting.Dispatching.View
             this.CIGARETTENAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHANNELLINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnEnd = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -145,8 +143,7 @@ namespace Sorting.Dispatching.View
             this.QUANTITY1,
             this.STATUS,
             this.STATUS1,
-            this.PACKAGE,
-            this.PACKAGE1});
+            this.PACKAGE});
             this.dgvMaster.DataSource = this.bsMaster;
             this.dgvMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaster.Location = new System.Drawing.Point(0, 0);
@@ -159,6 +156,97 @@ namespace Sorting.Dispatching.View
             this.dgvMaster.Size = new System.Drawing.Size(1044, 191);
             this.dgvMaster.TabIndex = 0;
             this.dgvMaster.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaster_RowEnter);
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.AllowUserToAddRows = false;
+            this.dgvDetail.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender;
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDetail.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column11,
+            this.SORTNO,
+            this.ORDERID,
+            this.CHANNELNAME,
+            this.CHANNELTYPE,
+            this.CIGARETTECODE,
+            this.CIGARETTENAME,
+            this.QUANTITY,
+            this.CHANNELLINE});
+            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
+            this.dgvDetail.MultiSelect = false;
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.RowHeadersWidth = 30;
+            this.dgvDetail.RowTemplate.Height = 23;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetail.Size = new System.Drawing.Size(1044, 210);
+            this.dgvDetail.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = global::Sorting.Dispatching.Properties.Resources.close;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(144, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 51);
+            this.btnExit.TabIndex = 17;
+            this.btnExit.Text = "退出";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefresh.Image = global::Sorting.Dispatching.Properties.Resources.refresh;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(48, 51);
+            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnUpdate.Image = global::Sorting.Dispatching.Properties.Resources.document_edit;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUpdate.Location = new System.Drawing.Point(48, 0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(48, 51);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "修正";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnEnd
+            // 
+            this.btnEnd.Image = global::Sorting.Dispatching.Properties.Resources.close;
+            this.btnEnd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEnd.Location = new System.Drawing.Point(95, 0);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(50, 51);
+            this.btnEnd.TabIndex = 18;
+            this.btnEnd.Text = "结束";
+            this.btnEnd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // ORDERDATE
             // 
@@ -278,55 +366,6 @@ namespace Sorting.Dispatching.View
             this.PACKAGE.ReadOnly = true;
             this.PACKAGE.Width = 113;
             // 
-            // PACKAGE1
-            // 
-            this.PACKAGE1.DataPropertyName = "PACKAGE1";
-            this.PACKAGE1.FilteringEnabled = false;
-            this.PACKAGE1.HeaderText = "2号包装状态";
-            this.PACKAGE1.Name = "PACKAGE1";
-            this.PACKAGE1.ReadOnly = true;
-            this.PACKAGE1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.PACKAGE1.Visible = false;
-            this.PACKAGE1.Width = 113;
-            // 
-            // dgvDetail
-            // 
-            this.dgvDetail.AllowUserToAddRows = false;
-            this.dgvDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender;
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDetail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column11,
-            this.SORTNO,
-            this.PackNo,
-            this.ORDERID,
-            this.CHANNELNAME,
-            this.CHANNELTYPE,
-            this.CIGARETTECODE,
-            this.CIGARETTENAME,
-            this.QUANTITY,
-            this.CHANNELLINE});
-            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvDetail.MultiSelect = false;
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.ReadOnly = true;
-            this.dgvDetail.RowHeadersWidth = 30;
-            this.dgvDetail.RowTemplate.Height = 23;
-            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(1044, 210);
-            this.dgvDetail.TabIndex = 0;
-            // 
             // Column11
             // 
             this.Column11.DataPropertyName = "ROWID";
@@ -343,14 +382,6 @@ namespace Sorting.Dispatching.View
             this.SORTNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.SORTNO.Width = 70;
             // 
-            // PackNo
-            // 
-            this.PackNo.DataPropertyName = "PACKNO";
-            this.PackNo.HeaderText = "包号";
-            this.PackNo.Name = "PackNo";
-            this.PackNo.ReadOnly = true;
-            this.PackNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // ORDERID
             // 
             this.ORDERID.DataPropertyName = "ORDERID";
@@ -362,7 +393,7 @@ namespace Sorting.Dispatching.View
             // CHANNELNAME
             // 
             this.CHANNELNAME.DataPropertyName = "CHANNELNAME";
-            this.CHANNELNAME.HeaderText = "烟道名称";
+            this.CHANNELNAME.HeaderText = "货仓名称";
             this.CHANNELNAME.Name = "CHANNELNAME";
             this.CHANNELNAME.ReadOnly = true;
             this.CHANNELNAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -373,7 +404,7 @@ namespace Sorting.Dispatching.View
             this.CHANNELTYPE.DataPropertyName = "CHANNELTYPE";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.CHANNELTYPE.DefaultCellStyle = dataGridViewCellStyle7;
-            this.CHANNELTYPE.HeaderText = "烟道类型";
+            this.CHANNELTYPE.HeaderText = "货仓类型";
             this.CHANNELTYPE.Name = "CHANNELTYPE";
             this.CHANNELTYPE.ReadOnly = true;
             this.CHANNELTYPE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -381,16 +412,16 @@ namespace Sorting.Dispatching.View
             // 
             // CIGARETTECODE
             // 
-            this.CIGARETTECODE.DataPropertyName = "CIGARETTECODE";
-            this.CIGARETTECODE.HeaderText = "卷烟代码";
+            this.CIGARETTECODE.DataPropertyName = "ProductCode";
+            this.CIGARETTECODE.HeaderText = "产品代码";
             this.CIGARETTECODE.Name = "CIGARETTECODE";
             this.CIGARETTECODE.ReadOnly = true;
             this.CIGARETTECODE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // CIGARETTENAME
             // 
-            this.CIGARETTENAME.DataPropertyName = "CIGARETTENAME";
-            this.CIGARETTENAME.HeaderText = "卷烟名称";
+            this.CIGARETTENAME.DataPropertyName = "ProductNAME";
+            this.CIGARETTENAME.HeaderText = "产品名称";
             this.CIGARETTENAME.Name = "CIGARETTENAME";
             this.CIGARETTENAME.ReadOnly = true;
             this.CIGARETTENAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -410,65 +441,11 @@ namespace Sorting.Dispatching.View
             // CHANNELLINE
             // 
             this.CHANNELLINE.DataPropertyName = "ISABNORMITY";
-            this.CHANNELLINE.HeaderText = "异形烟";
+            this.CHANNELLINE.HeaderText = "异形";
             this.CHANNELLINE.Name = "CHANNELLINE";
             this.CHANNELLINE.ReadOnly = true;
             this.CHANNELLINE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.CHANNELLINE.Visible = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Image = global::Sorting.Dispatching.Properties.Resources.close;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(144, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(48, 51);
-            this.btnExit.TabIndex = 17;
-            this.btnExit.Text = "退出";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRefresh.Image = global::Sorting.Dispatching.Properties.Resources.refresh;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(48, 51);
-            this.btnRefresh.TabIndex = 15;
-            this.btnRefresh.Text = "刷新";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnUpdate.Image = global::Sorting.Dispatching.Properties.Resources.document_edit;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(48, 0);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(48, 51);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "修正";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnEnd
-            // 
-            this.btnEnd.Image = global::Sorting.Dispatching.Properties.Resources.close;
-            this.btnEnd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEnd.Location = new System.Drawing.Point(95, 0);
-            this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(50, 51);
-            this.btnEnd.TabIndex = 18;
-            this.btnEnd.Text = "结束";
-            this.btnEnd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEnd.UseVisualStyleBackColor = true;
-            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // OrderQueryForm
             // 
@@ -497,17 +474,8 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridView dgvMaster;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.BindingSource bsMaster;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PackNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ORDERID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELTYPE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTECODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTENAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELLINE;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnEnd;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn ORDERDATE;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn BATCHNO;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn MAINSORTNO;
@@ -521,7 +489,14 @@ namespace Sorting.Dispatching.View
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn STATUS;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn STATUS1;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn PACKAGE;
-        private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn PACKAGE1;
-        private System.Windows.Forms.Button btnEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ORDERID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELTYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTECODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTENAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELLINE;
     }
 }

@@ -51,12 +51,12 @@ namespace Sorting.Dispatching.Dal
             }
             return count;
         }
-        public void Save(string channelCode, string cigaretteCode, string cigaretteName, string status)
+        public void Save(string channelCode, string ProductCode, string ProductName, string status)
         {
             using (PersistentManager pm = new PersistentManager())
             {
                 ChannelDao channelDao = new ChannelDao();
-                channelDao.UpdateEntity(channelCode, cigaretteCode, cigaretteName, status);
+                channelDao.UpdateEntity(channelCode, ProductCode, ProductName, status);
             }
         }
         public void Save(string channelCode, string productCode, string productName, string channelOrder, string status)
@@ -155,22 +155,22 @@ namespace Sorting.Dispatching.Dal
                 try
                 {
                     pm.BeginTransaction();
-                    DataTable sourceChannelTable = channelDao.FindChannel(batchNo,sourceChannel);//获取欲交换的烟道
-                    DataTable targetChannelTable = channelDao.FindChannel(batchNo,targetChannel);//获取要交换的目的烟道
+                    DataTable sourceChannelTable = channelDao.FindChannel(batchNo,sourceChannel);//获取欲交换的货仓
+                    DataTable targetChannelTable = channelDao.FindChannel(batchNo,targetChannel);//获取要交换的目的货仓
 
                     sourceChannelAddress = Convert.ToInt32(sourceChannelTable.Rows[0]["CHANNELADDRESS"]);
                     targetChannelAddress = Convert.ToInt32(targetChannelTable.Rows[0]["CHANNELADDRESS"]);
 
                     channelDao.UpdateChannel(batchNo,targetChannel,
-                        sourceChannelTable.Rows[0]["CIGARETTECODE"].ToString(),
-                        sourceChannelTable.Rows[0]["CIGARETTENAME"].ToString(), 
+                        sourceChannelTable.Rows[0]["ProductCode"].ToString(),
+                        sourceChannelTable.Rows[0]["ProductName"].ToString(), 
                         Convert.ToInt32(sourceChannelTable.Rows[0]["QUANTITY"]),
                         Convert.ToInt32(sourceChannelTable.Rows[0]["GROUPNO"]),
                         sourceChannelTable.Rows[0]["SORTNO"].ToString());
 
                     channelDao.UpdateChannel(batchNo,sourceChannel,
-                        targetChannelTable.Rows[0]["CIGARETTECODE"].ToString(),
-                        targetChannelTable.Rows[0]["CIGARETTENAME"].ToString(),
+                        targetChannelTable.Rows[0]["ProductCode"].ToString(),
+                        targetChannelTable.Rows[0]["ProductName"].ToString(),
                         Convert.ToInt32(targetChannelTable.Rows[0]["QUANTITY"]),
                         Convert.ToInt32(sourceChannelTable.Rows[0]["GROUPNO"]),
                         targetChannelTable.Rows[0]["SORTNO"].ToString());
@@ -178,12 +178,12 @@ namespace Sorting.Dispatching.Dal
                     orderDao.UpdateChannel(batchNo,sourceChannel, "0000");
                     orderDao.UpdateChannel(batchNo,targetChannel, sourceChannel);
                     orderDao.UpdateChannel(batchNo,"0000", targetChannel);
-                    //尾数表烟道交换
+                    //尾数表货仓交换
                     orderDao.UpdateChannelBalance(batchNo, sourceChannel, "0000", "", 0);
                     orderDao.UpdateChannelBalance(batchNo, targetChannel, sourceChannel, sourceChannelTable.Rows[0]["CHANNELNAME"].ToString(), Convert.ToInt32(sourceChannelTable.Rows[0]["CHANNELORDER"]));
                     orderDao.UpdateChannelBalance(batchNo, "0000", targetChannel, targetChannelTable.Rows[0]["CHANNELNAME"].ToString(), Convert.ToInt32(targetChannelTable.Rows[0]["CHANNELORDER"]));
 
-                    //补货目标烟道也要交换
+                    //补货目标货仓也要交换
                     supplyDao.UpdateChannel(batchNo,sourceChannel, "0000");
                     supplyDao.UpdateChannel(batchNo,targetChannel, sourceChannel);
                     supplyDao.UpdateChannel(batchNo,"0000", targetChannel);

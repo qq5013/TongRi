@@ -118,7 +118,7 @@
             // CHANNELNAME
             // 
             this.CHANNELNAME.DataPropertyName = "CHANNELNAME";
-            this.CHANNELNAME.HeaderText = "烟道名称";
+            this.CHANNELNAME.HeaderText = "货仓名称";
             this.CHANNELNAME.Name = "CHANNELNAME";
             this.CHANNELNAME.ReadOnly = true;
             this.CHANNELNAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -129,7 +129,7 @@
             this.CHANNELTYPE.DataPropertyName = "CHANNELTYPE";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.CHANNELTYPE.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CHANNELTYPE.HeaderText = "烟道类型";
+            this.CHANNELTYPE.HeaderText = "货仓类型";
             this.CHANNELTYPE.Name = "CHANNELTYPE";
             this.CHANNELTYPE.ReadOnly = true;
             this.CHANNELTYPE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;

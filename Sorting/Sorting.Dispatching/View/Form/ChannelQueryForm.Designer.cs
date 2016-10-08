@@ -36,6 +36,14 @@ namespace Sorting.Dispatching.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMain = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnExchange = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
             this.Column10 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column3 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column7 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -46,14 +54,6 @@ namespace Sorting.Dispatching.View
             this.Column6 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column9 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column8 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnExchange = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnPreview = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -122,118 +122,17 @@ namespace Sorting.Dispatching.View
             this.dgvMain.Size = new System.Drawing.Size(868, 425);
             this.dgvMain.TabIndex = 0;
             // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "BATCHNO";
-            this.Column10.FilteringEnabled = false;
-            this.Column10.HeaderText = "批次号";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "LINECODE";
-            this.Column3.FilteringEnabled = false;
-            this.Column3.HeaderText = "分拣线";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.Width = 80;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "CHANNELCODE";
-            this.Column7.FilteringEnabled = false;
-            this.Column7.HeaderText = "烟道代码";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.Width = 80;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "CHANNELNAME";
-            this.Column1.FilteringEnabled = false;
-            this.Column1.HeaderText = "烟道名称";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CHANNELTYPE";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.FilteringEnabled = false;
-            this.Column2.HeaderText = "烟道类别";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CIGARETTECODE";
-            this.Column4.FilteringEnabled = false;
-            this.Column4.HeaderText = "卷烟代码";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "CIGARETTENAME";
-            this.Column5.FilteringEnabled = false;
-            this.Column5.HeaderText = "卷烟名称";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "QUANTITY";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column6.FilteringEnabled = false;
-            this.Column6.HeaderText = "数量";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 60;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "BOXES";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column9.FilteringEnabled = false;
-            this.Column9.HeaderText = "件数";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "BALANCE";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column8.FilteringEnabled = false;
-            this.Column8.HeaderText = "零条";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lEDToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
             // 
             // lEDToolStripMenuItem
             // 
             this.lEDToolStripMenuItem.Name = "lEDToolStripMenuItem";
-            this.lEDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lEDToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.lEDToolStripMenuItem.Text = "LED重新发送";
             this.lEDToolStripMenuItem.Click += new System.EventHandler(this.lEDToolStripMenuItem_Click);
             // 
@@ -307,6 +206,107 @@ namespace Sorting.Dispatching.View
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "BATCHNO";
+            this.Column10.FilteringEnabled = false;
+            this.Column10.HeaderText = "批次号";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "LINECODE";
+            this.Column3.FilteringEnabled = false;
+            this.Column3.HeaderText = "分拣线";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.Width = 80;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "CHANNELCODE";
+            this.Column7.FilteringEnabled = false;
+            this.Column7.HeaderText = "货仓代码";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.Width = 80;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CHANNELNAME";
+            this.Column1.FilteringEnabled = false;
+            this.Column1.HeaderText = "货仓名称";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CHANNELTYPE";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.FilteringEnabled = false;
+            this.Column2.HeaderText = "货仓类别";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ProductCode";
+            this.Column4.FilteringEnabled = false;
+            this.Column4.HeaderText = "产品代码";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ProductName";
+            this.Column5.FilteringEnabled = false;
+            this.Column5.HeaderText = "产品名称";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "QUANTITY";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column6.FilteringEnabled = false;
+            this.Column6.HeaderText = "数量";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 60;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "BOXES";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column9.FilteringEnabled = false;
+            this.Column9.HeaderText = "件数";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "BALANCE";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column8.FilteringEnabled = false;
+            this.Column8.HeaderText = "尾数";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // ChannelQueryForm
             // 
             this.ClientSize = new System.Drawing.Size(868, 478);
@@ -331,6 +331,8 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.BindingSource bsMain;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem lEDToolStripMenuItem;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnPreview;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column10;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column3;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column7;
@@ -341,7 +343,5 @@ namespace Sorting.Dispatching.View
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column6;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column9;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column8;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnPreview;
     }
 }

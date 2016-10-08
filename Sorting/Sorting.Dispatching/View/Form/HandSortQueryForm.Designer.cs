@@ -39,6 +39,13 @@ namespace Sorting.Dispatching.View
             this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ORDERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDERDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BATCHNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -48,13 +55,6 @@ namespace Sorting.Dispatching.View
             this.Column7 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column8 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column3 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ORDERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIGARETTECODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIGARETTENAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -160,8 +160,8 @@ namespace Sorting.Dispatching.View
             this.Column4,
             this.SORTNO,
             this.ORDERID,
-            this.CIGARETTECODE,
-            this.CIGARETTENAME,
+            this.ProductCode,
+            this.ProductName,
             this.QUANTITY,
             this.Column9});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -202,6 +202,66 @@ namespace Sorting.Dispatching.View
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ORDERDETAILID";
+            this.Column4.HeaderText = "序号";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 60;
+            // 
+            // SORTNO
+            // 
+            this.SORTNO.DataPropertyName = "SORTNO";
+            this.SORTNO.HeaderText = "流水号";
+            this.SORTNO.Name = "SORTNO";
+            this.SORTNO.ReadOnly = true;
+            this.SORTNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SORTNO.Width = 70;
+            // 
+            // ORDERID
+            // 
+            this.ORDERID.DataPropertyName = "ORDERID";
+            this.ORDERID.HeaderText = "订单号";
+            this.ORDERID.Name = "ORDERID";
+            this.ORDERID.ReadOnly = true;
+            this.ORDERID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ProductCode
+            // 
+            this.ProductCode.DataPropertyName = "ProductCode";
+            this.ProductCode.HeaderText = "产品代码";
+            this.ProductCode.Name = "ProductCode";
+            this.ProductCode.ReadOnly = true;
+            this.ProductCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "产品名称";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProductName.Width = 200;
+            // 
+            // QUANTITY
+            // 
+            this.QUANTITY.DataPropertyName = "QUANTITY";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle5;
+            this.QUANTITY.HeaderText = "数量";
+            this.QUANTITY.Name = "QUANTITY";
+            this.QUANTITY.ReadOnly = true;
+            this.QUANTITY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QUANTITY.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "ISABNORMITY";
+            this.Column9.HeaderText = "异形";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // ORDERDATE
             // 
@@ -265,7 +325,7 @@ namespace Sorting.Dispatching.View
             // 
             // Column8
             // 
-            this.Column8.DataPropertyName = "CUSTOMERCODE";
+            this.Column8.DataPropertyName = "CUSTOMERNAME";
             this.Column8.FilteringEnabled = false;
             this.Column8.HeaderText = "客户名称";
             this.Column8.Name = "Column8";
@@ -280,66 +340,6 @@ namespace Sorting.Dispatching.View
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "ORDERDETAILID";
-            this.Column4.HeaderText = "序号";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 60;
-            // 
-            // SORTNO
-            // 
-            this.SORTNO.DataPropertyName = "SORTNO";
-            this.SORTNO.HeaderText = "流水号";
-            this.SORTNO.Name = "SORTNO";
-            this.SORTNO.ReadOnly = true;
-            this.SORTNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SORTNO.Width = 70;
-            // 
-            // ORDERID
-            // 
-            this.ORDERID.DataPropertyName = "ORDERID";
-            this.ORDERID.HeaderText = "订单号";
-            this.ORDERID.Name = "ORDERID";
-            this.ORDERID.ReadOnly = true;
-            this.ORDERID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CIGARETTECODE
-            // 
-            this.CIGARETTECODE.DataPropertyName = "CIGARETTECODE";
-            this.CIGARETTECODE.HeaderText = "卷烟代码";
-            this.CIGARETTECODE.Name = "CIGARETTECODE";
-            this.CIGARETTECODE.ReadOnly = true;
-            this.CIGARETTECODE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CIGARETTENAME
-            // 
-            this.CIGARETTENAME.DataPropertyName = "CIGARETTENAME";
-            this.CIGARETTENAME.HeaderText = "卷烟名称";
-            this.CIGARETTENAME.Name = "CIGARETTENAME";
-            this.CIGARETTENAME.ReadOnly = true;
-            this.CIGARETTENAME.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CIGARETTENAME.Width = 200;
-            // 
-            // QUANTITY
-            // 
-            this.QUANTITY.DataPropertyName = "QUANTITY";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle5;
-            this.QUANTITY.HeaderText = "数量";
-            this.QUANTITY.Name = "QUANTITY";
-            this.QUANTITY.ReadOnly = true;
-            this.QUANTITY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.QUANTITY.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "ISABNORMITY";
-            this.Column9.HeaderText = "异形烟";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
             // 
             // HandSortQueryForm
             // 
@@ -368,6 +368,13 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridView dgvMaster;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.BindingSource bsMaster;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ORDERID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDERDATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn BATCHNO;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column1;
@@ -377,12 +384,5 @@ namespace Sorting.Dispatching.View
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column7;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column8;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ORDERID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTECODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIGARETTENAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

@@ -72,10 +72,10 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannelSchedule(string orderDate, string batchNo, string lineCode)
         {
-            string sql = "SELECT A.*,D.CIGARETTECODE AS D_CIGARETTECODE,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE " + 
+            string sql = "SELECT A.*,D.ProductCode AS D_ProductCode,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE " + 
                     " FROM SC_CHANNELUSED A" +                    
                     " LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                    " LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                    " LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                     " WHERE A.LINECODE = '{0}' AND A.BATCHNO = '{1}' AND A.ORDERDATE = '{2}' " +
                     " ORDER BY A.CHANNELORDER";
             return ExecuteQuery(string.Format(sql, lineCode, batchNo, orderDate));
@@ -89,10 +89,10 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannel3(string orderDate, string batchNo)
         {
-            string sql = "SELECT A.*,D.CIGARETTECODE AS D_CIGARETTECODE,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE,(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY) SERIALNO " +
+            string sql = "SELECT A.*,D.ProductCode AS D_ProductCode,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE,(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY) SERIALNO " +
                          "FROM SC_CHANNELUSED A " +
                          "LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '3' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' " +
                          "ORDER BY A.CHANNELORDER";
             return ExecuteQuery(string.Format(sql, batchNo, orderDate));
@@ -106,12 +106,12 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannel3(string orderDate, string batchNo,string firstBatchNo,int pNo)
         {
-            string sql = "SELECT A.*,D.CIGARETTECODE AS D_CIGARETTECODE,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE," +
+            string sql = "SELECT A.*,D.ProductCode AS D_ProductCode,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE," +
                          "(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY) SERIALNO,ISNULL(B.QUANTITY{3},0) PBALANCE,ISNULL(C.PACKAGENUM,50) PACKAGENUM " +
                          "FROM SC_CHANNELUSED A " +
                          "LEFT JOIN SC_CHANNELBALANCE B ON A.CHANNELID = B.CHANNELID AND B.BATCHNO='{2}' " +
                          "LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '3' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' " +
                          "ORDER BY A.CHANNELORDER";
 
@@ -127,11 +127,11 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannel31(string orderDate, string batchNo)
         {
-            string sql = "SELECT A.*,D.CIGARETTECODE AS D_CIGARETTECODE,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE," +
+            string sql = "SELECT A.*,D.ProductCode AS D_ProductCode,A.QUANTITY,C.BARCODE,C.BARCODEPACK,A.QUANTITY/50 BOXES,A.QUANTITY%50 BALANCE," +
                          "(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY) SERIALNO,ISNULL(C.PACKAGENUM,50) PACKAGENUM " +
                          "FROM SC_CHANNELUSED A " +
                          "LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '3' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' " +
                          "ORDER BY A.CHANNELADDRESS";
 
@@ -147,14 +147,14 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannelBalance3(string orderDate, string batchNo)
         {
-            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.CIGARETTECODE, A.CIGARETTENAME, " +
+            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.ProductCode, A.ProductName, " +
                          "A.QUANTITY,A.QUANTITY1, A.QUANTITY2, A.QUANTITY3, A.QUANTITY4, A.QUANTITY5, A.QUANTITY6, A.QUANTITY7, A.QUANTITY8, A.QUANTITY9," +
                          "C.BARCODEPACK,MAX(B.SORTNO) SORTNO,(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY) SERIALNO,C.PACKAGENUM " +
                          "FROM SC_CHANNELBALANCE A " +
                          "LEFT JOIN SC_ORDER_DETAIL B ON A.CHANNELCODE=B.CHANNELCODE " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '3' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' " + 
-                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.CIGARETTECODE, A.CIGARETTENAME, " +
+                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.ProductCode, A.ProductName, " +
                          "A.QUANTITY,A.QUANTITY1, A.QUANTITY2, A.QUANTITY3, A.QUANTITY4, A.QUANTITY5, A.QUANTITY6, A.QUANTITY7, A.QUANTITY8, A.QUANTITY9,C.BARCODEPACK,C.PACKAGENUM " +
                          "ORDER BY A.CHANNELCODE ";
             return ExecuteQuery(string.Format(sql, batchNo, orderDate));
@@ -168,14 +168,14 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannelBalance2(string orderDate, string batchNo)
         {
-            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.CIGARETTECODE, A.CIGARETTENAME, " +
+            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.ProductCode, A.ProductName, " +
                          "A.QUANTITY,A.QUANTITY1, A.QUANTITY2, A.QUANTITY3, A.QUANTITY4, A.QUANTITY5, A.QUANTITY6, A.QUANTITY7, A.QUANTITY8, A.QUANTITY9," +
                          "C.BARCODEPACK,MAX(B.SORTNO) SORTNO,(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY2) SERIALNO,C.PACKAGENUM " +
                          "FROM SC_CHANNELBALANCE A " +
                          "LEFT JOIN SC_ORDER_DETAIL B ON A.CHANNELCODE=B.CHANNELCODE " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '2' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' " +
-                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.CIGARETTECODE, A.CIGARETTENAME, " +
+                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.CHANNELID, A.LINECODE, A.CHANNELTYPE, A.CHANNELCODE, A.CHANNELNAME, A.ProductCode, A.ProductName, " +
                          "A.QUANTITY,A.QUANTITY1, A.QUANTITY2, A.QUANTITY3, A.QUANTITY4, A.QUANTITY5, A.QUANTITY6, A.QUANTITY7, A.QUANTITY8, A.QUANTITY9,C.BARCODEPACK,C.PACKAGENUM " +
                          "ORDER BY A.CHANNELCODE ";
             return ExecuteQuery(string.Format(sql, batchNo, orderDate));
@@ -189,15 +189,15 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannel2(string orderDate, string batchNo, string firstBatchNo, int pNo)
         {
-            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.LINECODE, MIN(A.CHANNELCODE) CHANNELCODE, A.CHANNELTYPE,A.CHANNELGROUP,A.CIGARETTECODE, A.CIGARETTENAME," +
-                         "SUM(A.QUANTITY) QUANTITY,D.CIGARETTECODE AS D_CIGARETTECODE,C.BARCODE,C.BARCODEPACK,SUM(A.QUANTITY)/ISNULL(C.PACKAGENUM,50) BOXES,SUM(A.QUANTITY)%ISNULL(C.PACKAGENUM,50) BALANCE, " +
+            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.LINECODE, MIN(A.CHANNELCODE) CHANNELCODE, A.CHANNELTYPE,A.CHANNELGROUP,A.ProductCode, A.ProductName," +
+                         "SUM(A.QUANTITY) QUANTITY,D.ProductCode AS D_ProductCode,C.BARCODE,C.BARCODEPACK,SUM(A.QUANTITY)/ISNULL(C.PACKAGENUM,50) BOXES,SUM(A.QUANTITY)%ISNULL(C.PACKAGENUM,50) BALANCE, " +
                          "(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY2) SERIALNO,ISNULL(SUM(B.QUANTITY{3}),0) PBALANCE,ISNULL(C.PACKAGENUM,50) PACKAGENUM " +
                          "FROM SC_CHANNELUSED A " +
                          "LEFT JOIN SC_CHANNELBALANCE B ON A.CHANNELID = B.CHANNELID AND B.BATCHNO='{2}' " +
                          "LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '2' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' AND A.QUANTITY>0 " +
-                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.LINECODE,A.CHANNELTYPE,A.CHANNELGROUP,A.CIGARETTECODE, A.CIGARETTENAME, D.CIGARETTECODE,C.BARCODE,C.BARCODEPACK,C.PACKAGENUM " +
+                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.LINECODE,A.CHANNELTYPE,A.CHANNELGROUP,A.ProductCode, A.ProductName, D.ProductCode,C.BARCODE,C.BARCODEPACK,C.PACKAGENUM " +
                          "ORDER BY MIN(A.CHANNELCODE)";
             
             sql = string.Format(sql, batchNo, orderDate, firstBatchNo, pNo == 0 ? "" : pNo.ToString());
@@ -212,14 +212,14 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannel21(string orderDate, string batchNo)
         {
-            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.LINECODE, MIN(A.CHANNELCODE) CHANNELCODE, A.CHANNELTYPE,A.CHANNELGROUP,A.CIGARETTECODE, A.CIGARETTENAME," +
-                         "SUM(A.QUANTITY) QUANTITY,D.CIGARETTECODE AS D_CIGARETTECODE,C.BARCODE,C.BARCODEPACK,SUM(A.QUANTITY)/ISNULL(C.PACKAGENUM,50) BOXES,SUM(A.QUANTITY)%ISNULL(C.PACKAGENUM,50) BALANCE, " +
+            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.LINECODE, MIN(A.CHANNELCODE) CHANNELCODE, A.CHANNELTYPE,A.CHANNELGROUP,A.ProductCode, A.ProductName," +
+                         "SUM(A.QUANTITY) QUANTITY,D.ProductCode AS D_ProductCode,C.BARCODE,C.BARCODEPACK,SUM(A.QUANTITY)/ISNULL(C.PACKAGENUM,50) BOXES,SUM(A.QUANTITY)%ISNULL(C.PACKAGENUM,50) BALANCE, " +
                          "(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY2) SERIALNO,ISNULL(C.PACKAGENUM,50) PACKAGENUM " +
                          "FROM SC_CHANNELUSED A " +
                          "LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '2' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' AND A.QUANTITY>0 " +
-                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.LINECODE,A.CHANNELTYPE,A.CHANNELGROUP,A.CIGARETTECODE, A.CIGARETTENAME, D.CIGARETTECODE,C.BARCODE,C.BARCODEPACK,C.PACKAGENUM " +
+                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.LINECODE,A.CHANNELTYPE,A.CHANNELGROUP,A.ProductCode, A.ProductName, D.ProductCode,C.BARCODE,C.BARCODEPACK,C.PACKAGENUM " +
                          "ORDER BY MIN(A.CHANNELCODE)";
 
             sql = string.Format(sql, batchNo, orderDate);
@@ -234,14 +234,14 @@ namespace Sorting.Dispatching.Dao
         /// <returns></returns>22
         public DataSet FindChannel2(string orderDate, string batchNo)
         {
-            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.LINECODE, MIN(A.CHANNELCODE) CHANNELCODE, A.CHANNELTYPE,A.CHANNELGROUP,A.CIGARETTECODE, A.CIGARETTENAME," +
-                         "SUM(A.QUANTITY) QUANTITY,D.CIGARETTECODE AS D_CIGARETTECODE,C.BARCODE,C.BARCODEPACK,SUM(A.QUANTITY)/50 BOXES,SUM(A.QUANTITY)%50 BALANCE, " +
+            string sql = "SELECT A.ORDERDATE, A.BATCHNO, A.LINECODE, MIN(A.CHANNELCODE) CHANNELCODE, A.CHANNELTYPE,A.CHANNELGROUP,A.ProductCode, A.ProductName," +
+                         "SUM(A.QUANTITY) QUANTITY,D.ProductCode AS D_ProductCode,C.BARCODE,C.BARCODEPACK,SUM(A.QUANTITY)/50 BOXES,SUM(A.QUANTITY)%50 BALANCE, " +
                          "(SELECT ISNULL(MAX(SERIALNO),0) FROM SC_SUPPLY2) SERIALNO " +
                          "FROM SC_CHANNELUSED A " +
                          "LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
-                         "LEFT JOIN CMD_Product C ON A.CIGARETTECODE=C.CIGARETTECODE " +
+                         "LEFT JOIN CMD_Product C ON A.ProductCode=C.ProductCode " +
                          "WHERE A.CHANNELTYPE= '2' AND A.BATCHNO = '{0}' AND A.ORDERDATE = '{1}' AND A.QUANTITY>0 " +
-                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.LINECODE,A.CHANNELTYPE,A.CHANNELGROUP,A.CIGARETTECODE, A.CIGARETTENAME, D.CIGARETTECODE,C.BARCODE,C.BARCODEPACK " +
+                         "GROUP BY A.ORDERDATE, A.BATCHNO, A.LINECODE,A.CHANNELTYPE,A.CHANNELGROUP,A.ProductCode, A.ProductName, D.ProductCode,C.BARCODE,C.BARCODEPACK " +
                          "ORDER BY MIN(A.CHANNELCODE)";
             return ExecuteQuery(string.Format(sql, batchNo, orderDate));
         }
@@ -278,7 +278,7 @@ namespace Sorting.Dispatching.Dao
             string sql = "SELECT *, 50 REMAINQUANTITY,CASE WHEN CHANNELTYPE='3' THEN QUANTITY / 50 - 3 ELSE QUANTITY / 50 - 1 END PIECE " +
                          "FROM SC_CHANNELUSED WHERE LINECODE = '{0}' AND BATCHNO = '{1}' AND ORDERDATE = '{2}' ORDER BY CHANNELORDER";
 
-            sql = "SELECT A.*,D.CIGARETTECODE  AS D_CIGARETTECODE," +
+            sql = "SELECT A.*,D.ProductCode  AS D_ProductCode," +
                     " 	CASE WHEN (A.QUANTITY + ISNULL(B.QUANTITY,0))%50 > 16 " +
                     " 		    THEN (A.QUANTITY + ISNULL(B.QUANTITY,0))%50 - 16" +
                     "       WHEN (ISNULL(C.QUANTITY,0) - ISNULL(B.QUANTITY,0)) > 16 " +
@@ -299,19 +299,19 @@ namespace Sorting.Dispatching.Dao
                     "   (A.QUANTITY + ISNULL(B.QUANTITY,0)) AS SUPPLYQUANTITY" +
                     " FROM SC_CHANNELUSED A" +
                     " LEFT JOIN (SELECT CHANNELID,LINECODE,CHANNELCODE,CHANNELNAME," +
-                    " 	CIGARETTECODE,CIGARETTENAME,SUM(QUANTITY) AS QUANTITY " +
+                    " 	ProductCode,ProductName,SUM(QUANTITY) AS QUANTITY " +
                     " 	FROM SC_BALANCE" +
                     " 	WHERE LINECODE = '{0}' " +
                     " 	AND BATCHNO = '{1}' " +
                     " 	AND ORDERDATE = '{2}' " +
                     " 	GROUP BY CHANNELID,LINECODE,CHANNELCODE,CHANNELNAME," +
-                    " 	CIGARETTECODE,CIGARETTENAME) B " +
+                    " 	ProductCode,ProductName) B " +
                     " ON A.CHANNELID = B.CHANNELID" +
                     " LEFT JOIN (SELECT CHANNELID,LINECODE,CHANNELCODE,CHANNELNAME," +
-                    " 	CIGARETTECODE,CIGARETTENAME,SUM(QUANTITY) AS QUANTITY " +
+                    " 	ProductCode,ProductName,SUM(QUANTITY) AS QUANTITY " +
                     " 	FROM SC_BALANCE " +
                     " 	GROUP BY CHANNELID,LINECODE,CHANNELCODE,CHANNELNAME," +
-                    " 	CIGARETTECODE,CIGARETTENAME) C" +
+                    " 	ProductCode,ProductName) C" +
                     " ON A.CHANNELID = C.CHANNELID" +
                     " LEFT JOIN CMD_CHANNEL D ON A.CHANNELID = D.CHANNELID " +
                     " WHERE A.LINECODE = '{0}' " +
@@ -416,7 +416,7 @@ namespace Sorting.Dispatching.Dao
                 ExecuteNonQuery(string.Format(sql, channelRow["PRODUCTCODE"], channelRow["PRODUCTNAME"], channelRow["QUANTITY"],
                     channelRow["ORDERDATE"], channelRow["BATCHNO"].ToString().Trim(), channelRow["LINECODE"], channelRow["CHANNELCODE"]));
 
-                //if (isUseBalance && channelRow["CHANNELTYPE"].ToString() == "3" && channelRow["CIGARETTECODE"].ToString() == channelRow["D_CIGARETTECODE"].ToString())
+                //if (isUseBalance && channelRow["CHANNELTYPE"].ToString() == "3" && channelRow["ProductCode"].ToString() == channelRow["D_ProductCode"].ToString())
                 if (isUseBalance && channelRow["CHANNELTYPE"].ToString() == "3")
                 {
                     SqlCreate sqlCreate = new SqlCreate("SC_BALANCE", SqlType.INSERT);
@@ -427,8 +427,8 @@ namespace Sorting.Dispatching.Dao
                     sqlCreate.AppendQuote("LINECODE", channelRow["LINECODE"]);
                     sqlCreate.AppendQuote("CHANNELCODE", channelRow["CHANNELCODE"]);
                     sqlCreate.AppendQuote("CHANNELNAME", channelRow["CHANNELNAME"]);
-                    sqlCreate.AppendQuote("CIGARETTECODE", channelRow["CIGARETTECODE"]);
-                    sqlCreate.AppendQuote("CIGARETTENAME", channelRow["CIGARETTENAME"]);
+                    sqlCreate.AppendQuote("ProductCode", channelRow["ProductCode"]);
+                    sqlCreate.AppendQuote("ProductName", channelRow["ProductName"]);
 
                     int quantity = Convert.ToInt32(channelRow["QUANTITY"]) % 50;
                     int balance = Convert.ToInt32(channelRow["BALANCE"]);
@@ -444,21 +444,21 @@ namespace Sorting.Dispatching.Dao
             }
         }
 
-        internal void UpdateEntity(string channelCode, string cigaretteCode, string cigaretteName, string status)
+        internal void UpdateEntity(string channelCode, string ProductCode, string ProductName, string status)
         {
             SqlCreate sqlCreate = new SqlCreate("CMD_CHANNEL", SqlType.UPDATE);
-            sqlCreate.AppendQuote("CIGARETTECODE", cigaretteCode.Trim());
-            sqlCreate.AppendQuote("CIGARETTENAME", cigaretteName.Trim());
+            sqlCreate.AppendQuote("ProductCode", ProductCode.Trim());
+            sqlCreate.AppendQuote("ProductName", ProductName.Trim());
             sqlCreate.AppendQuote("STATUS", status);
             sqlCreate.AppendWhereQuote("CHANNELCODE", channelCode);
             ExecuteNonQuery(sqlCreate.GetSQL());
 
             string sql = "INSERT INTO SC_BALANCE_OUT" +
-                            " SELECT GETDATE(),LINECODE,CHANNELCODE,CHANNELNAME,CIGARETTECODE, CIGARETTENAME, " +
+                            " SELECT GETDATE(),LINECODE,CHANNELCODE,CHANNELNAME,ProductCode, ProductName, " +
                             " SUM(QUANTITY) AS QUANTITY,0" +
                             " FROM SC_BALANCE" +
                             " WHERE CHANNELCODE = '{0}'" +
-                            " GROUP BY LINECODE,CHANNELCODE,CHANNELNAME,CIGARETTECODE, CIGARETTENAME" +
+                            " GROUP BY LINECODE,CHANNELCODE,CHANNELNAME,ProductCode, ProductName" +
                             " HAVING ISNULL(SUM(QUANTITY),0) > 0 ";
             ExecuteNonQuery(string.Format(sql, channelCode));
 
@@ -476,11 +476,11 @@ namespace Sorting.Dispatching.Dao
             ExecuteNonQuery(sqlCreate.GetSQL());
 
             //string sql = "INSERT INTO SC_BALANCE_OUT" +
-            //                " SELECT GETDATE(),LINECODE,CHANNELCODE,CHANNELNAME,CIGARETTECODE, CIGARETTENAME, " +
+            //                " SELECT GETDATE(),LINECODE,CHANNELCODE,CHANNELNAME,ProductCode, ProductName, " +
             //                " SUM(QUANTITY) AS QUANTITY,0" +
             //                " FROM SC_BALANCE" +
             //                " WHERE CHANNELCODE = '{0}'" +
-            //                " GROUP BY LINECODE,CHANNELCODE,CHANNELNAME,CIGARETTECODE, CIGARETTENAME" +
+            //                " GROUP BY LINECODE,CHANNELCODE,CHANNELNAME,ProductCode, ProductName" +
             //                " HAVING ISNULL(SUM(QUANTITY),0) > 0 ";
             //ExecuteNonQuery(string.Format(sql, channelCode));
 
@@ -491,12 +491,11 @@ namespace Sorting.Dispatching.Dao
         {
             string sql = "SELECT A.BATCHNO,A.CHANNELCODE, A.CHANNELNAME, " +
                          "CASE A.CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE, " +
-                         "A.LINECODE, A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,CASE A.CHANNELTYPE WHEN '3' THEN A.QUANTITY/50 ELSE " +
-                         "CASE WHEN (SELECT COUNT(*) FROM SC_CHANNELUSED WHERE CIGARETTECODE=A.CIGARETTECODE AND BATCHNO=A.BATCHNO)>1 THEN ISNULL(B.QUANTITY,0)/50 " +
+                         "A.LINECODE, A.ProductCode, A.ProductName, A.QUANTITY,CASE A.CHANNELTYPE WHEN '3' THEN A.QUANTITY/50 ELSE " +
+                         "CASE WHEN (SELECT COUNT(*) FROM SC_CHANNELUSED WHERE ProductCode=A.ProductCode AND BATCHNO=A.BATCHNO)>1 THEN ISNULL(B.QUANTITY,0)/50 " +
                          "ELSE A.QUANTITY/50 END END BOXES,ISNULL(B.BALANCE,0) BALANCE " +
                          "FROM SC_CHANNELUSED A " +
-                         "LEFT JOIN SC_BALANCE B ON A.CHANNELCODE=B.CHANNELCODE " +
-                         "WHERE A.BATCHNO IN(SELECT TOP 1 BATCHNO FROM SC_BALANCE) " +
+                         "LEFT JOIN SC_BALANCE B ON A.CHANNELCODE=B.CHANNELCODE AND A.BatchNo=B.BATCHNO " +
                          "ORDER BY A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME";
             return ExecuteQuery(sql).Tables[0];
         }
@@ -504,19 +503,18 @@ namespace Sorting.Dispatching.Dao
         {
             string sql = "SELECT A.BATCHNO,A.CHANNELCODE, A.CHANNELNAME, " +
                          "CASE A.CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE, " +
-                         "A.LINECODE, A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,CASE A.CHANNELTYPE WHEN '3' THEN A.QUANTITY/50 ELSE " +
-                         "CASE WHEN (SELECT COUNT(*) FROM SC_CHANNELUSED WHERE CIGARETTECODE=A.CIGARETTECODE AND BATCHNO=A.BATCHNO)>1 THEN ISNULL(B.QUANTITY,0)/50 " +
+                         "A.LINECODE, A.ProductCode, A.ProductName, A.QUANTITY,CASE A.CHANNELTYPE WHEN '3' THEN A.QUANTITY/50 ELSE " +
+                         "CASE WHEN (SELECT COUNT(*) FROM SC_CHANNELUSED WHERE ProductCode=A.ProductCode AND BATCHNO=A.BATCHNO)>1 THEN ISNULL(B.QUANTITY,0)/50 " +
                          "ELSE A.QUANTITY/50 END END BOXES,ISNULL(B.BALANCE,0) BALANCE " +
                          "FROM SC_CHANNELUSED A " +
-                         "LEFT JOIN SC_BALANCE B ON A.CHANNELCODE=B.CHANNELCODE " +
-                         "WHERE A.BATCHNO IN(SELECT TOP 1 BATCHNO FROM SC_BALANCE) " +
+                         "LEFT JOIN SC_BALANCE B ON A.CHANNELCODE=B.CHANNELCODE AND A.BatchNo=B.BATCHNO " +
                          "ORDER BY A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME";
             return ExecuteQuery(sql);
         }
         public DataTable FindChannelBalance()
         {
             string sql = "SELECT ORDERDATE, BATCHNO, CHANNELID, LINECODE, CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE, " +
-                         "CHANNELCODE, CHANNELNAME, CIGARETTECODE, CIGARETTENAME, QUANTITY, QUANTITY1, QUANTITY2, QUANTITY3, QUANTITY4, QUANTITY5, QUANTITY6, QUANTITY7, QUANTITY8, QUANTITY9, BNO " +
+                         "CHANNELCODE, CHANNELNAME, ProductCode, ProductName, QUANTITY, QUANTITY1, QUANTITY2, QUANTITY3, QUANTITY4, QUANTITY5, QUANTITY6, QUANTITY7, QUANTITY8, QUANTITY9, BNO " +
                          "FROM SC_CHANNELBALANCE " +
                          "WHERE BATCHNO1 IN(SELECT TOP 1 BATCHNO FROM SC_ORDER_MASTER) " +
                          "ORDER BY BATCHNO,CHANNELCODE,CHANNELNAME";
@@ -528,7 +526,7 @@ namespace Sorting.Dispatching.Dao
                            ISNULL(QUANTITY4,0) QUANTITY4, ISNULL(QUANTITY5,0) QUANTITY5, ISNULL(QUANTITY6,0) QUANTITY6, ISNULL(QUANTITY7,0) QUANTITY7, 
                            ISNULL(QUANTITY8,0) QUANTITY8, ISNULL(QUANTITY9,0) QUANTITY9 
                            FROM CMD_CHANNEL LEFT JOIN
-                            (SELECT BATCHNO,CHANNELCODE, CHANNELNAME, CIGARETTECODE, CIGARETTENAME, QUANTITY, 
+                            (SELECT BATCHNO,CHANNELCODE, CHANNELNAME, ProductCode, ProductName, QUANTITY, 
                             QUANTITY1, QUANTITY2, QUANTITY3, 
                             QUANTITY4, QUANTITY5, QUANTITY6, QUANTITY7, QUANTITY8, QUANTITY9, BNO  
                             FROM SC_CHANNELBALANCE  
@@ -538,39 +536,39 @@ namespace Sorting.Dispatching.Dao
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 根据烟道代码查询烟道类型和烟道组号
+        /// 根据货仓代码查询货仓类型和货仓组号
         /// </summary>
-        /// <param name="channelcode">烟道代码</param>
-        /// <returns>返回烟道类型和烟道组号</returns>
+        /// <param name="channelcode">货仓代码</param>
+        /// <returns>返回货仓类型和货仓组号</returns>
         public DataTable FindChannelCode(string channelcode)
         {
-            string sql = string.Format("SELECT CHANNELNAME,CHANNELADDRESS,CHANNELTYPE,CHANNELGROUP,CIGARETTECODE,CIGARETTENAME,LEDNO FROM SC_CHANNELUSED WHERE CHANNELCODE='{0}'", channelcode);
+            string sql = string.Format("SELECT CHANNELNAME,CHANNELADDRESS,CHANNELTYPE,CHANNELGROUP,ProductCode,ProductName,LEDNO FROM SC_CHANNELUSED WHERE CHANNELCODE='{0}'", channelcode);
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 根据烟道代码查询烟道类型和烟道组号
+        /// 根据货仓代码查询货仓类型和货仓组号
         /// </summary>
-        /// <param name="channelcode">烟道代码</param>
-        /// <returns>返回烟道类型和烟道组号</returns>
+        /// <param name="channelcode">货仓代码</param>
+        /// <returns>返回货仓类型和货仓组号</returns>
         public DataTable FindChannelCode(string channelType,int channelAddress)
         {
             string sql = string.Format("SELECT * FROM SC_CHANNELUSED WHERE CHANNELTYPE='{0}' AND CHANNELADDRESS={1}", channelType, channelAddress);
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 根据流水号查询烟道信息
+        /// 根据流水号查询货仓信息
         /// </summary>
         /// <param name="sortNo">流水号</param>
         /// <param name="channelGroup">A线或者B线</param>
-        /// <returns>返回查询到的烟道信息表</returns>
+        /// <returns>返回查询到的货仓信息表</returns>
         public DataTable FindChannelQuantity(string sortNo)
         {
             string sql = string.Format("SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY " +
                                         " FROM (SELECT A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME, A.LEDGROUP, A.LEDNO, " +
                                                 " CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE," +
-                                                " A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY," +
+                                                " A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY," +
                                                 " A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY," +
-                                                " A.LED_X,A.LED_Y,A.LED_WIDTH,A.LED_HEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP " +
+                                                " A.LEDX,A.LEDY,A.LEDWIDTH,A.LEDHEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP " +
                                                 " FROM SC_CHANNELUSED A " +
                                                 " LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY " +
                                                             " FROM SC_ORDER_DETAIL WHERE SORTNO <= '{0}' GROUP BY CHANNELCODE) B " +
@@ -580,7 +578,7 @@ namespace Sorting.Dispatching.Dao
             //sql = string.Format("SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY " +
             //                            " FROM (SELECT A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME, " +
             //                                    " CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE," +
-            //                                    " A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY," +
+            //                                    " A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY," +
             //                                    " A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY " +
             //                                    " FROM SC_CHANNELUSED A " +
             //                                    " LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY " +
@@ -590,19 +588,19 @@ namespace Sorting.Dispatching.Dao
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 根据流水号查询烟道信息
+        /// 根据流水号查询货仓信息
         /// </summary>
         /// <param name="sortNo">流水号</param>
         /// <param name="channelGroup">A线或者B线</param>
-        /// <returns>返回查询到的烟道信息表</returns>
+        /// <returns>返回查询到的货仓信息表</returns>
         public DataTable FindChannelQuantity(string sortNo, string channelType)
         {
             string sql = string.Format("SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY "+
                                         " FROM (SELECT A.CHANNELNAME, A.LEDGROUP, A.LEDNO, "+
                                                 " CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE," +
-                                                " A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,"+
+                                                " A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,"+
                                                 " A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY,"+
-                                                " A.LED_X,A.LED_Y,A.LED_WIDTH,A.LED_HEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP "+
+                                                " A.LEDX,A.LEDY,A.LEDWIDTH,A.LEDHEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP "+
                                                 " FROM SC_CHANNELUSED A " +
                                                 " LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY "+
                                                             " FROM SC_ORDER_DETAIL WHERE SORTNO <= '{0}' GROUP BY CHANNELCODE) B " +
@@ -612,7 +610,7 @@ namespace Sorting.Dispatching.Dao
             //sql = string.Format("SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY " +
             //                            " FROM (SELECT A.CHANNELNAME, " +
             //                                    " CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE," +
-            //                                    " A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY," +
+            //                                    " A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY," +
             //                                    " A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY " +
             //                                    " FROM SC_CHANNELUSED A " +
             //                                    " LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY " +
@@ -622,19 +620,19 @@ namespace Sorting.Dispatching.Dao
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 根据流水号查询烟道信息
+        /// 根据流水号查询货仓信息
         /// </summary>
         /// <param name="sortNo">A线流水号</param>
         /// <param name="channelGroup">B线流水号</param>
-        /// <returns>返回查询到的烟道信息表</returns>
+        /// <returns>返回查询到的货仓信息表</returns>
         public DataTable FindAllChannelQuantity(string sortNo)
         {
             string sql = string.Format(@"SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY    
                                           FROM (SELECT A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME, A.LEDGROUP, A.LEDNO,    
                                                   CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE,   
-                                                  A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
+                                                  A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
                                                   A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY,   
-                                                  A.LED_X,A.LED_Y,A.LED_WIDTH,A.LED_HEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP    
+                                                  A.LEDX,A.LEDY,A.LEDWIDTH,A.LEDHEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP    
                                                   FROM SC_CHANNELUSED A    
                                                   LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY    
                                                               FROM SC_ORDER_DETAIL WHERE SORTNO <= '{0}' GROUP BY CHANNELCODE) B    
@@ -643,7 +641,7 @@ namespace Sorting.Dispatching.Dao
 //            sql = string.Format(@"SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY    
 //                                          FROM (SELECT A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME,    
 //                                                  CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE,   
-//                                                  A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
+//                                                  A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
 //                                                  A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY   
 //                                                  FROM SC_CHANNELUSED A    
 //                                                  LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY    
@@ -652,17 +650,17 @@ namespace Sorting.Dispatching.Dao
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 根据流水号查询烟道信息
+        /// 根据流水号查询货仓信息
         /// </summary>
         /// <param name="sortNo">A线流水号</param>
         /// <param name="channelGroup">B线流水号</param>
-        /// <returns>返回查询到的烟道信息表</returns>
+        /// <returns>返回查询到的货仓信息表</returns>
         public DataTable FindAllChannelQuantity(string sortNo_A, string sortNo_B)
         {
             string sql = string.Format(@"SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY    
                                           FROM (SELECT A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME, A.LEDGROUP, A.LEDNO,    
                                                   CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE,   
-                                                  A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
+                                                  A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
                                                   A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY,   
                                                   A.LED_X,A.LED_Y,A.LED_WIDTH,A.LED_HEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP    
                                                   FROM SC_CHANNELUSED A    
@@ -674,7 +672,7 @@ namespace Sorting.Dispatching.Dao
                                         SELECT *, REMAINQUANTITY / 50 BOXQUANTITY, REMAINQUANTITY % 50 ITEMQUANTITY    
                                           FROM (SELECT A.BATCHNO,A.CHANNELCODE,A.CHANNELNAME, A.LEDGROUP, A.LEDNO,    
                                                   CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE,   
-                                                  A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
+                                                  A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY,   
                                                   A.QUANTITY - ISNULL(B.QUANTITY,0) REMAINQUANTITY,   
                                                   A.LED_X,A.LED_Y,A.LED_WIDTH,A.LED_HEIGHT,A.CHANNELADDRESS,A.CHANNELGROUP    
                                                   FROM SC_CHANNELUSED A    
@@ -686,11 +684,11 @@ namespace Sorting.Dispatching.Dao
         }
 
         /// <summary>
-        /// 实时查询分拣烟道内所剩的卷烟数量
+        /// 实时查询分拣货仓内所剩的卷烟数量
         /// </summary>
         /// <param name="sortNo">分拣流水号</param>
-        /// <param name="channelGroup">烟道组号</param>
-        /// <returns>返回查询到分拣烟道信息表</returns>
+        /// <param name="channelGroup">货仓组号</param>
+        /// <returns>返回查询到分拣货仓信息表</returns>
         public DataTable FindChannelRealtimeQuantity(string sortNo, string channelGroup)
         {
             string sql = string.Format(@"SELECT C.*,   
@@ -702,7 +700,7 @@ namespace Sorting.Dispatching.Dao
                                         FROM (SELECT A.LINECODE,A.CHANNELGROUP,A.CHANNELCODE,A.CHANNELNAME,A.CHANNELADDRESS,
                                                 CASE CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE,
                                                 CASE CHANNELTYPE WHEN '2' THEN A.QUANTITY % 50 WHEN '5' THEN A.QUANTITY ELSE A.QUANTITY % 50 END HANDLESUPPLYQUANTITY,
-                                                A.CIGARETTECODE, A.CIGARETTENAME, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY                                                
+                                                A.ProductCode, A.ProductName, A.QUANTITY,ISNULL(B.QUANTITY,0) SORTQUANTITY                                                
                                               FROM SC_CHANNELUSED A 
                                                 LEFT JOIN(SELECT CHANNELCODE, SUM(QUANTITY) QUANTITY FROM SC_ORDER 
                                                             WHERE SORTNO <= '{0}' GROUP BY CHANNELCODE) B 
@@ -713,11 +711,11 @@ namespace Sorting.Dispatching.Dao
         }
 
         /// <summary>
-        ///  根据烟道组号和烟道类型查询出烟道信息表
+        ///  根据货仓组号和货仓类型查询出货仓信息表
         /// </summary>
-        /// <param name="channelType">烟道类型</param>
-        /// <param name="channelGroup">烟道组号</param>
-        /// <returns>返回烟道信息表</returns>
+        /// <param name="channelType">货仓类型</param>
+        /// <param name="channelGroup">货仓组号</param>
+        /// <returns>返回货仓信息表</returns>
         public DataTable FindEmptyChannel(string channelCode,string channelType,int channelGroup)
         {
             string sql = string.Format("SELECT CHANNELCODE, "+
@@ -739,7 +737,7 @@ namespace Sorting.Dispatching.Dao
             return ExecuteQuery(sql).Tables[0];
         }
         /// <summary>
-        /// 查询空仓烟道信息
+        /// 查询空仓货仓信息
         /// </summary>
         /// <returns>返回空仓信息表</returns>
         public DataTable FindLastSortNo(int channelgroup)
@@ -748,22 +746,22 @@ namespace Sorting.Dispatching.Dao
             return ExecuteQuery(sql).Tables[0];
         }
 
-        public void UpdateChannel(string channelCode, string cigaretteCode, string cigaretteName, int quantity, string sortNo)
+        public void UpdateChannel(string channelCode, string ProductCode, string ProductName, int quantity, string sortNo)
         {
-            string sql = string.Format("UPDATE SC_CHANNELUSED SET CIGARETTECODE='{0}', CIGARETTENAME='{1}', QUANTITY={2}, SORTNO={3} WHERE CHANNELCODE='{4}'",
-                cigaretteCode, cigaretteName, quantity, sortNo, channelCode);
+            string sql = string.Format("UPDATE SC_CHANNELUSED SET ProductCode='{0}', ProductName='{1}', QUANTITY={2}, SORTNO={3} WHERE CHANNELCODE='{4}'",
+                ProductCode, ProductName, quantity, sortNo, channelCode);
             ExecuteNonQuery(sql);
         }
-        public void UpdateChannel(string channelCode, string cigaretteCode, string cigaretteName, int quantity, int groupNo,string sortNo)
+        public void UpdateChannel(string channelCode, string ProductCode, string ProductName, int quantity, int groupNo,string sortNo)
         {
-            string sql = string.Format("UPDATE SC_CHANNELUSED SET CIGARETTECODE='{0}', CIGARETTENAME='{1}', QUANTITY={2},QUANTITY={3},  SORTNO={4} WHERE CHANNELCODE='{5}'",
-                cigaretteCode, cigaretteName, quantity, groupNo,sortNo, channelCode);
+            string sql = string.Format("UPDATE SC_CHANNELUSED SET ProductCode='{0}', ProductName='{1}', QUANTITY={2},QUANTITY={3},  SORTNO={4} WHERE CHANNELCODE='{5}'",
+                ProductCode, ProductName, quantity, groupNo,sortNo, channelCode);
             ExecuteNonQuery(sql);
         }
-        public void UpdateChannel(string batchNo,string channelCode, string cigaretteCode, string cigaretteName, int quantity, int groupNo, string sortNo)
+        public void UpdateChannel(string batchNo,string channelCode, string ProductCode, string ProductName, int quantity, int groupNo, string sortNo)
         {
-            string sql = string.Format("UPDATE SC_CHANNELUSED SET CIGARETTECODE='{0}', CIGARETTENAME='{1}', QUANTITY={2},GROUPNO={3},SORTNO={4} WHERE CHANNELCODE='{5}' AND BATCHNO='{6}'",
-                cigaretteCode, cigaretteName, quantity, groupNo, sortNo, channelCode, batchNo);
+            string sql = string.Format("UPDATE SC_CHANNELUSED SET ProductCode='{0}', ProductName='{1}', QUANTITY={2},GROUPNO={3},SORTNO={4} WHERE CHANNELCODE='{5}' AND BATCHNO='{6}'",
+                ProductCode, ProductName, quantity, groupNo, sortNo, channelCode, batchNo);
             ExecuteNonQuery(sql);
         }
         public void InsertChannel(DataTable channelTable)
@@ -788,8 +786,8 @@ namespace Sorting.Dispatching.Dao
             string sql = string.Format("DELETE FROM SC_CHANNELBALANCE WHERE BATCHNO='{0}'",batchNo);
             ExecuteNonQuery(sql);
 
-            sql = string.Format("INSERT INTO SC_CHANNELBALANCE (ORDERDATE, BATCHNO, CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, CIGARETTECODE, CIGARETTENAME) " +
-                                "SELECT ORDERDATE, BATCHNO, CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, CIGARETTECODE, CIGARETTENAME " +
+            sql = string.Format("INSERT INTO SC_CHANNELBALANCE (ORDERDATE, BATCHNO, CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, ProductCode, ProductName) " +
+                                "SELECT ORDERDATE, BATCHNO, CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, ProductCode, ProductName " +
                                 "FROM SC_CHANNELUSED " +
                                 "WHERE BATCHNO='{0}' AND ", batchNo);
             ExecuteNonQuery(sql);
@@ -803,8 +801,8 @@ namespace Sorting.Dispatching.Dao
             if (preBatchNo.Length<=0)
                 ExecuteNonQuery(sql);
 
-            sql = string.Format("INSERT INTO SC_CHANNELBALANCE (ORDERDATE, BATCHNO, CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, CIGARETTECODE, CIGARETTENAME,QUANTITY{0},BNO) " +
-                                "SELECT ORDERDATE, '{1}', CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, CIGARETTECODE, CIGARETTENAME,BALANCE,{0} " +
+            sql = string.Format("INSERT INTO SC_CHANNELBALANCE (ORDERDATE, BATCHNO, CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, ProductCode, ProductName,QUANTITY{0},BNO) " +
+                                "SELECT ORDERDATE, '{1}', CHANNELID, LINECODE, CHANNELTYPE, CHANNELCODE, CHANNELNAME, ProductCode, ProductName,BALANCE,{0} " +
                                 "FROM SC_BALANCE " +
                                 "WHERE BATCHNO='{2}' AND NOT EXISTS(SELECT * FROM SC_CHANNELBALANCE WHERE BATCHNO='{1}' AND CHANNELCODE=SC_BALANCE.CHANNELCODE)", bNo, firstBatchNo,batchNo);
             ExecuteNonQuery(sql);
@@ -812,7 +810,7 @@ namespace Sorting.Dispatching.Dao
             //如果有通道换了品牌也要更新
 
 
-            sql = string.Format("UPDATE SC_CHANNELBALANCE SET QUANTITY{0}=0,BATCHNO1='{1}', CIGARETTECODE=SC_CHANNELUSED.CIGARETTECODE,CIGARETTENAME=SC_CHANNELUSED.CIGARETTENAME " +
+            sql = string.Format("UPDATE SC_CHANNELBALANCE SET QUANTITY{0}=0,BATCHNO1='{1}', ProductCode=SC_CHANNELUSED.ProductCode,ProductName=SC_CHANNELUSED.ProductName " +
                                 "FROM SC_CHANNELBALANCE " +
                                 "INNER JOIN SC_CHANNELUSED ON SC_CHANNELBALANCE.CHANNELCODE=SC_CHANNELUSED.CHANNELCODE " +
                                 "WHERE SC_CHANNELBALANCE.BATCHNO='{2}' AND SC_CHANNELUSED.BATCHNO='{1}' ", bNo, batchNo, firstBatchNo);
@@ -891,7 +889,7 @@ namespace Sorting.Dispatching.Dao
                 ExecuteNonQuery(sql);                
             }
         }
-        public void UpdateCigaretteName(string batchNo)
+        public void UpdateProductName(string batchNo)
         {
             string sql = string.Format("UPDATE SC_CHANNELUSED SET PRODUCTNAME =CMD_Product.SHORTNAME " +
                                        "FROM SC_CHANNELUSED " +

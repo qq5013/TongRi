@@ -49,8 +49,8 @@ namespace Sorting.Dispatching.Dao
                 sqlCreate.Append("ORIGINALSORTNO", row["SORTNO"]);
                 sqlCreate.Append("SORTNO", row["SORTNO"]);
 
-                sqlCreate.AppendQuote("CIGARETTECODE", row["CIGARETTECODE"]);
-                sqlCreate.AppendQuote("CIGARETTENAME", row["CIGARETTENAME"]);
+                sqlCreate.AppendQuote("ProductCode", row["ProductCode"]);
+                sqlCreate.AppendQuote("ProductName", row["ProductName"]);
 
                 sqlCreate.AppendQuote("CHANNELCODE", row["CHANNELCODE"]);
                 sqlCreate.Append("CHANNELGROUP", row["CHANNELGROUP"]);
@@ -79,8 +79,8 @@ namespace Sorting.Dispatching.Dao
                 sqlCreate.Append("ORIGINALSORTNO", row["SORTNO"]);
                 sqlCreate.Append("SORTNO", row["SORTNO"]);
 
-                sqlCreate.AppendQuote("CIGARETTECODE", row["CIGARETTECODE"]);
-                sqlCreate.AppendQuote("CIGARETTENAME", row["CIGARETTENAME"]);
+                sqlCreate.AppendQuote("ProductCode", row["ProductCode"]);
+                sqlCreate.AppendQuote("ProductName", row["ProductName"]);
 
                 sqlCreate.AppendQuote("CHANNELCODE", row["CHANNELCODE"]);
                 sqlCreate.Append("CHANNELGROUP", row["CHANNELGROUP"]);
@@ -117,8 +117,8 @@ namespace Sorting.Dispatching.Dao
                 sqlCreate.Append("SERIALNO", serialNo++);                
                 sqlCreate.Append("ORIGINALSORTNO", row["SORTNO"]);               
                 
-                sqlCreate.AppendQuote("CIGARETTECODE", row["CIGARETTECODE"]);
-                sqlCreate.AppendQuote("CIGARETTENAME", row["CIGARETTENAME"]);
+                sqlCreate.AppendQuote("ProductCode", row["ProductCode"]);
+                sqlCreate.AppendQuote("ProductName", row["ProductName"]);
 
                 sqlCreate.AppendQuote("CHANNELCODE", row["CHANNELCODE"]);
                 sqlCreate.Append("CHANNELGROUP", row["CHANNELGROUP"]);
@@ -149,8 +149,8 @@ namespace Sorting.Dispatching.Dao
                 sqlCreate.Append("GROUPNO", row["GROUPNO"]);
                 sqlCreate.Append("CHANNELGROUP", row["CHANNELGROUP"]);
                 sqlCreate.AppendQuote("CHANNELCODE", row["CHANNELCODE"]);
-                sqlCreate.AppendQuote("CIGARETTECODE", row["CIGARETTECODE"]);
-                sqlCreate.AppendQuote("CIGARETTENAME", row["CIGARETTENAME"]);
+                sqlCreate.AppendQuote("ProductCode", row["ProductCode"]);
+                sqlCreate.AppendQuote("ProductName", row["ProductName"]);
                 ExecuteNonQuery(sqlCreate.GetSQL());
             }
         }
@@ -158,9 +158,9 @@ namespace Sorting.Dispatching.Dao
         {
             //插入立式机零条
             string sql = @"INSERT INTO SC_BALANCE(ORDERDATE, BATCHNO, LINECODE, CHANNELID, CHANNELCODE, CHANNELNAME, CHANNELTYPE, 
-                           CHANNELORDER, CIGARETTECODE,CIGARETTENAME, QUANTITY, BALANCE,BARCODE)
+                           CHANNELORDER, ProductCode,ProductName, QUANTITY, BALANCE,BARCODE)
                            SELECT  B2.ORDERDATE, B2.BATCHNO, B2.LINECODE, C2.CHANNELID,B2.CHANNELCODE,C2.CHANNELNAME, '2' CHANNELTYPE,B2.CHANNELORDER,
-                           B2.CIGARETTECODE, B2.CIGARETTENAME, B2.QUANTITY, B2.BALANCE, B2.BARCODE
+                           B2.ProductCode, B2.ProductName, B2.QUANTITY, B2.BALANCE, B2.BARCODE
                            FROM V_ORDER_BALANCE2 B2 INNER JOIN CMD_CHANNEL C2 ON B2.CHANNELCODE=C2.CHANNELCODE
                            WHERE B2.ORDERDATE='{0}' AND B2.BATCHNO='{1}' AND B2.LINECODE='{2}' AND B2.BALANCE>0";
             sql = string.Format(sql, orderDate, batchNo, lineCode);
@@ -168,9 +168,9 @@ namespace Sorting.Dispatching.Dao
 
             //插入通道机零条
             sql = @"INSERT INTO SC_BALANCE(ORDERDATE, BATCHNO, LINECODE, CHANNELID, CHANNELCODE, CHANNELNAME, CHANNELTYPE, 
-                    CHANNELORDER, CIGARETTECODE,CIGARETTENAME, QUANTITY, BALANCE,BARCODE)
+                    CHANNELORDER, ProductCode,ProductName, QUANTITY, BALANCE,BARCODE)
                     SELECT  B3.ORDERDATE, B3.BATCHNO, B3.LINECODE, C3.CHANNELID,B3.CHANNELCODE,C3.CHANNELNAME, '3' CHANNELTYPE,B3.CHANNELORDER,
-                    B3.CIGARETTECODE, B3.CIGARETTENAME, B3.QUANTITY, B3.BALANCE, B3.BARCODE
+                    B3.ProductCode, B3.ProductName, B3.QUANTITY, B3.BALANCE, B3.BARCODE
                     FROM V_ORDER_BALANCE3 B3 INNER JOIN CMD_CHANNEL C3 ON B3.CHANNELCODE=C3.CHANNELCODE
                     WHERE B3.ORDERDATE='{0}' AND B3.BATCHNO='{1}' AND B3.LINECODE='{2}' AND B3.BALANCE>0";
             sql = string.Format(sql, orderDate, batchNo, lineCode);

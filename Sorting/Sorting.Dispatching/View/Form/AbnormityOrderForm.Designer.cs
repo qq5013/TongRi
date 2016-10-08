@@ -36,7 +36,6 @@ namespace Sorting.Dispatching.View
             this.dgvMaster = new System.Windows.Forms.DataGridView();
             this.btnToExcel = new System.Windows.Forms.Button();
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.BATCHNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,7 +115,6 @@ namespace Sorting.Dispatching.View
             this.dgvMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ORDERDATE,
-            this.BATCHNO,
             this.Column10,
             this.Column4,
             this.Column5,
@@ -161,16 +159,6 @@ namespace Sorting.Dispatching.View
             this.ORDERDATE.ReadOnly = true;
             this.ORDERDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ORDERDATE.Width = 80;
-            // 
-            // BATCHNO
-            // 
-            this.BATCHNO.DataPropertyName = "BATCHNO";
-            this.BATCHNO.FilteringEnabled = false;
-            this.BATCHNO.HeaderText = "批次号";
-            this.BATCHNO.Name = "BATCHNO";
-            this.BATCHNO.ReadOnly = true;
-            this.BATCHNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.BATCHNO.Width = 110;
             // 
             // Column10
             // 
@@ -218,18 +206,18 @@ namespace Sorting.Dispatching.View
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "CIGARETTECODE";
+            this.Column1.DataPropertyName = "PRODUCTCODE";
             this.Column1.FilteringEnabled = false;
-            this.Column1.HeaderText = "卷烟编号";
+            this.Column1.HeaderText = "产品编号";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "CIGARETTENAME";
+            this.Column2.DataPropertyName = "PRODUCTNAME";
             this.Column2.FilteringEnabled = false;
-            this.Column2.HeaderText = "卷烟名称";
+            this.Column2.HeaderText = "产品名称";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -266,7 +254,6 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridView dgvMaster;
         private System.Windows.Forms.Button btnToExcel;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn ORDERDATE;
-        private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn BATCHNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;

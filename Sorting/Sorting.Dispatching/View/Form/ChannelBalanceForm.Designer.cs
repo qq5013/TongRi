@@ -204,7 +204,7 @@ namespace Sorting.Dispatching.View
             // 
             this.Column1.DataPropertyName = "CHANNELNAME";
             this.Column1.FilteringEnabled = false;
-            this.Column1.HeaderText = "烟道名称";
+            this.Column1.HeaderText = "货仓名称";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -216,7 +216,7 @@ namespace Sorting.Dispatching.View
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.FilteringEnabled = false;
-            this.Column2.HeaderText = "烟道类别";
+            this.Column2.HeaderText = "货仓类别";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;

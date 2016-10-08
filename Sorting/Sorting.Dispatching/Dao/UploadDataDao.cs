@@ -37,7 +37,7 @@ namespace Sorting.Dispatching.Dao
            if (this.ExecuteScalar(sql).ToString() != "")
            {
                string orderDate = Convert.ToDateTime(this.ExecuteScalar(sql).ToString()).ToString("yyyyMMdd");
-               sql = string.Format("SELECT * FROM DWV_IORD_SORT_STATUS WHERE ORDERDATE='{0}' AND IsImport='{1}'", orderDate, status);
+               sql = string.Format("SELECT * FROM DWV_IORD_SORT_STATUS WHERE ORDERDATE='{0}' AND IS_IMPORT='{1}'", orderDate, status);
                return this.ExecuteQuery(sql).Tables[0];
            }
            else

@@ -41,7 +41,7 @@
             this.lblCaption.Name = "lblCaption";
             this.lblCaption.Size = new System.Drawing.Size(89, 12);
             this.lblCaption.TabIndex = 0;
-            this.lblCaption.Text = "请选择目标烟道";
+            this.lblCaption.Text = "请选择目标货仓";
             // 
             // cbChannel
             // 
@@ -88,7 +88,7 @@
             this.MinimizeBox = false;
             this.Name = "ChannelDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "烟道选择";
+            this.Text = "货仓选择";
             this.ResumeLayout(false);
             this.PerformLayout();
 

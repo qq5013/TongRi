@@ -65,7 +65,7 @@ namespace Sorting.Dispatching.View
                             //    this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeDataA", data);
                             //else
                             //    this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeDataB", data);
-                            //MCP.Logger.Info(string.Format("{0}线{1}号烟道与{2}号烟道交换！",Convert.ToInt32(channeltable.Rows[0]["CHANNELGROUP"]) == 1?"A":"B", sourceChannelAddress, targetChannelAddress));
+                            //MCP.Logger.Info(string.Format("{0}线{1}号货仓与{2}号货仓交换！",Convert.ToInt32(channeltable.Rows[0]["CHANNELGROUP"]) == 1?"A":"B", sourceChannelAddress, targetChannelAddress));
                             this.mainFrame.Context.ProcessDispatcher.WriteToProcess("LEDProcess", "ChannelCode", channelCode);
                             this.mainFrame.Context.ProcessDispatcher.WriteToProcess("LEDProcess", "ChannelCode", channelDailog.SelectedChannelCode);
                         }
@@ -74,7 +74,7 @@ namespace Sorting.Dispatching.View
                     }
                 }
                 else
-                    MessageBox.Show("无法调整烟道，原因：没有可用烟道。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("无法调整货仓，原因：没有可用货仓。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

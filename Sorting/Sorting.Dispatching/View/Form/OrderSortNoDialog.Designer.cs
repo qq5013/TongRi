@@ -39,7 +39,7 @@
             // 
             // txtSortNo
             // 
-            this.txtSortNo.Location = new System.Drawing.Point(145, 12);
+            this.txtSortNo.Location = new System.Drawing.Point(183, 24);
             this.txtSortNo.Name = "txtSortNo";
             this.txtSortNo.Size = new System.Drawing.Size(90, 21);
             this.txtSortNo.TabIndex = 1;
@@ -48,18 +48,20 @@
             // lblSortNo
             // 
             this.lblSortNo.AutoSize = true;
-            this.lblSortNo.Location = new System.Drawing.Point(32, 16);
+            this.lblSortNo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblSortNo.Location = new System.Drawing.Point(32, 24);
             this.lblSortNo.Name = "lblSortNo";
-            this.lblSortNo.Size = new System.Drawing.Size(113, 12);
+            this.lblSortNo.Size = new System.Drawing.Size(154, 21);
             this.lblSortNo.TabIndex = 4;
             this.lblSortNo.Text = "请输入分拣流水号：";
             // 
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(50, 158);
+            this.btnOk.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOk.Location = new System.Drawing.Point(56, 125);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.Size = new System.Drawing.Size(75, 33);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -68,9 +70,10 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(146, 158);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCancel.Location = new System.Drawing.Point(152, 125);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -78,18 +81,18 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(30, 68);
+            this.label1.Location = new System.Drawing.Point(30, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 83);
+            this.label1.Size = new System.Drawing.Size(243, 53);
             this.label1.TabIndex = 5;
-            this.label1.Text = "注：此功能会将大于输入之流水号的订单且为所选分拣机类型的改为未下达状态，分拣机类型为空表示通道机与立式机同时修正";
+            this.label1.Text = "注：此功能会将大于输入之流水号的订单改为未下达状态";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 45);
+            this.label2.Location = new System.Drawing.Point(32, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 12);
             this.label2.TabIndex = 7;
@@ -103,7 +106,7 @@
             "",
             "通道机",
             "立式机"});
-            this.cbChannelType.Location = new System.Drawing.Point(145, 41);
+            this.cbChannelType.Location = new System.Drawing.Point(145, 228);
             this.cbChannelType.Name = "cbChannelType";
             this.cbChannelType.Size = new System.Drawing.Size(90, 20);
             this.cbChannelType.TabIndex = 8;
@@ -114,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(284, 204);
+            this.ClientSize = new System.Drawing.Size(300, 191);
             this.Controls.Add(this.cbChannelType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

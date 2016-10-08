@@ -46,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_1A3BE80C107184D98A0F96E4BB90ADA1"
-        "OwnerKey" = "8:_E93BAB29114941E7A45FF6555AE0E032"
+        "OwnerKey" = "8:_D143064F13747313375D46AB9C32A6C0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_1A3BE80C107184D98A0F96E4BB90ADA1"
-        "OwnerKey" = "8:_D143064F13747313375D46AB9C32A6C0"
+        "OwnerKey" = "8:_E93BAB29114941E7A45FF6555AE0E032"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -424,24 +424,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1A3BE80C107184D98A0F96E4BB90ADA1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_79F9FC2477D68C44661CE46D49D66C6E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EA8AC5A8A6BA4FF841C072A517C2179E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A78C091A649DCB11962C821C7F9F4F4B"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -479,6 +461,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D143064F13747313375D46AB9C32A6C0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1A3BE80C107184D98A0F96E4BB90ADA1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_79F9FC2477D68C44661CE46D49D66C6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -527,6 +521,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1DEC50ABC57B34B01652D0FA00AD3D40"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_EA8AC5A8A6BA4FF841C072A517C2179E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1792,7 +1792,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ASCS"
         "ProductCode" = "8:{1913BDD6-4735-4D17-9787-499857155EC2}"
-        "PackageCode" = "8:{FBC78696-D5CA-4F66-B426-2647681A1A9E}"
+        "PackageCode" = "8:{E9A89179-68FB-4CFF-8940-1E908565DCB8}"
         "UpgradeCode" = "8:{C6EE6F0C-679A-4871-BAEA-0A57B8370650}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

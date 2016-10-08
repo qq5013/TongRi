@@ -28,12 +28,13 @@ namespace Sorting.Dispatching.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bsMaster = new System.Windows.Forms.BindingSource(this.components);
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvMaster = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.ROWID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.BATCHNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -44,7 +45,6 @@ namespace Sorting.Dispatching.View
             this.Column5 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column6 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column7 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -100,18 +100,18 @@ namespace Sorting.Dispatching.View
             // 
             this.dgvMaster.AllowUserToAddRows = false;
             this.dgvMaster.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender;
-            this.dgvMaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lavender;
+            this.dgvMaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMaster.AutoGenerateColumns = false;
             this.dgvMaster.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ROWID,
@@ -135,6 +135,20 @@ namespace Sorting.Dispatching.View
             this.dgvMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaster.Size = new System.Drawing.Size(1044, 405);
             this.dgvMaster.TabIndex = 1;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrint.Image = global::Sorting.Dispatching.Properties.Resources.printer;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrint.Location = new System.Drawing.Point(96, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(48, 51);
+            this.btnPrint.TabIndex = 17;
+            this.btnPrint.Text = "打印";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // ROWID
             // 
@@ -168,25 +182,25 @@ namespace Sorting.Dispatching.View
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "CIGARETTECODE";
+            this.Column1.DataPropertyName = "PRODUCTCODE";
             this.Column1.FilteringEnabled = false;
-            this.Column1.HeaderText = "卷烟编号";
+            this.Column1.HeaderText = "产品编号";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "CIGARETTENAME";
+            this.Column2.DataPropertyName = "PRODUCTNAME";
             this.Column2.FilteringEnabled = false;
-            this.Column2.HeaderText = "卷烟名称";
+            this.Column2.HeaderText = "产品名称";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "TOTAL_CIGARETTE_QUANTITY";
+            this.Column3.DataPropertyName = "TOTAL_PRODUCT_QUANTITY";
             this.Column3.FilteringEnabled = false;
             this.Column3.HeaderText = "订单数量";
             this.Column3.Name = "Column3";
@@ -204,7 +218,7 @@ namespace Sorting.Dispatching.View
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "CIGARETTE_PERCENT";
+            this.Column5.DataPropertyName = "PRODUCT_PERCENT";
             this.Column5.FilteringEnabled = false;
             this.Column5.HeaderText = "订单百分比";
             this.Column5.Name = "Column5";
@@ -213,7 +227,7 @@ namespace Sorting.Dispatching.View
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "CIGARETTE_COUNT";
+            this.Column6.DataPropertyName = "PRODUCT_COUNT";
             this.Column6.FilteringEnabled = false;
             this.Column6.HeaderText = "品牌数量";
             this.Column6.Name = "Column6";
@@ -224,24 +238,10 @@ namespace Sorting.Dispatching.View
             // 
             this.Column7.DataPropertyName = "ISABNORMITY";
             this.Column7.FilteringEnabled = false;
-            this.Column7.HeaderText = "异形烟";
+            this.Column7.HeaderText = "异形";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPrint.Image = global::Sorting.Dispatching.Properties.Resources.printer;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(96, 0);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(48, 51);
-            this.btnPrint.TabIndex = 17;
-            this.btnPrint.Text = "打印";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // InitialOrderTotalForm
             // 
@@ -263,6 +263,7 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.BindingSource bsMaster;
         private System.Windows.Forms.DataGridView dgvMaster;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROWID;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn ORDERDATE;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn BATCHNO;
@@ -273,6 +274,5 @@ namespace Sorting.Dispatching.View
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column5;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column6;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column7;
-        private System.Windows.Forms.Button btnPrint;
     }
 }

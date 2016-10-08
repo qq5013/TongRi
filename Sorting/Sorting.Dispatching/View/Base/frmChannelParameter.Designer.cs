@@ -339,7 +339,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChannelParameter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "烟道参数设置";
+            this.Text = "货仓参数设置";
             this.Load += new System.EventHandler(this.frmChannelParameter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -210,7 +210,7 @@ namespace Sorting.Dispatching.Schedule
                 //订单按配送路线及顺序统计数量(不包括异形烟)，均匀分布到各分拣线上
                 GenLineSchedule(orderDate, batchNo);
 
-                //分拣线烟道优化
+                //分拣线货仓优化
                 //优化的数据放到表SC_CHANNELUSED
                 GenChannelSchedule(orderDate, batchNo);
 
@@ -223,7 +223,7 @@ namespace Sorting.Dispatching.Schedule
                 //订单优化1
                 GenOrderSchedule2(orderDate, batchNo);
 
-                //备货烟道优化
+                //备货货仓优化
                 GenStockChannelSchedule(orderDate, batchNo);
 
                 //补货优化
@@ -305,7 +305,7 @@ namespace Sorting.Dispatching.Schedule
         }
 
         /// <summary>
-        /// 生产线烟道优化
+        /// 生产线货仓优化
         /// </summary>
         /// <param name="orderDate"></param>
         /// <param name="batchNo"></param>
@@ -313,7 +313,7 @@ namespace Sorting.Dispatching.Schedule
         {
             using (DB.Util.PersistentManager pm = new DB.Util.PersistentManager())
             {
-                //烟道
+                //货仓
                 ChannelDao channelDao = new ChannelDao();
                 //订单
                 OrderDao detailDao = new OrderDao();
@@ -350,7 +350,7 @@ namespace Sorting.Dispatching.Schedule
                     //if (dtNoChannel.Rows.Count > 0)
                     //    throw new Exception("有品牌还没有固定烟仓，请检查！"); ;
 
-                    //查询分拣线烟道表
+                    //查询分拣线货仓表
                     DataTable channelTable = channelDao.FindAvailableChannel(lineCode).Tables[0];
                     //查询分拣线设备参数表            
                     DataTable deviceTable = deviceDao.FindLineDevice(lineCode).Tables[0];
@@ -359,17 +359,17 @@ namespace Sorting.Dispatching.Schedule
                     //取所有订单品牌及总数量
                     DataTable orderTable = detailDao.FindAllCigaretteQuantity(batchNo, isUseWholePiecesSortLine).Tables[0];
 
-                    //检查订单中是否有未固定的烟道
+                    //检查订单中是否有未固定的货仓
 
                     channelSchedule.Optimize(orderTable, channelTable, deviceTable, parameter);
 
                     channelDao.SaveChannelSchedule(channelTable, orderDate, batchNo);
                     
                     //更新卷烟名称为简称
-                    channelDao.UpdateCigaretteName(batchNo);
+                    channelDao.UpdateProductName(batchNo);
 
                     if (OnSchedule != null)
-                        OnSchedule(this, new ScheduleEventArgs(3, "正在优化" + lineRow["LINECODE"].ToString() + "分拣线烟道", ++currentCount, totalCount));
+                        OnSchedule(this, new ScheduleEventArgs(3, "正在优化" + lineRow["LINECODE"].ToString() + "分拣线货仓", ++currentCount, totalCount));
                 }
 
                 currentCount = 0;
@@ -379,13 +379,13 @@ namespace Sorting.Dispatching.Schedule
                 {
                     string lineCode = lineRow["LINECODE"].ToString();
 
-                    //查询分拣线烟道表
+                    //查询分拣线货仓表
                     DataTable channelTable = channelDao.FindAvailableChannel(lineCode).Tables[0];
                     channelDao.SaveChannelSchedule(channelTable, orderDate, batchNo);
 
 
                     if (OnSchedule != null)
-                        OnSchedule(this, new ScheduleEventArgs(3, "正在优化" + lineRow["LINECODE"].ToString() + "分拣线烟道", ++currentCount, totalCount));
+                        OnSchedule(this, new ScheduleEventArgs(3, "正在优化" + lineRow["LINECODE"].ToString() + "分拣线货仓", ++currentCount, totalCount));
                 }
             }
         }
@@ -426,7 +426,7 @@ namespace Sorting.Dispatching.Schedule
                 {
                     string lineCode = lineRow["LINECODE"].ToString();
 
-                    //查询烟道信息表 SC_CHANNELUSED，Order by CHANNELORDER
+                    //查询货仓信息表 SC_CHANNELUSED，Order by CHANNELORDER
                     DataTable channelTable = channelDao.FindChannelSchedule(batchNo, lineCode).Tables[0];
 
                     //查询订单主表 SC_I_ORDERMASTER ORDER BY ROW_NUMBER() over (ORDER BY AREA.SORTID,ROUTE.SORTID,ROUTECODE, SORTID) SORTNO
@@ -576,7 +576,7 @@ namespace Sorting.Dispatching.Schedule
                     DataTable masterTable = orderDao.FindTmpMaster(orderDate, batchNo, lineCode);
                     //查询订单明细表
                     DataTable orderTable = orderDao.FindTmpDetail(orderDate, batchNo, lineCode);
-                    //查询分拣烟道表
+                    //查询分拣货仓表
                     DataTable channelTable = channelDao.FindChannelSchedule(orderDate, batchNo, lineCode, Convert.ToInt32(parameter["RemainCount"])).Tables[0];
 
                     int sortNo = 1;
@@ -608,7 +608,7 @@ namespace Sorting.Dispatching.Schedule
                 {
                     string lineCode = lineRow["LINECODE"].ToString();
 
-                    //查询烟道信息表
+                    //查询货仓信息表
                     DataTable channelTable = channelDao.FindChannelSchedule(orderDate, batchNo, lineCode, Convert.ToInt32(parameter["RemainCount"])).Tables[0];
                     //查询订单主表
                     DataTable masterTable = orderDao.FindOrderMaster(orderDate, batchNo, lineCode).Tables[0];
@@ -660,7 +660,7 @@ namespace Sorting.Dispatching.Schedule
                 DataTable masterTable = orderDao.FindTmpMaster(orderDate, batchNo, lineCode);
                 //查询订单明细表
                 DataTable orderTable = orderDao.FindTmpDetail(orderDate, batchNo, lineCode);
-                //查询分拣烟道表
+                //查询分拣货仓表
                 DataTable channelTable = channelDao.FindChannelSchedule(orderDate, batchNo, lineCode).Tables[0];
 
                 int sortNo = 1;
@@ -687,7 +687,7 @@ namespace Sorting.Dispatching.Schedule
             }
         }
         /// <summary>
-        /// 备货烟道优化2010-07-08
+        /// 备货货仓优化2010-07-08
         /// </summary>
         /// <param name="orderDate"></param>
         /// <param name="batchNo"></param>
@@ -702,16 +702,16 @@ namespace Sorting.Dispatching.Schedule
                 SysParameterDao parameterDao = new SysParameterDao();
                 Dictionary<string, string> parameter = parameterDao.FindParameters();
 
-                //每天分拣结束后备货烟道是否为空
+                //每天分拣结束后备货货仓是否为空
                 if (parameter["ClearStockChannel"] == "1")
                     schannelDao.ClearCigarette();
 
-                //查询补货烟道表 CMD_STOCKCHANNEL ORDER BY ORDERNO
+                //查询补货货仓表 CMD_STOCKCHANNEL ORDER BY ORDERNO
                 DataTable channelTable = schannelDao.FindChannel();
                 //查询通道机卷烟数量信息表
                 //DataTable orderCTable = orderDao.FindCigaretteQuantityFromChannelUsed(orderDate, batchNo, "3");
                 DataTable orderCTable = orderDao.FindCigaretteQuantityFromChannelUsed(orderDate, batchNo);
-                //查询立式机卷烟数量信息表（应加上混合烟道问题）
+                //查询立式机卷烟数量信息表（应加上混合货仓问题）
                 DataTable orderTTable = orderDao.FindCigaretteQuantityFromChannelUsed(orderDate, batchNo, "2");
                 //取所有订单品牌及总数量
                 DataTable orderTable = detailDao.FindAllCigaretteQuantity(orderDate, batchNo, false).Tables[0];
@@ -728,7 +728,7 @@ namespace Sorting.Dispatching.Schedule
                 //schannelDao.InsertMixChannel(mixTable);
 
                 if (OnSchedule != null)
-                    OnSchedule(this, new ScheduleEventArgs(6, "备货烟道优化", 1, 1));
+                    OnSchedule(this, new ScheduleEventArgs(6, "备货货仓优化", 1, 1));
             }
         }
 
@@ -794,7 +794,7 @@ namespace Sorting.Dispatching.Schedule
                 {
                     string lineCode = lineRow["LINECODE"].ToString();
 
-                    //查询烟道信息表
+                    //查询货仓信息表
                     DataTable channelTable = channelDao.FindChannelSchedule(orderDate, batchNo, lineCode, Convert.ToInt32(parameter["RemainCount"])).Tables[0];
                     //查询订单主表
                     DataTable masterTable = orderDao.FindOrderMaster(orderDate, batchNo, lineCode).Tables[0];
@@ -852,7 +852,7 @@ namespace Sorting.Dispatching.Schedule
                     //返回新的手工补货订单表
                     DataTable newSupplyOrders = handleSupplyOptimize.Optimize(handSupplyOrders, multiBrandChannel);
 
-                    //保存烟道空仓作业的SortNo
+                    //保存货仓空仓作业的SortNo
                     channelDao.Update(multiBrandChannel, orderDate, batchNo);
 
                     //删除sc_order原来的手工补货定单
@@ -1029,7 +1029,7 @@ namespace Sorting.Dispatching.Schedule
                     //返回新的手工补货订单表
                     DataTable newSupplyOrders = handleSupplyOptimize.Optimize(handSupplyOrders, multiBrandChannel);
 
-                    //保存烟道空仓作业的SortNo
+                    //保存货仓空仓作业的SortNo
                     channelDao.Update(multiBrandChannel, orderDate, batchNo);
 
                     //删除sc_order原来的手工补货定单

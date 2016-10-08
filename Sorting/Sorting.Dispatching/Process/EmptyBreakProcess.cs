@@ -475,8 +475,8 @@ namespace Sorting.Dispatching.Process
                 using (PersistentManager pm = new PersistentManager())
                 {
                     ChannelDao channelDao = new ChannelDao();
-                    DataTable channelTableA = channelDao.FindLastSortNo(1);//获取A线烟道
-                    //DataTable channeltableB = channelDao.FindLastSortNo(2);//获取B线烟道
+                    DataTable channelTableA = channelDao.FindLastSortNo(1);//获取A线货仓
+                    //DataTable channeltableB = channelDao.FindLastSortNo(2);//获取B线货仓
 
                     int[] channelDataA = new int[27];
                     //int[] channelDataB = new int[42];
