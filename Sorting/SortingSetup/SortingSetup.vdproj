@@ -1792,7 +1792,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ASCS"
         "ProductCode" = "8:{1913BDD6-4735-4D17-9787-499857155EC2}"
-        "PackageCode" = "8:{E9A89179-68FB-4CFF-8940-1E908565DCB8}"
+        "PackageCode" = "8:{421C5C3F-E6A7-4ECB-B253-E20E34F52299}"
         "UpgradeCode" = "8:{C6EE6F0C-679A-4871-BAEA-0A57B8370650}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

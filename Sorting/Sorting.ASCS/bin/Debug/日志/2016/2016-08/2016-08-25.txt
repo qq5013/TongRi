@@ -1,5 +1,0 @@
-2016/8/25 9:16:09 [ERROR] 2016/8/25 9:16:09 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
-2016/8/25 11:44:39 [ERROR] 2016/8/25 11:44:39 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
-2016/8/25 11:50:47 [ERROR] 2016/8/25 11:50:47 操作作业失败！原因：未将对象引用设置到对象的实例。
-2016/8/25 14:24:56 [ERROR] 2016/8/25 14:24:56 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.
-2016/8/25 14:44:22 [ERROR] 2016/8/25 14:44:22 初始化处理失败请检查配置，原因：在组中添加项不成功，原因：The item definition does not exist in the server address space.

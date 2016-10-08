@@ -1,9 +1,0 @@
-C:\Users\Administrator.Jerry-PC\Desktop\分拣\system\THOK.SortingSystem-master\THOK.SortingSystem-master\Solution_Sorting\THOK.Optimize\bin\Debug\THOK.Optimize.dll
-C:\Users\Administrator.Jerry-PC\Desktop\分拣\system\THOK.SortingSystem-master\THOK.SortingSystem-master\Solution_Sorting\THOK.Optimize\bin\Debug\THOK.Optimize.pdb
-C:\Users\Administrator.Jerry-PC\Desktop\分拣\system\THOK.SortingSystem-master\THOK.SortingSystem-master\Solution_Sorting\THOK.Optimize\obj\Debug\THOK.Optimize.dll
-C:\Users\Administrator.Jerry-PC\Desktop\分拣\system\THOK.SortingSystem-master\THOK.SortingSystem-master\Solution_Sorting\THOK.Optimize\obj\Debug\THOK.Optimize.pdb
-E:\Sorting\system\THOK.SortingSystem-master\THOK.Optimize\bin\Debug\THOK.Optimize.dll
-E:\Sorting\system\THOK.SortingSystem-master\THOK.Optimize\bin\Debug\THOK.Optimize.pdb
-E:\Sorting\system\THOK.SortingSystem-master\THOK.Optimize\obj\Debug\THOK.Optimize.csprojResolveAssemblyReference.cache
-E:\Sorting\system\THOK.SortingSystem-master\THOK.Optimize\obj\Debug\THOK.Optimize.dll
-E:\Sorting\system\THOK.SortingSystem-master\THOK.Optimize\obj\Debug\THOK.Optimize.pdb

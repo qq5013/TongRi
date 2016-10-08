@@ -1,3 +1,0 @@
-E:\THOK\HNXC\CODE\WCS\THOK.XC.Dispatching\obj\Release\ResolveAssemblyReference.cache
-E:\THOK\HNXC\CODE\WCS\THOK.XC.Dispatching\obj\Release\ResGen.read.1.tlog
-E:\THOK\HNXC\CODE\WCS\THOK.XC.Dispatching\obj\Release\ResGen.write.1.tlog

@@ -1,4 +1,0 @@
-E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\bin\Debug\Sroting.Optimize.dll
-E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\bin\Debug\Sroting.Optimize.pdb
-E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\obj\Debug\Sroting.Optimize.dll
-E:\Sorting\LC\Code\JS\Sorting\Sorting.Optimize\obj\Debug\Sroting.Optimize.pdb
