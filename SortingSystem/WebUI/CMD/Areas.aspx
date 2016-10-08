@@ -190,12 +190,12 @@
 		    <tr>
                 <th data-options="field:'',checkbox:true"></th> 
 		        <th data-options="field:'AreaCode',width:80">区域编码</th>
-                <th data-options="field:'AreaName',width:100">名称</th>
-                <th data-options="field:'SortId',width:80">排序</th>
+                <th data-options="field:'AreaName',width:200">名称</th>
+                <th data-options="field:'SortId',width:60">排序</th>
                 <th data-options="field:'Creator',width:80">建单人员</th>
-                <th data-options="field:'CreateDate',width:80">建单日期</th>
+                <th data-options="field:'CreateDate',width:120">建单日期</th>
                 <th data-options="field:'Updater',width:80">修改人员</th>
-                <th data-options="field:'UpdateDate',width:80">修改日期</th>
+                <th data-options="field:'UpdateDate',width:120">修改日期</th>
 		    </tr>
         </thead>
     </table>
