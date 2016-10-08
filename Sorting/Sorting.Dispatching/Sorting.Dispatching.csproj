@@ -58,7 +58,7 @@
       <HintPath>..\..\Lib\AxSEND232OCXLib.dll</HintPath>
     </Reference>
     <Reference Include="DataGridViewAutoFilter">
-      <HintPath>..\Libraries\DataGridViewAutoFilter.dll</HintPath>
+      <HintPath>..\..\Lib\DataGridViewAutoFilter.dll</HintPath>
     </Reference>
     <Reference Include="DB.Util">
       <HintPath>..\..\Lib\DB.Util.dll</HintPath>

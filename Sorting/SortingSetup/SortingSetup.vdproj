@@ -213,26 +213,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_95B7F198746C01C16319758CB17CAA8A"
-        "OwnerKey" = "8:_D88B369D098B7BE8EB03D3D136BA1195"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_95B7F198746C01C16319758CB17CAA8A"
-        "OwnerKey" = "8:_9A49F76DC6DB411881352EC291E87ADD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_95B7F198746C01C16319758CB17CAA8A"
-        "OwnerKey" = "8:_E93BAB29114941E7A45FF6555AE0E032"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_9A0C47F71267AF0336B2C25D7DD2660D"
-        "OwnerKey" = "8:_95B7F198746C01C16319758CB17CAA8A"
+        "OwnerKey" = "8:_E46A978E9E5F7BD1055A7426DEB4F5A5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -345,6 +327,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E46A978E9E5F7BD1055A7426DEB4F5A5"
+        "OwnerKey" = "8:_9A49F76DC6DB411881352EC291E87ADD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E46A978E9E5F7BD1055A7426DEB4F5A5"
+        "OwnerKey" = "8:_D88B369D098B7BE8EB03D3D136BA1195"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E93BAB29114941E7A45FF6555AE0E032"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -401,24 +395,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E93BAB29114941E7A45FF6555AE0E032"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FB00C3B22FEF4F928E2C32F5638BCFC6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9A49F76DC6DB411881352EC291E87ADD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_57F0EF0670524C0B939447B7CDAA8E0A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -490,7 +466,49 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_95B7F198746C01C16319758CB17CAA8A"
+        "OwnerKey" = "8:_4DCDA90CD31A9F1A480A2C03E13007E3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D8F50480AC4441543DC400D8E7280238"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_754F13BB835E0EBC9D0C8CACD0AF0D94"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_058A030C7B2C9467A6EC9A64BF72603F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FB00C3B22FEF4F928E2C32F5638BCFC6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9A49F76DC6DB411881352EC291E87ADD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E46A978E9E5F7BD1055A7426DEB4F5A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_57F0EF0670524C0B939447B7CDAA8E0A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -527,30 +545,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EA8AC5A8A6BA4FF841C072A517C2179E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4DCDA90CD31A9F1A480A2C03E13007E3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D8F50480AC4441543DC400D8E7280238"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_754F13BB835E0EBC9D0C8CACD0AF0D94"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_058A030C7B2C9467A6EC9A64BF72603F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1170,37 +1164,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_95B7F198746C01C16319758CB17CAA8A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SEND232OCXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_95B7F198746C01C16319758CB17CAA8A"
-                    {
-                    "Name" = "8:SEND232OCXLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SEND232OCXLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C88F5755D1154A369FB94A5165E9850E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9A0C47F71267AF0336B2C25D7DD2660D"
             {
             "SourcePath" = "8:Send232OCX.ocx"
@@ -1549,6 +1512,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E46A978E9E5F7BD1055A7426DEB4F5A5"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SEND232OCXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E46A978E9E5F7BD1055A7426DEB4F5A5"
+                    {
+                    "Name" = "8:SEND232OCXLib.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SEND232OCXLib.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C88F5755D1154A369FB94A5165E9850E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EA8AC5A8A6BA4FF841C072A517C2179E"
             {
             "AssemblyRegister" = "3:1"
@@ -1792,7 +1786,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ASCS"
         "ProductCode" = "8:{1913BDD6-4735-4D17-9787-499857155EC2}"
-        "PackageCode" = "8:{421C5C3F-E6A7-4ECB-B253-E20E34F52299}"
+        "PackageCode" = "8:{24771454-BCA2-4CF7-8176-FEF3F081D77A}"
         "UpgradeCode" = "8:{C6EE6F0C-679A-4871-BAEA-0A57B8370650}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
