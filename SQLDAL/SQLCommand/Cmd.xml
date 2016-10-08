@@ -219,7 +219,7 @@
   <Command ID="InsertBatch">
     <CommandString>
       insert into  CMD_Batch(OrderDate, BatchNo, BatchName, IsDownload, IsUpload, IsValid, ScDate)
-      values(@OrderDate, @BatchNo, @BatchNo, 0, 0, 0, getdate())
+      values(@OrderDate, @BatchNo, @BatchNo, 1, 0, 0, getdate())
     </CommandString>
   </Command>
 
