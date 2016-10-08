@@ -117,7 +117,7 @@
                 if (result.status == 1) {
                     ReloadGrid('dg');
                     $('#AddWin').window('close');
-                    $.messager.alert('提示', '数据修改成功。');
+                    
                 } else {
                     $.messager.alert('错误', result.msg, 'error');
                 }
@@ -157,12 +157,12 @@
 		    <tr>
 		        <th data-options="field:'ChannelCode',width:80">货仓编码</th>
                 <th data-options="field:'ChannelName',width:100">名称</th>
-                <th data-options="field:'LineCode',width:100">分拣线</th>
-                <th data-options="field:'ChannelTypeDesc',width:100">货仓类型</th>
+                <th data-options="field:'LineCode',width:80">分拣线</th>
+                <th data-options="field:'ChannelTypeDesc',width:80">货仓类型</th>
                 <th data-options="field:'ProductCode',width:80">产品编码</th>
-                <th data-options="field:'ProductName',width:80">产品名称</th>
+                <th data-options="field:'ProductName',width:150">产品名称</th>
                 <th data-options="field:'StatusDesc',width:80">状态</th>
-                <th data-options="field:'ChannelOrder',width:80">排货顺序</th>
+                <th data-options="field:'ChannelOrder',width:60">排货顺序</th>
 		    </tr>
         </thead>
     </table>

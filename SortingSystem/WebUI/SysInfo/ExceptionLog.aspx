@@ -76,7 +76,7 @@
                             if (result.status == 1) {
                                 ReloadGrid('dg');
 
-                                $.messager.alert('提示', '数据删除成功！');
+                                
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }
@@ -103,8 +103,6 @@
                     $.post('../../Handler/OtherHandler.ashx', data, function (result) {
                         if (result.status == 1) {
                             ReloadGrid('dg');
-
-                            $.messager.alert('提示', '数据清空成功！');
                         } else {
                             $.messager.alert('错误', result.msg, 'error');
                         }

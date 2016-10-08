@@ -123,7 +123,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据记录保存成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -136,7 +136,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据修改成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -176,7 +176,7 @@
                             if (result.status == 1) {
                                 ReloadGrid('dg');
 
-                                $.messager.alert('提示', '数据删除成功！');
+                                
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }
@@ -199,17 +199,17 @@
 		    <tr>
                 <th data-options="field:'',checkbox:true"></th> 
 		        <th data-options="field:'CustomerCode',width:80">客户编码</th>
-                <th data-options="field:'CustomerName',width:120">名称</th>
+                <th data-options="field:'CustomerName',width:200">名称</th>
                  <th data-options="field:'RouteName',width:120">路线</th>
-                <th data-options="field:'LicenseNo',width:80">许可证号</th>
-                <th data-options="field:'SortId',width:80">排序</th>
-                <th data-options="field:'TelNo',width:80">联系电话</th>
-                <th data-options="field:'Address',width:100">地址</th>
+                <th data-options="field:'LicenseNo',width:120">许可证号</th>
+                <th data-options="field:'SortId',width:60">排序</th>
+                <th data-options="field:'TelNo',width:90">联系电话</th>
+                <th data-options="field:'Address',width:180">地址</th>
                 <th data-options="field:'CustomerDesc',width:100">客户描述</th>
                 <th data-options="field:'Creator',width:80">建单人员</th>
-                <th data-options="field:'CreateDate',width:80">建单日期</th>
+                <th data-options="field:'CreateDate',width:120">建单日期</th>
                 <th data-options="field:'Updater',width:80">修改人员</th>
-                <th data-options="field:'UpdateDate',width:80">修改日期</th>
+                <th data-options="field:'UpdateDate',width:120">修改日期</th>
 		    </tr>
         </thead>
     </table>

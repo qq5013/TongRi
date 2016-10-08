@@ -241,7 +241,6 @@
                     if (result.status == 1) {
                         ReloadGrid("dg");
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据记录保存成功。');
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -297,7 +296,6 @@
                     if (result.status == 1) {
                         ReloadGrid("dg");
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据修改成功。');
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -333,8 +331,6 @@
                         $.post(url, data, function (result) {
                             if (result.status == 1) {
                                 ReloadGrid("dg");
-
-                                $.messager.alert('提示', '数据删除成功！');
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }
@@ -461,13 +457,13 @@
                   <thead>
                     <tr>
                         <th data-options="field:'SubBatchNo',width:100">批次号</th>
-                        <th data-options="field:'CustomerName',width:100">客户</th>
-                        <th data-options="field:'RouteName',width:100">区域</th>
-                        <th data-options="field:'DeliveryAdd',width:100">送货地址</th>
+                        <th data-options="field:'CustomerName',width:200">客户</th>
+                        <th data-options="field:'RouteName',width:150">区域</th>
+                        <th data-options="field:'DeliveryAdd',width:180">送货地址</th>
                         <th data-options="field:'Creator',width:80">建单人员</th>
-                        <th data-options="field:'CreateDate',width:80">建单日期</th>
+                        <th data-options="field:'CreateDate',width:120">建单日期</th>
                         <th data-options="field:'Updater',width:80">修改人员</th>
-                        <th data-options="field:'UpdateDate',width:80">修改日期</th>
+                        <th data-options="field:'UpdateDate',width:120">修改日期</th>
 		            </tr>
                 </thead>
             </table>
@@ -479,7 +475,7 @@
 		            <tr>
 		                <th data-options="field:'RowID',width:100">序号</th>
                         <th data-options="field:'ProductCode',width:100">产品编号</th>
-                        <th data-options="field:'ProductName',width:120">品名</th>
+                        <th data-options="field:'ProductName',width:180">品名</th>
                         <th data-options="field:'Quantity',width:80">数量</th>
                         <th data-options="field:'Price',width:100">单价</th>
                         <th data-options="field:'Amount',width:150">金额</th>

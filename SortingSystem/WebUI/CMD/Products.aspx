@@ -163,7 +163,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据记录保存成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -176,7 +176,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据修改成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -202,7 +202,6 @@
                 if (result.status == 1) {
                     ReloadGrid('dg');
                     $('#BatchWin').window('close');
-                    $.messager.alert('提示', '产品编号变更成功。');
                 } else {
                     $.messager.alert('错误', result.msg, 'error');
                 }
@@ -243,7 +242,7 @@
                             if (result.status == 1) {
                                 ReloadGrid('dg');
                                
-                                $.messager.alert('提示', '数据删除成功！');
+                                
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }
@@ -291,19 +290,19 @@
         <thead>
 		    <tr>
                 <th data-options="field:'CategoryName',width:80">产品类别</th>
-                <th data-options="field:'ShortName',width:100">简称</th>
-                <th data-options="field:'FactoryName',width:100">供应商</th>
+                <th data-options="field:'ShortName',width:180">简称</th>
+                <th data-options="field:'FactoryName',width:150">供应商</th>
                 <th data-options="field:'Province',width:100">省份</th>
                 <th data-options="field:'Unit',width:50">单位</th>
-                <th data-options="field:'Barcode',width:100">产品条码</th>
-                <th data-options="field:'BarcodePack',width:100">包装条码</th>
+                <th data-options="field:'Barcode',width:120">产品条码</th>
+                <th data-options="field:'BarcodePack',width:120">包装条码</th>
                 <th data-options="field:'Length',width:100">长度</th>
                 <th data-options="field:'Width',width:100">宽度</th>
                 <th data-options="field:'Height',width:100">高度</th>
                 <th data-options="field:'Creator',width:80">建单人员</th>
-                <th data-options="field:'CreateDate',width:80">建单日期</th>
+                <th data-options="field:'CreateDate',width:120">建单日期</th>
                 <th data-options="field:'Updater',width:80">修改人员</th>
-                <th data-options="field:'UpdateDate',width:80">修改日期</th>
+                <th data-options="field:'UpdateDate',width:120">修改日期</th>
 		    </tr>
         </thead>
     </table>

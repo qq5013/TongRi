@@ -121,7 +121,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据记录保存成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -134,7 +134,7 @@
                     if (result.status == 1) {
                         ReloadGrid('dg');
                         $('#AddWin').window('close');
-                        $.messager.alert('提示', '数据修改成功。');
+                        
                     } else {
                         $.messager.alert('错误', result.msg, 'error');
                     }
@@ -173,7 +173,7 @@
                             if (result.status == 1) {
                                 ReloadGrid('dg');
 
-                                $.messager.alert('提示', '数据删除成功！');
+                                
                             } else {
                                 $.messager.alert('错误', result.msg, 'error');
                             }
@@ -196,16 +196,16 @@
 		    <tr>
                 <th data-options="field:'',checkbox:true"></th> 
 		        <th data-options="field:'FactoryID',width:80">厂家编码</th>
-                <th data-options="field:'FactoryName',width:100">名称</th>
+                <th data-options="field:'FactoryName',width:200">名称</th>
                 <th data-options="field:'LinkPerson',width:80">联系人</th>
-                <th data-options="field:'LinkPhone',width:80">联系电话</th>
+                <th data-options="field:'LinkPhone',width:90">联系电话</th>
                 <th data-options="field:'Fax',width:80">传真</th>
-                <th data-options="field:'Address',width:100">地址</th>
+                <th data-options="field:'Address',width:180">地址</th>
                 <th data-options="field:'Memo',width:100">备注</th>
                 <th data-options="field:'Creator',width:80">建单人员</th>
-                <th data-options="field:'CreateDate',width:80">建单日期</th>
+                <th data-options="field:'CreateDate',width:120">建单日期</th>
                 <th data-options="field:'Updater',width:80">修改人员</th>
-                <th data-options="field:'UpdateDate',width:80">修改日期</th>
+                <th data-options="field:'UpdateDate',width:120">修改日期</th>
 		    </tr>
         </thead>
     </table>
