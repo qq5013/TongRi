@@ -283,14 +283,14 @@
         <thead data-options="frozen:true">
 			<tr>
 				<th data-options="field:'',checkbox:true"></th> 
-		        <th data-options="field:'ProductCode',width:100">产品编码</th>
-                <th data-options="field:'ProductName',width:100">品名</th>
+		        <th data-options="field:'ProductCode',width:80">产品编码</th>
+                <th data-options="field:'ProductName',width:180">品名</th>
 			</tr>
 		</thead>
         <thead>
 		    <tr>
                 <th data-options="field:'CategoryName',width:80">产品类别</th>
-                <th data-options="field:'ShortName',width:180">简称</th>
+                <th data-options="field:'ShortName',width:160">简称</th>
                 <th data-options="field:'FactoryName',width:150">供应商</th>
                 <th data-options="field:'Province',width:100">省份</th>
                 <th data-options="field:'Unit',width:50">单位</th>
