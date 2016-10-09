@@ -294,6 +294,8 @@
                 <th data-options="field:'FactoryName',width:150">供应商</th>
                 <th data-options="field:'Province',width:100">省份</th>
                 <th data-options="field:'Unit',width:50">单位</th>
+                <th data-options="field:'AbnormityDesc',width:50">异型</th>
+                <th data-options="field:'PickDesc',width:50">分拣</th>
                 <th data-options="field:'Barcode',width:120">产品条码</th>
                 <th data-options="field:'BarcodePack',width:120">包装条码</th>
                 <th data-options="field:'Length',width:100">长度</th>
