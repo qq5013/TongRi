@@ -82,6 +82,7 @@
             if (row) {
                 var data = { Action: 'FillDataTable', Comd: 'cmd.SelectChannel', Where: "ChannelCode='" + row.ChannelCode + "'" };
                 $.post(url, data, function (result) {
+                    debugger;
                     var Product = result.rows[0];
                     $('#AddWin').dialog('open').dialog('setTitle', '货仓资料--编辑');
                     $('#fm').form('load', Product);
@@ -252,7 +253,7 @@
                     </td>
                     <td  width="160px">
                            &nbsp;<select id="ddlChannelType" class="easyui-combobox" data-options="required:true,editable:false" name="ChannelType" style="width:150px;">   
-                                <option value="0">立式机</option>   
+                                <option value="2">立式机</option>   
                              </select>  
                     </td>
                     

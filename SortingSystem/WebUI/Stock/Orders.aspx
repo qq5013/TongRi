@@ -458,7 +458,8 @@
                     <tr>
                         <th data-options="field:'SubBatchNo',width:100">批次号</th>
                         <th data-options="field:'CustomerName',width:200">客户</th>
-                        <th data-options="field:'RouteName',width:150">区域</th>
+                          <th data-options="field:'RouteCode',width:100">路线编码</th>
+                        <th data-options="field:'RouteName',width:150">路线</th>
                         <th data-options="field:'DeliveryAdd',width:180">送货地址</th>
                         <th data-options="field:'Creator',width:80">建单人员</th>
                         <th data-options="field:'CreateDate',width:120">建单日期</th>
@@ -563,7 +564,7 @@
                                 <input type="button" id="btnCust" class="ButtonCss" onclick="SelectWinShow('SelectCustWin','客户资料--选择')" value="..."/>
                         </td>
                         <td align="center" class="musttitle" style="width:8%;" >
-                                区域
+                                路线
                         </td>
                         <td  colspan="3"> 
                             &nbsp;<input id="txtRouteCode" name="RouteCode" class="easyui-textbox" data-options="editable:false"  style="width:127px"/>

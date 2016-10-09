@@ -200,9 +200,10 @@
                 <th data-options="field:'',checkbox:true"></th> 
 		        <th data-options="field:'CustomerCode',width:80">客户编码</th>
                 <th data-options="field:'CustomerName',width:200">名称</th>
-                 <th data-options="field:'RouteName',width:120">路线</th>
+                <th data-options="field:'RouteCode',width:80">路线</th>
+                 <th data-options="field:'RouteName',width:200">路线</th>
                 <th data-options="field:'LicenseNo',width:120">许可证号</th>
-                <th data-options="field:'SortId',width:60">排序</th>
+                <th data-options="field:'SortId',width:60">配送顺序</th>
                 <th data-options="field:'TelNo',width:90">联系电话</th>
                 <th data-options="field:'Address',width:180">地址</th>
                 <th data-options="field:'CustomerDesc',width:100">客户描述</th>
@@ -288,7 +289,7 @@
                     </td>
                     <td align="center" class="smalltitle"style="width:90px"  >
                             
-                        排序</td>
+                        配送顺序</td>
                     <td width="210px"> 
                        &nbsp;<input id="txtSortId" name="SortId"  class="easyui-numberbox" data-options="min:0,precision:0"  style="width:180px"/>
                     </td>
