@@ -597,11 +597,11 @@ namespace Sorting.Dispatching.View
 
                 Logger.Info("数据优化完成");
 
-                Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
-                Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
+                //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
+                //Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
                 //Context.ProcessDispatcher.WriteToProcess("CreatePackAndPrintDataProcess", "NewData", null);
-                Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "OrderFinish3", new int[] { -1 });
-                Context.ProcessDispatcher.WriteToProcess("SortingOrderProcess", "OrderInfo", new string[] { OrderDate, BatchNo });
+                //Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "RestartSign", new int[] { 1 });
+                //Context.ProcessDispatcher.WriteToProcess("SortingOrderProcess", "OrderInfo", new string[] { OrderDate, BatchNo });
             }
             catch (Exception ex)
             {
@@ -633,10 +633,10 @@ namespace Sorting.Dispatching.View
             schedule.GenStockChannelSchedule(OrderDate, BatchNo);
 
             //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("补货优化", 7, 6));
-            schedule.GenSupplySchedule1(OrderDate, BatchNo);
+            //schedule.GenSupplySchedule1(OrderDate, BatchNo);
 
             //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("手工补货优化", 7, 7));
-            schedule.GenHandleSupplySchedule1(OrderDate, BatchNo);
+            //schedule.GenHandleSupplySchedule1(OrderDate, BatchNo);
         }
 
         private void btnUploadLogistics_Click(object sender, EventArgs e)

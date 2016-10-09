@@ -23,9 +23,8 @@
     <Menu Name="营销订单统计" Type="Sorting.Dispatching.View.InitialOrderTotalForm,Sorting.Dispatching.dll"/>
     <Menu Name="营销异形明细" Type="Sorting.Dispatching.View.AbnormityOrderForm,Sorting.Dispatching.dll"/>
     <Menu Name="营销异形统计" Type="Sorting.Dispatching.View.AbnormityTotalForm,Sorting.Dispatching.dll"/>
-		<Menu Name="分拣烟道查询" Type="Sorting.Dispatching.View.ChannelQueryForm,Sorting.Dispatching.dll"/>
-		<Menu Name="分拣烟道盘点" Type="Sorting.Dispatching.View.CheckQueryForm,Sorting.Dispatching.dll"/>
-    <Menu Name="分拣烟道余量" Type="Sorting.Dispatching.View.ChannelBalanceForm,Sorting.Dispatching.dll"/>
+		<Menu Name="分拣货仓查询" Type="Sorting.Dispatching.View.ChannelQueryForm,Sorting.Dispatching.dll"/>
+		<Menu Name="分拣货仓盘点" Type="Sorting.Dispatching.View.CheckQueryForm,Sorting.Dispatching.dll"/>
 	</Menus>	
 	<Menus Name="系统">
 		<Menu Name="参数设置" Type="Sorting.Dispatching.View.ParameterForm,Sorting.Dispatching.dll"/>

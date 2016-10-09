@@ -152,6 +152,7 @@ namespace Sorting.Dispatching.Dao
                 sqlCreate.AppendQuote("ISSTOCKIN", row["ISSTOCKIN"]);
                 sqlCreate.AppendQuote("CHANNELADDRESS", row["CHANNELADDRESS"]);
                 sqlCreate.AppendQuote("TOCHANNELCODE", row["TOCHANNELCODE"]);
+
                 ExecuteNonQuery(sqlCreate.GetSQL());
             }
         }

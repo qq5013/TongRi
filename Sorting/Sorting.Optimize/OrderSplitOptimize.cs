@@ -186,9 +186,6 @@ namespace Sorting.Optimize
                 int quantity = Convert.ToInt32(orderRow["QUANTITY"]);
                 int qty = quantity;
 
-                
-
-
                 string dd;
                 if (productCode == "0153")
                     dd = "";
@@ -201,146 +198,26 @@ namespace Sorting.Optimize
 
                 string channelType = channelRows[0]["CHANNELTYPE"].ToString();
                 //此品牌订单总数量
-                int channelQuantity = int.Parse(channelRows[0]["GroupTotal"].ToString());
-                if (channelRows.Length == 1)
-                {
-                    AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[0], qty);
-                    channelRows[0]["QUANTITY"] = int.Parse(channelRows[0]["QUANTITY"].ToString()) + qty;
-                    continue;      
-                }
+                int channelQuantity = int.Parse(channelRows[0]["GroupTotal"].ToString());                
 
                 //每个通道整件数数量,尾数分配在一个通道
-                int channelBoxes = channelQuantity / 50;
-                channelBoxes = channelBoxes / channelCount;
-                channelBoxes = channelBoxes * 50;
+                int channelBoxes = channelQuantity / channelCount;
                 int channelReset = channelQuantity - channelBoxes * channelCount;
-                int channelQuantityTotal = 0;
-                int j = 0;              
-
-                if (channelType == "3")
+                
+                if (channelType == "2")
                 {
-                    //有几个整5条
-                    int quantity5 = quantity / 5;
-                    //每个通道分配整5条数量
-                    int eachChannelQty = quantity5 / channelCount;
-                    int channel5 = quantity5 % channelCount;
-                    channelReset = quantity - eachChannelQty * channelCount * 5 - channel5*5;
-
                     for (int i = 0; i < channelRows.Length; i++)
                     {
-                        if (i == channelRows.Length - 1)
+                        if (channelReset > 0)
+                            qty = channelBoxes + 1;
+                        else
+                            qty = channelBoxes;
+
+                        if (qty > 0)
                         {
-                            //统计此订单品牌已经分配了多少数量                        
-                            qty = quantity - channelQuantityTotal;
-                            channelRows[i]["CHANNELGROUP"] = 2;
                             AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[i], qty);
                             channelRows[i]["QUANTITY"] = int.Parse(channelRows[i]["QUANTITY"].ToString()) + qty;
-                            //尾数的此字段记录为2
-                        }
-                        else
-                        {
-                            if (int.Parse(channelRows[i]["QUANTITY"].ToString()) >= channelBoxes)
-                            {
-                                j++;//已经分配满的要扣掉
-                                continue;
-                            }
-                            //判断剩下的订单还有没有>=5的订单量，如果没有就分配尾数直至满足没尾数问题
-                            //比如当前到了240条，还差10条的时候，剩余的订单又没有>=5的量，那么就要分配尾数
-                            qty = eachChannelQty * 5;
-                            if (channel5 > 0)
-                                qty = eachChannelQty * 5 + 5;
-
-                            if (qty <= 0)
-                            {
-                                if (i == 0)
-                                {
-                                    int FrestQty = channelBoxes - int.Parse(channelRows[i]["FChannelQty"].ToString());
-                                    if (FrestQty > 0)
-                                        qty = quantity - channelQuantityTotal;
-
-                                    channelRows[i]["FChannelQty"] = int.Parse(channelRows[i]["FChannelQty"].ToString()) + qty;
-                                }
-                                else if (i == 1)
-                                {
-                                    int SrestQty = channelBoxes - int.Parse(channelRows[i]["SChannelQty"].ToString());
-                                    if (SrestQty > 0)
-                                        qty = quantity - channelQuantityTotal;
-
-                                    channelRows[i]["SChannelQty"] = int.Parse(channelRows[i]["SChannelQty"].ToString()) + qty;
-                                }
-                                if(qty<=0)
-                                    continue;
-
-                            }
-                            
-                            if (int.Parse(channelRows[i]["QUANTITY"].ToString()) + qty <= channelBoxes)
-                            {
-                                channelRows[i]["CHANNELGROUP"] = 1;
-                                AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[i], qty);
-                                channelRows[i]["QUANTITY"] = int.Parse(channelRows[i]["QUANTITY"].ToString()) + qty;
-
-                                channelQuantityTotal += qty;
-                            }
-                            else
-                            {
-                                //需要的余量
-                                int reset = channelBoxes - int.Parse(channelRows[i]["QUANTITY"].ToString());
-                                channelRows[i]["CHANNELGROUP"] = 1;
-                                AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[i], reset);
-                                channelRows[i]["QUANTITY"] = channelBoxes;
-
-                                channelQuantityTotal += reset;
-                            }
-                            channel5--;
-                            j++;
-                        }
-                    }
-                }
-                else if (channelType == "2")
-                {
-                    channelBoxes = channelQuantity / channelCount;
-                    channelReset = channelQuantity - channelBoxes * channelCount;
-
-                    for (int i = 0; i < channelRows.Length; i++)
-                    {                        
-                        if (i == channelRows.Length - 1)
-                        {
-                            //统计此订单品牌已经分配了多少数量                        
-                            qty = quantity - channelQuantityTotal;
-                            AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[i], qty);
-                            channelRows[i]["QUANTITY"] = int.Parse(channelRows[i]["QUANTITY"].ToString()) + qty;
-                        }
-                        else
-                        {
-                            if (int.Parse(channelRows[i]["QUANTITY"].ToString()) >= channelBoxes)
-                            {
-                                j++;//已经分配满的要扣掉
-                                continue;
-                            }
-                            int allotRest = quantity - channelQuantityTotal;
-                            if (allotRest <= 0)
-                                break;
-                            //计算订单总数量是否已达到整件数量
-                            int allotQuantity = quantity / (channelRows.Length - j);
-                            if (allotRest % (channelRows.Length - i) > 0)
-                                allotQuantity = allotQuantity + 1;
-
-                            if (int.Parse(channelRows[i]["QUANTITY"].ToString()) + allotQuantity <= channelBoxes)
-                            {
-                                AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[i], allotQuantity);
-                                channelRows[i]["QUANTITY"] = int.Parse(channelRows[i]["QUANTITY"].ToString()) + allotQuantity;
-
-                                channelQuantityTotal += allotQuantity;
-                            }
-                            else
-                            {
-                                //需要的余量
-                                int reset = channelBoxes - int.Parse(channelRows[i]["QUANTITY"].ToString());
-                                AddDetailRow(masterRow, tmpDetail, sortNo, lineCode, channelRows[i], reset);
-                                channelRows[i]["QUANTITY"] = channelBoxes;
-
-                                channelQuantityTotal += reset;
-                            }
+                            channelReset--;
                         }
                     }
                 }

@@ -48,8 +48,8 @@ namespace Sorting.Dispatching.Schedule
                 orderDao.DeleteOrder(batchNo);
 
                 //SC_STOCKMIXCHANNEL
-                //StockChannelDao scDao = new StockChannelDao();
-                //scDao.DeleteSchedule(batchNo);
+                StockChannelDao scDao = new StockChannelDao();
+                scDao.DeleteSchedule(batchNo);
 
                 //SC_SUPPLY
                 //SupplyDao supplyDao = new SupplyDao();
@@ -886,7 +886,7 @@ namespace Sorting.Dispatching.Schedule
         /// <param name="batchNo"></param>
         public void GenSupplySchedule1(string orderDate, string batchNo)
         {
-            int batch = int.Parse(batchNo.Substring(10));
+            int batch = int.Parse(batchNo.Substring(6,3));
             using (PersistentManager pm = new PersistentManager())
             {
                 BatchDao batchDao = new BatchDao();

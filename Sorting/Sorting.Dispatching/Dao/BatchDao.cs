@@ -230,25 +230,25 @@ namespace Sorting.Dispatching.Dao
 		                            WHERE ORDERID = A.ORDERID AND CIGARETTECODE = B.CIGARETTECODE)  
 	                            ORDER BY A.ROUTECODE ";
 
-            sql = @"SELECT A.ORDERID,A.ROUTECODE,A.CUSTOMERCODE,B.CIGARETTENAME,
+            sql = @"SELECT A.ORDERID,A.ROUTECODE,A.CUSTOMERCODE,B.ProductName,
 	                            ISNULL(SUM(B.QUANTITY),0),
 	                            (SELECT ISNULL(SUM(QUANTITY),0) FROM SC_ORDER   
-		                            WHERE ORDERID = A.ORDERID AND CIGARETTECODE = B.CIGARETTECODE),   
+		                            WHERE ORDERID = A.ORDERID AND ProductCode = B.ProductCode),   
 	                            ISNULL(SUM(B.QUANTITY),0)-
 	                            (SELECT ISNULL(SUM(QUANTITY),0) FROM SC_ORDER   
-		                            WHERE ORDERID = A.ORDERID AND CIGARETTECODE = B.CIGARETTECODE ),  
+		                            WHERE ORDERID = A.ORDERID AND ProductCode = B.ProductCode ),  
 	                            D.CUSTOMERNAME  
 	                            FROM SC_I_ORDERMASTER A  
 	                            LEFT JOIN SC_I_ORDERDETAIL B ON A.ORDERID = B.ORDERID  
 	                            LEFT JOIN CMD_CUSTOMER D ON A.CUSTOMERCODE = D.CUSTOMERCODE  
-	                            LEFT JOIN CMD_Product E ON B.CIGARETTECODE = E.CIGARETTECODE   
+	                            LEFT JOIN CMD_Product E ON B.ProductCode = E.ProductCode   
 	                            WHERE  A.ORDERDATE ='{0}' AND A.BATCHNO = '{1}'  AND E.ISABNORMITY = 0 
 	                            AND A.ORDERID NOT IN (SELECT ORDERID FROM SC_HANDLE_SORT_ORDER WHERE BATCHNO = '{1}')
-                                AND A.ROUTECODE IN(SELECT ROUTECODE FROM CMD_ROUTE WHERE ISSORT ='1' AND BATCHNO = '{1}')  
-	                            GROUP BY A.ORDERID,A.ROUTECODE,A.CUSTOMERCODE,B.CIGARETTECODE,B.CIGARETTENAME,D.CUSTOMERNAME   
+                                AND A.ROUTECODE IN(SELECT ROUTECODE FROM CMD_ROUTE WHERE ISSORT ='1')  
+	                            GROUP BY A.ORDERID,A.ROUTECODE,A.CUSTOMERCODE,B.ProductCode,B.ProductName,D.CUSTOMERNAME   
 	                            HAVING ISNULL(SUM(B.QUANTITY),0) != 
 	                            (SELECT ISNULL(SUM(QUANTITY),0) FROM SC_ORDER_DETAIL
-		                            WHERE ORDERID = A.ORDERID AND CIGARETTECODE = B.CIGARETTECODE)  
+		                            WHERE ORDERID = A.ORDERID AND ProductCode = B.ProductCode)  
 	                            ORDER BY A.ROUTECODE ";
             return (ExecuteQuery(string.Format(sql, orderDate, batchNo)).Tables[0].Rows.Count == 0);
         }
@@ -344,7 +344,7 @@ namespace Sorting.Dispatching.Dao
         }
         internal string GetPreBatchNo(string BatchNo)
         {
-            string preBatchNo = BatchNo.Substring(0, 10);
+            string preBatchNo = BatchNo.Substring(0, 6);
             string sql = string.Format("SELECT BATCHNO FROM CMD_BATCH WHERE BATCHNO LIKE '{0}%' AND BATCHNO<'{1}' AND ISVALID='1' ORDER BY VALIDTIME DESC", preBatchNo, BatchNo);
 
             DataTable dt = ExecuteQuery(sql).Tables[0];
