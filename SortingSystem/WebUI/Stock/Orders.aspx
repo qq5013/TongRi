@@ -444,7 +444,7 @@
         <div data-options="region:'north',split:true" style="height:300px;">
              <table id="dg"  class="easyui-datagrid" 
                 data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,url:'../../Handler/BaseHandler.ashx?Action=PageDate&FormID='+FormID,
-                             pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tb',onLoadSuccess: function(data){ 
+                             pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tb',onLoadSuccess: function(data){ 
                              $('#dg').datagrid('selectRow',0);},singleSelect:true,selectOnCheck:false,checkOnSelect:false,onSelect:getDetail,onCheck:CheckRow,onUncheck:CheckRow"> 
                   <thead data-options="frozen:true">
 			        <tr>
@@ -471,7 +471,7 @@
         </div>   
         <div data-options="region:'center', split:true,title:'订单明细',split:true" >
             <table id="dgSub"  class="easyui-datagrid" 
-                data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true"> 
+                data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true"> 
                 <thead>
 		            <tr>
 		                <th data-options="field:'RowID',width:100">序号</th>
@@ -646,7 +646,7 @@
     <div  id="SelectProductWin" style="width:800px;height:500px">
              <table id="dgProduct"  class="easyui-datagrid" 
             data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:false,checkOnSelect:false,onCheck:SelectCheckRow,onUncheck:SelectUnCheckRow,onCheckAll:SelectCheckRowAll,onUncheckAll:SelectUnCheckRowAll,onLoadSuccess:SelectLoadSelectSuccess"> 
+                         pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:false,checkOnSelect:false,onCheck:SelectCheckRow,onUncheck:SelectUnCheckRow,onCheckAll:SelectCheckRowAll,onUncheckAll:SelectUnCheckRowAll,onLoadSuccess:SelectLoadSelectSuccess"> 
               <thead data-options="frozen:true">
 			    <tr>
 				    <th data-options="field:'',checkbox:true"></th> 
@@ -696,7 +696,7 @@
     <div  id="SelectCustWin" style="width:800px;height:500px">
              <table id="dgCust"  class="easyui-datagrid" 
             data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#divCustBtn',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectSingleCheckRow,onUncheck:SelectSingleUnCheckRow,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
+                         pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#divCustBtn',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectSingleCheckRow,onUncheck:SelectSingleUnCheckRow,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
              <thead>
 		        <tr>
                     <th data-options="field:'',checkbox:true"></th> 
