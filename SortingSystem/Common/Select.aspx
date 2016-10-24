@@ -43,7 +43,7 @@
 <body class="easyui-layout">
     <table id="dgSelect"  class="easyui-datagrid" 
         data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,url:'../../Handler/BaseHandler.ashx?Action=PageDate&Comd=CMD.SelectProduct',
-                     pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:false,checkOnSelect:false,onCheck:CheckRow,onUncheck:UnCheckRow,onCheckAll:CheckRowAll,onUncheckAll:UnCheckRowAll,onLoadSuccess:LoadSelectSuccess"> 
+                     pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:false,checkOnSelect:false,onCheck:CheckRow,onUncheck:UnCheckRow,onCheckAll:CheckRowAll,onUncheckAll:UnCheckRowAll,onLoadSuccess:LoadSelectSuccess"> 
         <thead data-options="frozen:true">
 			<tr>
 				<th data-options="field:'',checkbox:true"></th> 

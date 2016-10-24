@@ -237,7 +237,7 @@
             <div class="easyui-layout" data-options="fit:true"> 
                 <div data-options="region:'north', split:true" style="height:260px;">
                     <table id="dg"  class="easyui-datagrid" data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,url:'../../Handler/BaseHandler.ashx?Action=PageDate&FormID='+FormID,
-                             pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,singleSelect:true,selectOnCheck:false,checkOnSelect:false,onLoadSuccess: function(data){$('#dg').datagrid('selectRow',0);},onSelect:getDetail"> 
+                             pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,singleSelect:true,selectOnCheck:false,checkOnSelect:false,onLoadSuccess: function(data){$('#dg').datagrid('selectRow',0);},onSelect:getDetail"> 
                           <thead>
                             <tr>
                                 <th data-options="field:'GroupID',width:100">用户组ID</th>
@@ -247,7 +247,7 @@
                     </table>      
                 </div>   
                 <div data-options="region:'center',title:'用户组成员',split:true">
-                    <table id="dgSub" class="easyui-datagrid" data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true"> 
+                    <table id="dgSub" class="easyui-datagrid" data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true"> 
                         <thead>
 		                    <tr>
                                 <th data-options="field:'UserID',width:100">用户ID</th>
@@ -287,7 +287,7 @@
 
     <div  id="SelectWin" style="width:480px;height:450px" class="easyui-dialog" data-options="closed:true,buttons:'#SelectWinBtn'">
              <table id="dgSelect"  class="easyui-datagrid" data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:false,checkOnSelect:false,onCheck:RMSelectCheckRow,onUncheck:RMSelectUnCheckRow,onCheckAll:RMSelectCheckRowAll,onUncheckAll:RMSelectUnCheckRowAll,onLoadSuccess:LoadSelectSuccess"> 
+                         pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:false,checkOnSelect:false,onCheck:RMSelectCheckRow,onUncheck:RMSelectUnCheckRow,onCheckAll:RMSelectCheckRowAll,onUncheckAll:RMSelectUnCheckRowAll,onLoadSuccess:LoadSelectSuccess"> 
                 <thead>
 		            <tr>
                     <th data-options="field:'chk',checkbox:true"></th> 

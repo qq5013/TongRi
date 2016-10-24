@@ -147,12 +147,13 @@
             $('#txtProductName').textbox('setValue', RowData.ProductName);
 
         }
+        
  </script> 
 </head>
 <body class="easyui-layout">
     <table id="dg"  class="easyui-datagrid" 
         data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,url:'../../Handler/BaseHandler.ashx?Action=PageDate&FormID='+FormID,
-                     pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tb',singleSelect:true"> 
+                     pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tb',singleSelect:true"> 
         <thead>
 		    <tr>
 		        <th data-options="field:'ChannelCode',width:80">货仓编码</th>
@@ -270,7 +271,7 @@
     <div  id="SelectWin" style="width:800px;height:500px">
              <table id="dgSelect"  class="easyui-datagrid" 
             data-options="loadMsg: '正在加载数据，请稍等...',fit:true, rownumbers:true,
-                         pagination:true,pageSize:15, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectCheckRow,onUncheck:SelectUnCheckRow,onCheckAll:SelectCheckRowAll,onUncheckAll:SelectUnCheckRowAll,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
+                         pagination:true,pageSize:PageSize, pageList:[15, 20, 30, 50],method:'post',striped:true,fitcolumns:true,toolbar:'#tbSelect',singleSelect:true,selectOnCheck:true,checkOnSelect:true,onCheck:SelectCheckRow,onUncheck:SelectUnCheckRow,onCheckAll:SelectCheckRowAll,onUncheckAll:SelectUnCheckRowAll,onLoadSuccess:SelectLoadSelectSuccess,onDblClickRow:DblClickRow"> 
             <thead data-options="frozen:true">
 			    <tr>
 				    <th data-options="field:'',checkbox:true"></th> 

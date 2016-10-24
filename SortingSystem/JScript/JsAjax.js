@@ -1,4 +1,5 @@
-﻿var BaseUrl = "../../Handler/BaseHandler.ashx";
+﻿var PageSize = 20; //只能设置15, 20, 30, 50
+var BaseUrl = "../../Handler/BaseHandler.ashx";
 var BindComboList = function ( data, CtlID, FieldID, FieldName) {
     $.ajax({
         type: "post",
