@@ -36,6 +36,10 @@ namespace Sorting.Dispatching.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.dgvMaster = new System.Windows.Forms.DataGridView();
+            this.bsMaster = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.ROWID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.DELIVERYDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -47,10 +51,6 @@ namespace Sorting.Dispatching.View
             this.CUSTOMERCODE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.CUSTOMERDESC = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.AMOUNT = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.bsMaster = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.ORDERDETAILID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRODUCTCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -144,107 +144,6 @@ namespace Sorting.Dispatching.View
             this.dgvMaster.TabIndex = 0;
             this.dgvMaster.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaster_RowEnter);
             // 
-            // ROWID
-            // 
-            this.ROWID.DataPropertyName = "ROWID";
-            this.ROWID.HeaderText = "序号";
-            this.ROWID.Name = "ROWID";
-            this.ROWID.ReadOnly = true;
-            this.ROWID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ROWID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ROWID.Width = 60;
-            // 
-            // ORDERDATE
-            // 
-            this.ORDERDATE.DataPropertyName = "ORDERDATE";
-            this.ORDERDATE.FilteringEnabled = false;
-            this.ORDERDATE.HeaderText = "订单日期";
-            this.ORDERDATE.Name = "ORDERDATE";
-            this.ORDERDATE.ReadOnly = true;
-            this.ORDERDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ORDERDATE.Width = 80;
-            // 
-            // DELIVERYDATE
-            // 
-            this.DELIVERYDATE.DataPropertyName = "DELIVERYDATE";
-            this.DELIVERYDATE.FilteringEnabled = false;
-            this.DELIVERYDATE.HeaderText = "送货日期";
-            this.DELIVERYDATE.Name = "DELIVERYDATE";
-            this.DELIVERYDATE.ReadOnly = true;
-            this.DELIVERYDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // BATCHNO
-            // 
-            this.BATCHNO.DataPropertyName = "BATCHNO";
-            this.BATCHNO.FilteringEnabled = false;
-            this.BATCHNO.HeaderText = "批次号";
-            this.BATCHNO.Name = "BATCHNO";
-            this.BATCHNO.ReadOnly = true;
-            this.BATCHNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.BATCHNO.Width = 110;
-            // 
-            // SORTID
-            // 
-            this.SORTID.DataPropertyName = "SORTID";
-            this.SORTID.FilteringEnabled = false;
-            this.SORTID.HeaderText = "配送顺序";
-            this.SORTID.Name = "SORTID";
-            this.SORTID.ReadOnly = true;
-            this.SORTID.Width = 80;
-            // 
-            // ORDERID
-            // 
-            this.ORDERID.DataPropertyName = "ORDERID";
-            this.ORDERID.FilteringEnabled = false;
-            this.ORDERID.HeaderText = "订单号";
-            this.ORDERID.Name = "ORDERID";
-            this.ORDERID.ReadOnly = true;
-            // 
-            // ROUTECODE
-            // 
-            this.ROUTECODE.DataPropertyName = "ROUTECODE";
-            this.ROUTECODE.FilteringEnabled = false;
-            this.ROUTECODE.HeaderText = "线路代码";
-            this.ROUTECODE.Name = "ROUTECODE";
-            this.ROUTECODE.ReadOnly = true;
-            this.ROUTECODE.Width = 80;
-            // 
-            // ROUTENAME
-            // 
-            this.ROUTENAME.DataPropertyName = "ROUTENAME";
-            this.ROUTENAME.FilteringEnabled = false;
-            this.ROUTENAME.HeaderText = "线路名称";
-            this.ROUTENAME.Name = "ROUTENAME";
-            this.ROUTENAME.ReadOnly = true;
-            this.ROUTENAME.Width = 130;
-            // 
-            // CUSTOMERCODE
-            // 
-            this.CUSTOMERCODE.DataPropertyName = "CUSTOMERCODE";
-            this.CUSTOMERCODE.FilteringEnabled = false;
-            this.CUSTOMERCODE.HeaderText = "客户代码";
-            this.CUSTOMERCODE.Name = "CUSTOMERCODE";
-            this.CUSTOMERCODE.ReadOnly = true;
-            this.CUSTOMERCODE.Width = 80;
-            // 
-            // CUSTOMERDESC
-            // 
-            this.CUSTOMERDESC.DataPropertyName = "CUSTOMERDESC";
-            this.CUSTOMERDESC.FilteringEnabled = false;
-            this.CUSTOMERDESC.HeaderText = "客户名称";
-            this.CUSTOMERDESC.Name = "CUSTOMERDESC";
-            this.CUSTOMERDESC.ReadOnly = true;
-            this.CUSTOMERDESC.Width = 110;
-            // 
-            // AMOUNT
-            // 
-            this.AMOUNT.DataPropertyName = "AMOUNT";
-            this.AMOUNT.FilteringEnabled = false;
-            this.AMOUNT.HeaderText = "总数量";
-            this.AMOUNT.Name = "AMOUNT";
-            this.AMOUNT.ReadOnly = true;
-            this.AMOUNT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // dgvDetail
             // 
             this.dgvDetail.AllowUserToAddRows = false;
@@ -307,9 +206,108 @@ namespace Sorting.Dispatching.View
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // ROWID
+            // 
+            this.ROWID.DataPropertyName = "ROWID";
+            this.ROWID.HeaderText = "序号";
+            this.ROWID.Name = "ROWID";
+            this.ROWID.ReadOnly = true;
+            this.ROWID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ROWID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ROWID.Width = 60;
+            // 
+            // ORDERDATE
+            // 
+            this.ORDERDATE.DataPropertyName = "ORDERDATE";
+            this.ORDERDATE.FilteringEnabled = false;
+            this.ORDERDATE.HeaderText = "订单日期";
+            this.ORDERDATE.Name = "ORDERDATE";
+            this.ORDERDATE.ReadOnly = true;
+            this.ORDERDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // DELIVERYDATE
+            // 
+            this.DELIVERYDATE.DataPropertyName = "DELIVERYDATE";
+            this.DELIVERYDATE.FilteringEnabled = false;
+            this.DELIVERYDATE.HeaderText = "送货日期";
+            this.DELIVERYDATE.Name = "DELIVERYDATE";
+            this.DELIVERYDATE.ReadOnly = true;
+            this.DELIVERYDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // BATCHNO
+            // 
+            this.BATCHNO.DataPropertyName = "BATCHNO";
+            this.BATCHNO.FilteringEnabled = false;
+            this.BATCHNO.HeaderText = "批次号";
+            this.BATCHNO.Name = "BATCHNO";
+            this.BATCHNO.ReadOnly = true;
+            this.BATCHNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BATCHNO.Width = 110;
+            // 
+            // SORTID
+            // 
+            this.SORTID.DataPropertyName = "SORTID";
+            this.SORTID.FilteringEnabled = false;
+            this.SORTID.HeaderText = "配送顺序";
+            this.SORTID.Name = "SORTID";
+            this.SORTID.ReadOnly = true;
+            this.SORTID.Visible = false;
+            // 
+            // ORDERID
+            // 
+            this.ORDERID.DataPropertyName = "ORDERID";
+            this.ORDERID.FilteringEnabled = false;
+            this.ORDERID.HeaderText = "订单号";
+            this.ORDERID.Name = "ORDERID";
+            this.ORDERID.ReadOnly = true;
+            this.ORDERID.Width = 140;
+            // 
+            // ROUTECODE
+            // 
+            this.ROUTECODE.DataPropertyName = "ROUTECODE";
+            this.ROUTECODE.FilteringEnabled = false;
+            this.ROUTECODE.HeaderText = "线路代码";
+            this.ROUTECODE.Name = "ROUTECODE";
+            this.ROUTECODE.ReadOnly = true;
+            // 
+            // ROUTENAME
+            // 
+            this.ROUTENAME.DataPropertyName = "ROUTENAME";
+            this.ROUTENAME.FilteringEnabled = false;
+            this.ROUTENAME.HeaderText = "线路名称";
+            this.ROUTENAME.Name = "ROUTENAME";
+            this.ROUTENAME.ReadOnly = true;
+            this.ROUTENAME.Width = 150;
+            // 
+            // CUSTOMERCODE
+            // 
+            this.CUSTOMERCODE.DataPropertyName = "CUSTOMERCODE";
+            this.CUSTOMERCODE.FilteringEnabled = false;
+            this.CUSTOMERCODE.HeaderText = "客户代码";
+            this.CUSTOMERCODE.Name = "CUSTOMERCODE";
+            this.CUSTOMERCODE.ReadOnly = true;
+            // 
+            // CUSTOMERDESC
+            // 
+            this.CUSTOMERDESC.DataPropertyName = "CUSTOMERNAME";
+            this.CUSTOMERDESC.FilteringEnabled = false;
+            this.CUSTOMERDESC.HeaderText = "客户名称";
+            this.CUSTOMERDESC.Name = "CUSTOMERDESC";
+            this.CUSTOMERDESC.ReadOnly = true;
+            this.CUSTOMERDESC.Width = 140;
+            // 
+            // AMOUNT
+            // 
+            this.AMOUNT.DataPropertyName = "AMOUNT";
+            this.AMOUNT.FilteringEnabled = false;
+            this.AMOUNT.HeaderText = "总数量";
+            this.AMOUNT.Name = "AMOUNT";
+            this.AMOUNT.ReadOnly = true;
+            this.AMOUNT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // ORDERDETAILID
             // 
-            this.ORDERDETAILID.DataPropertyName = "ORDERDETAILID";
+            this.ORDERDETAILID.DataPropertyName = "RowID";
             this.ORDERDETAILID.HeaderText = "流水号";
             this.ORDERDETAILID.Name = "ORDERDETAILID";
             this.ORDERDETAILID.ReadOnly = true;
@@ -323,6 +321,7 @@ namespace Sorting.Dispatching.View
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 140;
             // 
             // PRODUCTCODE
             // 

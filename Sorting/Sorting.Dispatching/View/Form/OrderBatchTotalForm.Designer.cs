@@ -213,7 +213,7 @@ namespace Sorting.Dispatching.View
             this.Column3.DataPropertyName = "AMOUNT";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "分拣总量(条)";
+            this.Column3.HeaderText = "分拣总量";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
@@ -232,27 +232,27 @@ namespace Sorting.Dispatching.View
             this.Column4.DataPropertyName = "TAMOUNT";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.HeaderText = "通道机总量(条)";
+            this.Column4.HeaderText = "A组总量";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 120;
+            this.Column4.Width = 80;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "LAMOUNT";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column5.HeaderText = "立式机总量(条)";
+            this.Column5.HeaderText = "B组总量";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 120;
+            this.Column5.Width = 80;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "EFFICIENCY";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column6.HeaderText = "分拣效率(条/小时)";
+            this.Column6.HeaderText = "分拣效率(盒/小时)";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Width = 130;
@@ -367,6 +367,7 @@ namespace Sorting.Dispatching.View
             this.btnPrint.Text = "打印";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Visible = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // OrderBatchTotalForm
@@ -395,6 +396,12 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.BindingSource bsMaster;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PackNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELTYPE;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -406,12 +413,6 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SORTNO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PackNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHANNELTYPE;
-        private System.Windows.Forms.Button btnPrint;
 
     }
 }

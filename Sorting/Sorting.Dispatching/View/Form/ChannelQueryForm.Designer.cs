@@ -36,14 +36,6 @@ namespace Sorting.Dispatching.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMain = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnExchange = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnPreview = new System.Windows.Forms.Button();
             this.Column10 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column3 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column7 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -54,6 +46,14 @@ namespace Sorting.Dispatching.View
             this.Column6 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column9 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column8 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lEDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExchange = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -64,9 +64,9 @@ namespace Sorting.Dispatching.View
             // 
             // pnlTool
             // 
+            this.pnlTool.Controls.Add(this.btnExit);
             this.pnlTool.Controls.Add(this.btnPreview);
             this.pnlTool.Controls.Add(this.btnPrint);
-            this.pnlTool.Controls.Add(this.btnExit);
             this.pnlTool.Controls.Add(this.btnExchange);
             this.pnlTool.Controls.Add(this.btnRefresh);
             this.pnlTool.Size = new System.Drawing.Size(868, 53);
@@ -121,90 +121,6 @@ namespace Sorting.Dispatching.View
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(868, 425);
             this.dgvMain.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lEDToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
-            // 
-            // lEDToolStripMenuItem
-            // 
-            this.lEDToolStripMenuItem.Name = "lEDToolStripMenuItem";
-            this.lEDToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.lEDToolStripMenuItem.Text = "LED重新发送";
-            this.lEDToolStripMenuItem.Click += new System.EventHandler(this.lEDToolStripMenuItem_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExit.Image = global::Sorting.Dispatching.Properties.Resources.close;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(96, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(48, 51);
-            this.btnExit.TabIndex = 15;
-            this.btnExit.Text = "退出";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnExchange
-            // 
-            this.btnExchange.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExchange.Image = global::Sorting.Dispatching.Properties.Resources.go;
-            this.btnExchange.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExchange.Location = new System.Drawing.Point(48, 0);
-            this.btnExchange.Name = "btnExchange";
-            this.btnExchange.Size = new System.Drawing.Size(48, 51);
-            this.btnExchange.TabIndex = 14;
-            this.btnExchange.Text = "交换";
-            this.btnExchange.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExchange.UseVisualStyleBackColor = true;
-            this.btnExchange.Click += new System.EventHandler(this.btnExchange_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRefresh.Image = global::Sorting.Dispatching.Properties.Resources.refresh;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(48, 51);
-            this.btnRefresh.TabIndex = 13;
-            this.btnRefresh.Text = "刷新";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPrint.Image = global::Sorting.Dispatching.Properties.Resources.printer;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(144, 0);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(48, 51);
-            this.btnPrint.TabIndex = 16;
-            this.btnPrint.Text = "打印";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnPreview
-            // 
-            this.btnPreview.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPreview.Image = global::Sorting.Dispatching.Properties.Resources.printer;
-            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPreview.Location = new System.Drawing.Point(192, 0);
-            this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(48, 51);
-            this.btnPreview.TabIndex = 17;
-            this.btnPreview.Text = "预览";
-            this.btnPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPreview.UseVisualStyleBackColor = true;
-            this.btnPreview.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // Column10
             // 
@@ -307,6 +223,91 @@ namespace Sorting.Dispatching.View
             this.Column8.ReadOnly = true;
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lEDToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
+            // 
+            // lEDToolStripMenuItem
+            // 
+            this.lEDToolStripMenuItem.Name = "lEDToolStripMenuItem";
+            this.lEDToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.lEDToolStripMenuItem.Text = "LED重新发送";
+            this.lEDToolStripMenuItem.Click += new System.EventHandler(this.lEDToolStripMenuItem_Click);
+            // 
+            // btnExchange
+            // 
+            this.btnExchange.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExchange.Image = global::Sorting.Dispatching.Properties.Resources.go;
+            this.btnExchange.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExchange.Location = new System.Drawing.Point(48, 0);
+            this.btnExchange.Name = "btnExchange";
+            this.btnExchange.Size = new System.Drawing.Size(48, 51);
+            this.btnExchange.TabIndex = 14;
+            this.btnExchange.Text = "交换";
+            this.btnExchange.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExchange.UseVisualStyleBackColor = true;
+            this.btnExchange.Click += new System.EventHandler(this.btnExchange_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefresh.Image = global::Sorting.Dispatching.Properties.Resources.refresh;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(48, 51);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrint.Image = global::Sorting.Dispatching.Properties.Resources.printer;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrint.Location = new System.Drawing.Point(96, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(48, 51);
+            this.btnPrint.TabIndex = 16;
+            this.btnPrint.Text = "打印";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPreview.Image = global::Sorting.Dispatching.Properties.Resources.printer;
+            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPreview.Location = new System.Drawing.Point(144, 0);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(48, 51);
+            this.btnPreview.TabIndex = 17;
+            this.btnPreview.Text = "预览";
+            this.btnPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExit.Image = global::Sorting.Dispatching.Properties.Resources.close;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(192, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 51);
+            this.btnExit.TabIndex = 18;
+            this.btnExit.Text = "退出";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // ChannelQueryForm
             // 
             this.ClientSize = new System.Drawing.Size(868, 478);
@@ -326,7 +327,6 @@ namespace Sorting.Dispatching.View
 
         private System.Windows.Forms.Button btnExchange;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.BindingSource bsMain;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -343,5 +343,6 @@ namespace Sorting.Dispatching.View
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column6;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column9;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column8;
+        private System.Windows.Forms.Button btnExit;
     }
 }

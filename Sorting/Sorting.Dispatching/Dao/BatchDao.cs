@@ -324,6 +324,26 @@ namespace Sorting.Dispatching.Dao
                 sql = string.Format("UPDATE CMD_BatchDetail SET ENDTIME=GETDATE() WHERE BREAKTYPE='{0}' AND ENDTIME IS NULL AND BATCHNO IN(SELECT TOP 1 BATCHNO FROM SC_ORDER_MASTER)", BreakType);
             ExecuteNonQuery(sql);
         }
+        internal void InsertBatchDetail(string AlarmNo,string BreakType, string ChannelName)
+        {
+            string sql = string.Format("INSERT INTO CMD_BatchDetail(BatchNo, AlarmNo,BreakType, BreakName,ChannelCode,ChannelName, BeginTime) " +
+                             "SELECT ISNULL((SELECT TOP 1 BATCHNO FROM SC_ORDER_MASTER),''),'{0}','{1}',ISNULL((SELECT BREAKNAME FROM CMD_BREAKTYPE WHERE BREAKTYPE='{1}'),'')," +
+                             "ISNULL((SELECT ChannelCode FROM CMD_Channel WHERE ChannelName='{2}'),''),'{2}',GETDATE() " + 
+                             "Where Not exists(select * from CMD_BatchDetail where AlarmNo='{0}' AND Status='0' AND " +
+                             "ENDTIME IS NULL AND BATCHNO IN(SELECT TOP 1 BATCHNO FROM SC_ORDER_MASTER))", AlarmNo,BreakType, ChannelName);
+
+            ExecuteNonQuery(sql);
+        }
+        internal void UpdateBatchDetail()
+        {
+            string sql = string.Format("UPDATE CMD_BatchDetail SET Status='1', ENDTIME=GETDATE() WHERE Status='0' AND ENDTIME IS NULL AND BATCHNO IN(SELECT TOP 1 BATCHNO FROM SC_ORDER_MASTER)");
+            ExecuteNonQuery(sql);
+        }
+        internal void UpdateBatchDetail(string AlarmNo)
+        {
+            string sql = string.Format("UPDATE CMD_BatchDetail SET Status='1', ENDTIME=GETDATE() WHERE Status='0' AND AlarmNo not in('{0}') AND ENDTIME IS NULL AND BATCHNO IN(SELECT TOP 1 BATCHNO FROM SC_ORDER_MASTER)", AlarmNo);
+            ExecuteNonQuery(sql);
+        }
         internal DataTable GetBatchDetail(string BatchNo)
         {
             string sql = string.Format("SELECT ROW_NUMBER() OVER (ORDER BY BATCHNO) ROWID,BATCHNO, BREAKTYPE, BREAKNAME, CONVERT(VARCHAR(30),BEGINTIME,120) BEGINTIME, CONVERT(VARCHAR(30),ENDTIME,120) ENDTIME,DATEDIFF(minute, BEGINTIME, ENDTIME) BREAKTIME FROM CMD_BatchDetail WHERE BATCHNO='{0}'", BatchNo);

@@ -39,7 +39,16 @@ namespace Sorting.Dispatching.Dao
             string sql = "SELECT COUNT(*) FROM CMD_Product " + where;
             return (int)ExecuteScalar(sql);
         }
-
+        public void UpdateEntity(string cigaretteCode, string cigaretteName, string showName, string isAbnormity, string barcode)
+        {
+            SqlCreate sqlCreate = new SqlCreate("CMD_Product", SqlType.UPDATE);
+            sqlCreate.AppendQuote("ProductNAME", cigaretteName);
+            sqlCreate.AppendQuote("ShortName", showName);
+            sqlCreate.AppendQuote("ISABNORMITY", isAbnormity);
+            sqlCreate.AppendQuote("BARCODE", barcode);
+            sqlCreate.AppendWhereQuote("ProductCODE", cigaretteCode);
+            ExecuteNonQuery(sqlCreate.GetSQL());
+        }
         public void UpdateEntity(string cigaretteCode, string cigaretteName, string showName, string isAbnormity, string barcode,int packagenum)
         {
             SqlCreate sqlCreate = new SqlCreate("CMD_Product", SqlType.UPDATE);

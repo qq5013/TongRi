@@ -51,7 +51,7 @@
             // lblBatchNo
             // 
             this.lblBatchNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblBatchNo.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblBatchNo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblBatchNo.ForeColor = System.Drawing.Color.Black;
             this.lblBatchNo.Location = new System.Drawing.Point(5, 2);
             this.lblBatchNo.Name = "lblBatchNo";
@@ -63,7 +63,7 @@
             // 
             this.Label8.AutoSize = true;
             this.Label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label8.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Label8.ForeColor = System.Drawing.Color.Black;
             this.Label8.Location = new System.Drawing.Point(133, 2);
             this.Label8.Name = "Label8";
@@ -76,7 +76,7 @@
             // 
             this.lblDispatching.AutoSize = true;
             this.lblDispatching.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDispatching.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDispatching.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDispatching.ForeColor = System.Drawing.Color.Black;
             this.lblDispatching.Location = new System.Drawing.Point(389, 2);
             this.lblDispatching.Name = "lblDispatching";
@@ -89,7 +89,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(5, 34);
             this.label1.Name = "label1";
@@ -102,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(5, 66);
             this.label2.Name = "label2";
@@ -115,7 +115,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(5, 98);
             this.label3.Name = "label3";
@@ -127,7 +127,7 @@
             // lblRoute
             // 
             this.lblRoute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRoute.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRoute.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblRoute.ForeColor = System.Drawing.Color.Black;
             this.lblRoute.Location = new System.Drawing.Point(133, 66);
             this.lblRoute.Name = "lblRoute";
@@ -139,7 +139,7 @@
             // lblCompleteRoute
             // 
             this.lblCompleteRoute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCompleteRoute.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCompleteRoute.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCompleteRoute.ForeColor = System.Drawing.Color.Black;
             this.lblCompleteRoute.Location = new System.Drawing.Point(133, 34);
             this.lblCompleteRoute.Name = "lblCompleteRoute";
@@ -151,7 +151,7 @@
             // lblTotalRoute
             // 
             this.lblTotalRoute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalRoute.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTotalRoute.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTotalRoute.ForeColor = System.Drawing.Color.Black;
             this.lblTotalRoute.Location = new System.Drawing.Point(133, 98);
             this.lblTotalRoute.Name = "lblTotalRoute";
@@ -163,7 +163,7 @@
             // lblCustomer
             // 
             this.lblCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCustomer.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCustomer.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCustomer.ForeColor = System.Drawing.Color.Black;
             this.lblCustomer.Location = new System.Drawing.Point(261, 66);
             this.lblCustomer.Name = "lblCustomer";
@@ -175,7 +175,7 @@
             // lblTotalCustomer
             // 
             this.lblTotalCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalCustomer.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTotalCustomer.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTotalCustomer.ForeColor = System.Drawing.Color.Black;
             this.lblTotalCustomer.Location = new System.Drawing.Point(261, 98);
             this.lblTotalCustomer.Name = "lblTotalCustomer";
@@ -187,7 +187,7 @@
             // lblCompleteCustomer
             // 
             this.lblCompleteCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCompleteCustomer.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCompleteCustomer.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCompleteCustomer.ForeColor = System.Drawing.Color.Black;
             this.lblCompleteCustomer.Location = new System.Drawing.Point(261, 34);
             this.lblCompleteCustomer.Name = "lblCompleteCustomer";
@@ -200,7 +200,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(261, 2);
             this.label7.Name = "label7";
@@ -212,7 +212,7 @@
             // lblQuantity
             // 
             this.lblQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuantity.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Black;
             this.lblQuantity.Location = new System.Drawing.Point(389, 66);
             this.lblQuantity.Name = "lblQuantity";
@@ -224,7 +224,7 @@
             // lblTotalQuantity
             // 
             this.lblTotalQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalQuantity.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTotalQuantity.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTotalQuantity.ForeColor = System.Drawing.Color.Black;
             this.lblTotalQuantity.Location = new System.Drawing.Point(389, 98);
             this.lblTotalQuantity.Name = "lblTotalQuantity";
@@ -236,7 +236,7 @@
             // lblCompleteQuantity
             // 
             this.lblCompleteQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCompleteQuantity.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCompleteQuantity.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCompleteQuantity.ForeColor = System.Drawing.Color.Black;
             this.lblCompleteQuantity.Location = new System.Drawing.Point(389, 34);
             this.lblCompleteQuantity.Name = "lblCompleteQuantity";
@@ -271,6 +271,7 @@
             this.pnlMain.Controls.Add(this.label2, 0, 2);
             this.pnlMain.Controls.Add(this.label1, 0, 1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.RowCount = 4;

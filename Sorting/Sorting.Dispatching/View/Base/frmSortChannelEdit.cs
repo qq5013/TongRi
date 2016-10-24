@@ -46,7 +46,8 @@ namespace Sorting.Dispatching.View.Base
 
             ProductFields.Add("ProductCODE", "产品编号");
             ProductFields.Add("ProductNAME", "产品名称");
-            ProductFields.Add("ISABNORMITY", "是否异型");
+            ProductFields.Add("FactoryName", "供应商");
+            ProductFields.Add("Width", "宽度");
             ProductFields.Add("BARCODE", "条形码");
 
             this.txtChannelCode.Text = channelcode;
@@ -62,7 +63,7 @@ namespace Sorting.Dispatching.View.Base
             int.TryParse(this.txtChannelOrder.Text.Trim(), out channelOrder);
             if (channelOrder <= 0)
             {
-                GridUtil.ShowInfo("排烟顺序请输入正确的数字！");
+                GridUtil.ShowInfo("排列顺序请输入正确的数字！");
                 this.txtChannelOrder.Focus();
                 return;
             }

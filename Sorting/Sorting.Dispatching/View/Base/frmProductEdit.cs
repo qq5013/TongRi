@@ -12,14 +12,14 @@ namespace Sorting.Dispatching.View.Base
 {
     public partial class frmProductEdit : Form
     {
-        public string CigaretteCode
+        public string ProductCode
         {
-            get { return this.txtCigaretteCode.Text; }
+            get { return this.txtProductCode.Text; }
         }
 
-        public string CigaretteName
+        public string ProductName
         {
-            get { return this.txtCigaretteName.Text; }
+            get { return this.txtProductName.Text; }
         }
         public string ShowName
         {
@@ -33,37 +33,33 @@ namespace Sorting.Dispatching.View.Base
         {
             get { return this.txtBarcode.Text.Trim(); }
         }
-        public int PackageNum
-        {
-            get { return int.Parse(this.txtPackageNum.Text.Trim()); }
-        }
+
         public frmProductEdit()
         {
             InitializeComponent();
         }
-        public frmProductEdit(string cigaretteCode, string cigaretteName, string shortName,string isAbnormity,string barcode,string packNum)
+        public frmProductEdit(string cigaretteCode, string cigaretteName, string shortName,string isAbnormity,string barcode)
         {
             InitializeComponent();
-            this.txtCigaretteCode.Text = cigaretteCode;
-            this.txtCigaretteName.Text = cigaretteName;
+            this.txtProductCode.Text = cigaretteCode;
+            this.txtProductName.Text = cigaretteName;
             this.txtShowName.Text = shortName;
             this.cmbIsAbnormity.SelectedIndex = int.Parse(isAbnormity);
             this.txtBarcode.Text = barcode;
-            this.txtPackageNum.Text = packNum;
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (txtCigaretteCode.Text.Trim().Length == 0)
+            if (txtProductCode.Text.Trim().Length == 0)
             {
-                GridUtil.ShowInfo("卷烟代码不能为空。");
-                this.txtCigaretteCode.Focus();
+                GridUtil.ShowInfo("产品编码不能为空。");
+                this.txtProductCode.Focus();
                 return;
             }
 
-            if (txtCigaretteName.Text.Trim().Length == 0)
+            if (txtProductName.Text.Trim().Length == 0)
             {
-                GridUtil.ShowInfo("卷烟名称不能为空。");
-                txtCigaretteName.Focus();
+                GridUtil.ShowInfo("产品名称不能为空。");
+                txtProductName.Focus();
                 return;
             }
 

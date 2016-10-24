@@ -66,8 +66,8 @@ namespace Sorting.Dispatching.View
                             //else
                             //    this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeDataB", data);
                             //MCP.Logger.Info(string.Format("{0}线{1}号货仓与{2}号货仓交换！",Convert.ToInt32(channeltable.Rows[0]["CHANNELGROUP"]) == 1?"A":"B", sourceChannelAddress, targetChannelAddress));
-                            this.mainFrame.Context.ProcessDispatcher.WriteToProcess("LEDProcess", "ChannelCode", channelCode);
-                            this.mainFrame.Context.ProcessDispatcher.WriteToProcess("LEDProcess", "ChannelCode", channelDailog.SelectedChannelCode);
+                            //this.mainFrame.Context.ProcessDispatcher.WriteToProcess("LEDProcess", "ChannelCode", channelCode);
+                            //this.mainFrame.Context.ProcessDispatcher.WriteToProcess("LEDProcess", "ChannelCode", channelDailog.SelectedChannelCode);
                         }
                         DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn.RemoveFilter(dgvMain);
                         bsMain.DataSource = channelDal.GetChannel();
@@ -88,8 +88,8 @@ namespace Sorting.Dispatching.View
         {
             if (bsMain.DataSource == null)
                 bsMain.DataSource = channelDal.GetChannel();
-            //OpView.ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
-            OpView.ExcelHelper.DoExport((DataTable)bsMain.DataSource);
+            //ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
+            ExcelHelper.DoExport((DataTable)bsMain.DataSource);
         }
 
         private void btnReport_Click(object sender, EventArgs e)

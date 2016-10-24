@@ -28,7 +28,7 @@
       <TextObject Name="Text14" Left="406.35" Top="9.45" Width="170.1" Height="18.9" Text="产品名称" Font="宋体, 9pt"/>
       <TextObject Name="Text16" Left="576.45" Top="9.45" Width="56.7" Height="18.9" Text="数量" Font="宋体, 9pt"/>
       <TextObject Name="Text18" Left="633.15" Top="9.45" Width="47.25" Height="18.9" Text="件数" Font="宋体, 9pt"/>
-      <TextObject Name="Text20" Left="680.4" Top="9.45" Width="37.8" Height="18.9" Text="零条" Font="宋体, 9pt"/>
+      <TextObject Name="Text20" Left="680.4" Top="9.45" Width="37.8" Height="18.9" Text="尾数" Font="宋体, 9pt"/>
     </PageHeaderBand>
     <DataBand Name="Data1" Top="74.15" Width="718.2" Height="28.35" Guides="18.9" DataSource="Channel">
       <TextObject Name="Text1" Width="94.5" Height="18.9" Text="[Channel.BATCHNO]" Font="宋体, 9pt"/>

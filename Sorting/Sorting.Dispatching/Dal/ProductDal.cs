@@ -52,12 +52,12 @@ namespace Sorting.Dispatching.Dal
             return count;
         }
 
-        public void Save(string cigaretteCode, string cigaretteName,string showName,string isAbnormity, string barcode,int packagenum)
+        public void Save(string cigaretteCode, string cigaretteName,string showName,string isAbnormity, string barcode)
         {
             using (PersistentManager pm = new PersistentManager())
             {
                 CigaretteDao cigaretteDao = new CigaretteDao();
-                cigaretteDao.UpdateEntity(cigaretteCode, cigaretteName, showName, isAbnormity, barcode, packagenum);
+                cigaretteDao.UpdateEntity(cigaretteCode, cigaretteName, showName, isAbnormity, barcode);
             }
         }
     }

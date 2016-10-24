@@ -272,6 +272,30 @@ namespace Sorting.Dispatching.Dal
                 batchDao.InsertBatchDetail(BreakType, Flag);
             }
         }
+        public void InsertBatchDetail(string AlarmNo,string BreakType, string ChannelName)
+        {
+            using (PersistentManager pm = new PersistentManager())
+            {
+                BatchDao batchDao = new BatchDao();
+                batchDao.InsertBatchDetail(AlarmNo, BreakType, ChannelName);
+            }
+        }
+        public void UpdateBatchDetail()
+        {
+            using (PersistentManager pm = new PersistentManager())
+            {
+                BatchDao batchDao = new BatchDao();
+                batchDao.UpdateBatchDetail();
+            }
+        }
+        public void UpdateBatchDetail(string AlarmNo)
+        {
+            using (PersistentManager pm = new PersistentManager())
+            {
+                BatchDao batchDao = new BatchDao();
+                batchDao.UpdateBatchDetail(AlarmNo);
+            }
+        }
         public DataTable GetBatchDetail(string BatchNo)
         {            
             DataTable table = null;

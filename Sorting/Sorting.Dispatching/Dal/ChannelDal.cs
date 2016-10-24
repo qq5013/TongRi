@@ -184,17 +184,17 @@ namespace Sorting.Dispatching.Dal
                     orderDao.UpdateChannelBalance(batchNo, "0000", targetChannel, targetChannelTable.Rows[0]["CHANNELNAME"].ToString(), Convert.ToInt32(targetChannelTable.Rows[0]["CHANNELORDER"]));
 
                     //补货目标货仓也要交换
-                    supplyDao.UpdateChannel(batchNo,sourceChannel, "0000");
-                    supplyDao.UpdateChannel(batchNo,targetChannel, sourceChannel);
-                    supplyDao.UpdateChannel(batchNo,"0000", targetChannel);
+                    //supplyDao.UpdateChannel(batchNo,sourceChannel, "0000");
+                    //supplyDao.UpdateChannel(batchNo,targetChannel, sourceChannel);
+                    //supplyDao.UpdateChannel(batchNo,"0000", targetChannel);
                     //补货目标地址变更
-                    supplyDao.UpdateStockChannelUsed(batchNo, sourceChannel, "0000");
-                    supplyDao.UpdateStockChannelUsed(batchNo, targetChannel, sourceChannel);
-                    supplyDao.UpdateStockChannelUsed(batchNo, "0000", targetChannel);
+                    //supplyDao.UpdateStockChannelUsed(batchNo, sourceChannel, "0000");
+                    //supplyDao.UpdateStockChannelUsed(batchNo, targetChannel, sourceChannel);
+                    //supplyDao.UpdateStockChannelUsed(batchNo, "0000", targetChannel);
                     //补货目标地址变更
-                    supplyDao.UpdateStockChannel(batchNo, sourceChannel, "0000");
-                    supplyDao.UpdateStockChannel(batchNo, targetChannel, sourceChannel);
-                    supplyDao.UpdateStockChannel(batchNo, "0000", targetChannel);
+                    //supplyDao.UpdateStockChannel(batchNo, sourceChannel, "0000");
+                    //supplyDao.UpdateStockChannel(batchNo, targetChannel, sourceChannel);
+                    //supplyDao.UpdateStockChannel(batchNo, "0000", targetChannel);
                     pm.Commit();
                     return true;
                 }

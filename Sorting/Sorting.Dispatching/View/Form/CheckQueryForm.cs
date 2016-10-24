@@ -54,8 +54,8 @@ namespace Sorting.Dispatching.View
         {
             if (bsMain.DataSource == null)
                 return;
-            //OpView.ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
-            OpView.ExcelHelper.DoExport((DataTable)bsMain.DataSource);
+            //ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
+            ExcelHelper.DoExport((DataTable)bsMain.DataSource);
         }
     }
 }

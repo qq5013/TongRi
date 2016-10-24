@@ -69,12 +69,12 @@ namespace Sorting.Dispatching.View.Base
             {
                 DataGridViewRow row = dgvMain.SelectedRows[0];
 
-                frmProductEdit f = new frmProductEdit(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString(), row.Cells[7].Value.ToString());
+                frmProductEdit f = new frmProductEdit(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[5].Value.ToString(), row.Cells[6].Value.ToString());
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
-                        dal.Save(f.CigaretteCode, f.CigaretteName,f.ShowName,f.IsAbnormity,f.Barcode,f.PackageNum);
+                        dal.Save(f.ProductCode, f.ProductName,f.ShowName,f.IsAbnormity,f.Barcode);
                         bsMain.DataSource = dal.GetAll();
                     }
                     catch (Exception exp)
@@ -117,6 +117,13 @@ namespace Sorting.Dispatching.View.Base
         private void dgvMain_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 5)
+            {
+                if (e.Value.ToString() == "0")
+                    e.Value = "否";
+                else
+                    e.Value = "是";
+            }
+            else if (e.ColumnIndex == 13)
             {
                 if (e.Value.ToString() == "0")
                     e.Value = "否";

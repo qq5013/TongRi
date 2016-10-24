@@ -17,6 +17,11 @@ namespace Sorting.Dispatching.View
         public InitialOrderTotalForm()
         {
             InitializeComponent();
+            this.ORDERDATE.FilteringEnabled = true;
+            this.BATCHNO.FilteringEnabled = true;
+            this.PRODUCTCODE.FilteringEnabled = true;
+            this.PRODUCTNAME.FilteringEnabled = true;
+            
             //this.dgvDetail.AutoGenerateColumns = false;
         }
 
@@ -42,8 +47,8 @@ namespace Sorting.Dispatching.View
         {
             if (bsMaster.DataSource == null)
                 bsMaster.DataSource = orderDal.FindDownloadTotal();
-            //OpView.ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
-            OpView.ExcelHelper.DoExport((DataTable)bsMaster.DataSource);
+            //ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
+            ExcelHelper.DoExport((DataTable)bsMaster.DataSource);
         }
     }
 }

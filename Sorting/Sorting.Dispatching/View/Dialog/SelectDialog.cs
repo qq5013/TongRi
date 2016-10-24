@@ -43,6 +43,9 @@ namespace Sorting.Dispatching.View
             }
             dgvMain.MultiSelect = isMultiSelect;
             bsMain.DataSource = table;
+
+            dgvMain.Columns[1].Width = 120;
+            dgvMain.Columns[2].Width = 150;       
         }
 
         private void dgvMain_MouseDoubleClick(object sender, MouseEventArgs e)

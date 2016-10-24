@@ -69,7 +69,7 @@ namespace Sorting.Dispatching.View.Base
             {
                 DataGridViewRow row = dgvMain.SelectedRows[0];
 
-                frmRouteEdit f = new frmRouteEdit(row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());
+                frmRouteEdit f = new frmRouteEdit(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     try
@@ -115,7 +115,7 @@ namespace Sorting.Dispatching.View.Base
         }
         private void dgvMain_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 3)
             {
                 if (e.Value.ToString() == "1")
                     e.Value = "是";

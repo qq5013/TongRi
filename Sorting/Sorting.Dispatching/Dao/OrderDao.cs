@@ -593,7 +593,7 @@ namespace Sorting.Dispatching.Dao
         }
         public DataTable GetOrderDetail(string OrderId)
         {
-            string sql = string.Format("SELECT ROW_NUMBER() OVER(ORDER BY B.CHANNELTYPE DESC,B.CHANNELADDRESS,A.PRODUCTCODE) ROWID,A.SORTNO, A.PACKNO,ORDERID, B.CHANNELNAME, " +
+            string sql = string.Format("SELECT ROW_NUMBER() OVER(ORDER BY B.CHANNELTYPE DESC,B.CHANNELADDRESS,A.PRODUCTCODE) ROWID,A.SORTNO, ORDERID, B.CHANNELNAME, " +
                                             " CASE B.CHANNELTYPE WHEN '2' THEN '立式机' WHEN '5' THEN '立式机' ELSE '通道机' END CHANNELTYPE, " +
                                             " A.PRODUCTCODE, A.PRODUCTNAME, A.QUANTITY ,(CASE E.ISABNORMITY WHEN 0 THEN '否' ELSE '是' END) ISABNORMITY, " +
                                             " CASE WHEN A.CHANNELGROUP=1 THEN 'A线' ELSE 'B线' END  CHANNELLINE " +
@@ -727,6 +727,20 @@ namespace Sorting.Dispatching.Dao
             return ExecuteScalar(string.Format(sql, channelType=="3"?"":"1")).ToString();
         }
         /// <summary>
+        /// 根据订单ID和A线或者B线查询换户的流水号
+        /// </summary>
+        /// <param name="orderID">订单ID</param>
+        /// <param name="channelGroup">A线或者B线</param>
+        /// <returns>返回一个换户的流水号</returns>
+        public DataTable FindMaxSortNoChannelAddress()
+        {
+            string sql = @"select top 1 sortno,CMD_Channel.ChannelAddress from SC_ORDER_DETAIL
+                           inner join CMD_Channel on SC_ORDER_DETAIL.CHANNELCODE =CMD_Channel.ChannelCode
+                           where SC_ORDER_DETAIL.QUANTITY>0
+                           order by sortno desc,SC_ORDER_DETAIL.CHANNELCODE desc";
+            return ExecuteQuery(sql).Tables[0];
+        }
+        /// <summary>
         /// 查询本分拣线组是否结束
         /// </summary>
         /// <param name="channelGroup">A线或者B线</param>
@@ -803,11 +817,11 @@ namespace Sorting.Dispatching.Dao
         {
             string sql = "SELECT A.CHANNELADDRESS,A.CHANNELCODE, A.CHANNELTYPE, ISNULL(B.QUANTITY,0) QUANTITY,ISNULL(C.QUANTITY,0) ORDERQUANTITY,D.SORTNO MAXSORTNO," +
                          "(SELECT TOP 1 CHANNELADDRESS FROM SC_ORDER_DETAIL INNER JOIN SC_CHANNELUSED ON SC_ORDER_DETAIL.BATCHNO=SC_CHANNELUSED.BATCHNO AND SC_ORDER_DETAIL.CHANNELCODE=SC_CHANNELUSED.CHANNELCODE " +
-                         "WHERE SC_ORDER_DETAIL.QUANTITY>0 AND SC_CHANNELUSED.GROUPNO={2} ORDER BY SC_ORDER_DETAIL.SORTNO DESC,SC_ORDER_DETAIL.CHANNELCODE DESC) LASTCHANNELADDRESS" +
+                         "WHERE SC_ORDER_DETAIL.SORTNO='{0}' AND SC_ORDER_DETAIL.QUANTITY>0 AND SC_CHANNELUSED.GROUPNO={2} ORDER BY SC_ORDER_DETAIL.SORTNO DESC,SC_ORDER_DETAIL.CHANNELCODE DESC) LASTCHANNELADDRESS" +
                 " FROM SC_CHANNELUSED A " +
                 " INNER JOIN (SELECT BATCHNO,SORTNO,CHANNELCODE,SUM(QUANTITY) QUANTITY FROM SC_ORDER_DETAIL GROUP BY BATCHNO,SORTNO,CHANNELCODE) B " +
                         " ON A.BATCHNO=B.BATCHNO AND A.CHANNELCODE = B.CHANNELCODE AND B.SORTNO = '{0}' " +
-                " INNER JOIN (SELECT BATCHNO,SORTNO,SUM(QUANTITY) QUANTITY FROM SC_ORDER_DETAIL GROUP BY BATCHNO,SORTNO) C " +
+                " INNER JOIN (SELECT BATCHNO,SORTNO,SUM(QUANTITY) QUANTITY FROM SC_ORDER_DETAIL where GroupNo={2} GROUP BY BATCHNO,SORTNO) C " +
                         " ON A.BATCHNO=C.BATCHNO AND C.SORTNO = '{0}' " +
                 " INNER JOIN (SELECT BATCHNO,MAX(SORTNO) SORTNO FROM SC_ORDER_DETAIL GROUP BY BATCHNO) D " +
                         " ON A.BATCHNO=D.BATCHNO " +                
@@ -868,7 +882,7 @@ namespace Sorting.Dispatching.Dao
             sql = "SELECT COUNT(DISTINCT CUSTOMERCODE) CUSTOMERNUM, COUNT(DISTINCT ROUTECODE) ROUTENUM, " +
                          " (SELECT ISNULL(SUM(QUANTITY),0) FROM SC_ORDER_MASTER WHERE FINISHEDTIME <= GETDATE() AND STATUS=1 ) QUANTITY, " +
                          " (SELECT ISNULL(SUM(QUANTITY1),0) FROM SC_ORDER_MASTER WHERE FINISHEDTIME1 <= GETDATE() AND STATUS1=1 ) QUANTITY1 " +
-                         " FROM SC_ORDER_MASTER WHERE FINISHEDTIME IS NOT NULL AND FINISHEDTIME1 IS NOT NULL";
+                         " FROM SC_ORDER_MASTER WHERE FINISHEDTIME1 IS NOT NULL";
             else
                 sql = "SELECT BATCHNO,COUNT(DISTINCT CUSTOMERCODE) CUSTOMERNUM, COUNT(DISTINCT ROUTECODE) ROUTENUM, " +
                         " ISNULL(SUM(QUANTITY),0) QUANTITY, ISNULL(SUM(QUANTITY1),0) QUANTITY1 " +
@@ -975,7 +989,7 @@ namespace Sorting.Dispatching.Dao
             //最后一个订单号
             if (sortNo == maxSortNo)
             {
-                sql = string.Format("UPDATE CMD_BATCH SET ENDSORTTIME=TMP.FINISHEDTIME FROM CMD_BATCH B INNER JOIN (SELECT BATCHNO,FINISHEDTIME FROM SC_ORDER_MASTER WHERE SORTNO={0}) TMP ON B.BATCHNO=TMP.BATCHNO",sortNo);
+                sql = string.Format("UPDATE CMD_BATCH SET ENDSORTTIME=TMP.FINISHEDTIME1 FROM CMD_BATCH B INNER JOIN (SELECT BATCHNO,FINISHEDTIME1 FROM SC_ORDER_MASTER WHERE SORTNO={0}) TMP ON B.BATCHNO=TMP.BATCHNO", sortNo);
                 ExecuteNonQuery(sql);
             }
 
@@ -983,7 +997,7 @@ namespace Sorting.Dispatching.Dao
             //最后一个订单号
             if (sortNo == "1")
             {
-                sql = string.Format("UPDATE CMD_BATCH SET BEGINSORTTIME=TMP.FINISHEDTIME FROM CMD_BATCH B INNER JOIN (SELECT BATCHNO,FINISHEDTIME FROM SC_ORDER_MASTER WHERE SORTNO={0}) TMP ON B.BATCHNO=TMP.BATCHNO", sortNo);
+                sql = string.Format("UPDATE CMD_BATCH SET BEGINSORTTIME=TMP.FINISHEDTIME1 FROM CMD_BATCH B INNER JOIN (SELECT BATCHNO,FINISHEDTIME1 FROM SC_ORDER_MASTER WHERE SORTNO={0}) TMP ON B.BATCHNO=TMP.BATCHNO", sortNo);
                 ExecuteNonQuery(sql);
             }
         }
@@ -1711,11 +1725,11 @@ namespace Sorting.Dispatching.Dao
         public DataSet GetSortingOrder()
         {
             string sql = "SELECT TOP 4 CUSTOMERNAME,ORDERID,SORTNO,AREANAME,ROUTENAME,QUANTITY FROM SC_ORDER_MASTER " +
-                         "WHERE (STATUS=0 OR STATUS1=0) ORDER BY SORTNO;SELECT * FROM V_SC_ORDER_DETAIL WHERE SORTNO IN " +
-                         "(SELECT TOP 4 SORTNO FROM SC_ORDER_MASTER WHERE (STATUS=0 OR STATUS1=0) ORDER BY SORTNO) ORDER BY CHANNELCODE";
+                         "WHERE STATUS1=0 ORDER BY SORTNO;SELECT * FROM V_SC_ORDER_DETAIL WHERE SORTNO IN " +
+                         "(SELECT TOP 4 SORTNO FROM SC_ORDER_MASTER WHERE STATUS1=0 ORDER BY SORTNO) ORDER BY CHANNELCODE";
 
             sql = "SELECT TOP 4 BATCHNO,CUSTOMERNAME,ORDERID,SORTNO,AREANAME,ROUTENAME,QUANTITY FROM SC_ORDER_MASTER " +
-                         "WHERE ((FINISHEDTIME IS NULL AND QUANTITY>0) OR (FINISHEDTIME1 IS NULL AND QUANTITY1>0)) ORDER BY BATCHNO,SORTNO";
+                         "WHERE FINISHEDTIME1 IS NULL AND QUANTITY1>0 ORDER BY BATCHNO,SORTNO";
             //sql = string.Format(sql, SortNo);
 
             DataSet ds = ExecuteQuery(sql);

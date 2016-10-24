@@ -41,8 +41,8 @@ namespace Sorting.Dispatching.View
         {
             if (bsMain.DataSource == null)
                 bsMain.DataSource = channelDal.GetChannelBalance();
-            //OpView.ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
-            OpView.ExcelHelper.DoExport((DataTable)bsMain.DataSource);
+            //ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
+            ExcelHelper.DoExport((DataTable)bsMain.DataSource);
         }
 
         private void btnClearBalance_Click(object sender, EventArgs e)

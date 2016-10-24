@@ -62,7 +62,8 @@
     <Reference Include="MCP">
       <HintPath>..\..\Lib\MCP.dll</HintPath>
     </Reference>
-    <Reference Include="MCP.Service.Siemens">
+    <Reference Include="MCP.Service.Siemens, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\MCP.Service.Siemens.dll</HintPath>
     </Reference>
     <Reference Include="System" />

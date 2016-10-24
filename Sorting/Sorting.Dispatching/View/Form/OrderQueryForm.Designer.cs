@@ -32,10 +32,10 @@ namespace Sorting.Dispatching.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.dgvMaster = new System.Windows.Forms.DataGridView();
             this.bsMaster = new System.Windows.Forms.BindingSource(this.components);
@@ -44,6 +44,15 @@ namespace Sorting.Dispatching.View
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEnd = new System.Windows.Forms.Button();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ORDERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHANNELNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHANNELTYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIGARETTECODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIGARETTENAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHANNELLINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.BATCHNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.MAINSORTNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -57,15 +66,6 @@ namespace Sorting.Dispatching.View
             this.STATUS = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.STATUS1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.PACKAGE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SORTNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ORDERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHANNELNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHANNELTYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIGARETTECODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIGARETTENAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHANNELLINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -248,130 +248,13 @@ namespace Sorting.Dispatching.View
             this.btnEnd.UseVisualStyleBackColor = true;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
-            // ORDERDATE
-            // 
-            this.ORDERDATE.DataPropertyName = "ORDERDATE";
-            this.ORDERDATE.FilteringEnabled = false;
-            this.ORDERDATE.HeaderText = "订单日期";
-            this.ORDERDATE.Name = "ORDERDATE";
-            this.ORDERDATE.ReadOnly = true;
-            this.ORDERDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // BATCHNO
-            // 
-            this.BATCHNO.DataPropertyName = "BATCHNO";
-            this.BATCHNO.FilteringEnabled = false;
-            this.BATCHNO.HeaderText = "分拣批次";
-            this.BATCHNO.Name = "BATCHNO";
-            this.BATCHNO.ReadOnly = true;
-            this.BATCHNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // MAINSORTNO
-            // 
-            this.MAINSORTNO.DataPropertyName = "SORTNO";
-            this.MAINSORTNO.FilteringEnabled = false;
-            this.MAINSORTNO.HeaderText = "流水号";
-            this.MAINSORTNO.Name = "MAINSORTNO";
-            this.MAINSORTNO.ReadOnly = true;
-            // 
-            // MAINORDERID
-            // 
-            this.MAINORDERID.DataPropertyName = "ORDERID";
-            this.MAINORDERID.FilteringEnabled = false;
-            this.MAINORDERID.HeaderText = "订单号";
-            this.MAINORDERID.Name = "MAINORDERID";
-            this.MAINORDERID.ReadOnly = true;
-            // 
-            // ROUTECODE
-            // 
-            this.ROUTECODE.DataPropertyName = "ROUTECODE";
-            this.ROUTECODE.FilteringEnabled = false;
-            this.ROUTECODE.HeaderText = "线路代码";
-            this.ROUTECODE.Name = "ROUTECODE";
-            this.ROUTECODE.ReadOnly = true;
-            // 
-            // ROUTENAME
-            // 
-            this.ROUTENAME.DataPropertyName = "ROUTENAME";
-            this.ROUTENAME.FilteringEnabled = false;
-            this.ROUTENAME.HeaderText = "线路名称";
-            this.ROUTENAME.Name = "ROUTENAME";
-            this.ROUTENAME.ReadOnly = true;
-            this.ROUTENAME.Width = 120;
-            // 
-            // CUSTOMERCODE
-            // 
-            this.CUSTOMERCODE.DataPropertyName = "CUSTOMERCODE";
-            this.CUSTOMERCODE.FilteringEnabled = false;
-            this.CUSTOMERCODE.HeaderText = "客户代码";
-            this.CUSTOMERCODE.Name = "CUSTOMERCODE";
-            this.CUSTOMERCODE.ReadOnly = true;
-            // 
-            // CUSTOMERNAME
-            // 
-            this.CUSTOMERNAME.DataPropertyName = "CUSTOMERNAME";
-            this.CUSTOMERNAME.FilteringEnabled = false;
-            this.CUSTOMERNAME.HeaderText = "客户名称";
-            this.CUSTOMERNAME.Name = "CUSTOMERNAME";
-            this.CUSTOMERNAME.ReadOnly = true;
-            this.CUSTOMERNAME.Width = 120;
-            // 
-            // MAINQUANTITY
-            // 
-            this.MAINQUANTITY.DataPropertyName = "QUANTITY";
-            this.MAINQUANTITY.FilteringEnabled = false;
-            this.MAINQUANTITY.HeaderText = "通道机数量";
-            this.MAINQUANTITY.Name = "MAINQUANTITY";
-            this.MAINQUANTITY.ReadOnly = true;
-            this.MAINQUANTITY.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // QUANTITY1
-            // 
-            this.QUANTITY1.DataPropertyName = "QUANTITY1";
-            this.QUANTITY1.FilteringEnabled = false;
-            this.QUANTITY1.HeaderText = "立式机数量";
-            this.QUANTITY1.Name = "QUANTITY1";
-            this.QUANTITY1.ReadOnly = true;
-            this.QUANTITY1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // STATUS
-            // 
-            this.STATUS.DataPropertyName = "STATUS";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STATUS.DefaultCellStyle = dataGridViewCellStyle3;
-            this.STATUS.FilteringEnabled = false;
-            this.STATUS.HeaderText = "通道机下单";
-            this.STATUS.Name = "STATUS";
-            this.STATUS.ReadOnly = true;
-            this.STATUS.Width = 110;
-            // 
-            // STATUS1
-            // 
-            this.STATUS1.DataPropertyName = "STATUS1";
-            this.STATUS1.FilteringEnabled = false;
-            this.STATUS1.HeaderText = "立式机下单";
-            this.STATUS1.Name = "STATUS1";
-            this.STATUS1.ReadOnly = true;
-            this.STATUS1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.STATUS1.Width = 110;
-            // 
-            // PACKAGE
-            // 
-            this.PACKAGE.DataPropertyName = "STATUS2";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PACKAGE.DefaultCellStyle = dataGridViewCellStyle4;
-            this.PACKAGE.FilteringEnabled = false;
-            this.PACKAGE.HeaderText = "状态";
-            this.PACKAGE.Name = "PACKAGE";
-            this.PACKAGE.ReadOnly = true;
-            this.PACKAGE.Width = 113;
-            // 
             // Column11
             // 
             this.Column11.DataPropertyName = "ROWID";
             this.Column11.HeaderText = "序号";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
+            this.Column11.Width = 80;
             // 
             // SORTNO
             // 
@@ -389,6 +272,7 @@ namespace Sorting.Dispatching.View
             this.ORDERID.Name = "ORDERID";
             this.ORDERID.ReadOnly = true;
             this.ORDERID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ORDERID.Width = 160;
             // 
             // CHANNELNAME
             // 
@@ -446,6 +330,128 @@ namespace Sorting.Dispatching.View
             this.CHANNELLINE.ReadOnly = true;
             this.CHANNELLINE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.CHANNELLINE.Visible = false;
+            // 
+            // ORDERDATE
+            // 
+            this.ORDERDATE.DataPropertyName = "ORDERDATE";
+            this.ORDERDATE.FilteringEnabled = false;
+            this.ORDERDATE.HeaderText = "订单日期";
+            this.ORDERDATE.Name = "ORDERDATE";
+            this.ORDERDATE.ReadOnly = true;
+            this.ORDERDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // BATCHNO
+            // 
+            this.BATCHNO.DataPropertyName = "BATCHNO";
+            this.BATCHNO.FilteringEnabled = false;
+            this.BATCHNO.HeaderText = "分拣批次";
+            this.BATCHNO.Name = "BATCHNO";
+            this.BATCHNO.ReadOnly = true;
+            this.BATCHNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // MAINSORTNO
+            // 
+            this.MAINSORTNO.DataPropertyName = "SORTNO";
+            this.MAINSORTNO.FilteringEnabled = false;
+            this.MAINSORTNO.HeaderText = "流水号";
+            this.MAINSORTNO.Name = "MAINSORTNO";
+            this.MAINSORTNO.ReadOnly = true;
+            // 
+            // MAINORDERID
+            // 
+            this.MAINORDERID.DataPropertyName = "ORDERID";
+            this.MAINORDERID.FilteringEnabled = false;
+            this.MAINORDERID.HeaderText = "订单号";
+            this.MAINORDERID.Name = "MAINORDERID";
+            this.MAINORDERID.ReadOnly = true;
+            this.MAINORDERID.Width = 150;
+            // 
+            // ROUTECODE
+            // 
+            this.ROUTECODE.DataPropertyName = "ROUTECODE";
+            this.ROUTECODE.FilteringEnabled = false;
+            this.ROUTECODE.HeaderText = "线路代码";
+            this.ROUTECODE.Name = "ROUTECODE";
+            this.ROUTECODE.ReadOnly = true;
+            // 
+            // ROUTENAME
+            // 
+            this.ROUTENAME.DataPropertyName = "ROUTENAME";
+            this.ROUTENAME.FilteringEnabled = false;
+            this.ROUTENAME.HeaderText = "线路名称";
+            this.ROUTENAME.Name = "ROUTENAME";
+            this.ROUTENAME.ReadOnly = true;
+            this.ROUTENAME.Width = 150;
+            // 
+            // CUSTOMERCODE
+            // 
+            this.CUSTOMERCODE.DataPropertyName = "CUSTOMERCODE";
+            this.CUSTOMERCODE.FilteringEnabled = false;
+            this.CUSTOMERCODE.HeaderText = "客户代码";
+            this.CUSTOMERCODE.Name = "CUSTOMERCODE";
+            this.CUSTOMERCODE.ReadOnly = true;
+            // 
+            // CUSTOMERNAME
+            // 
+            this.CUSTOMERNAME.DataPropertyName = "CUSTOMERNAME";
+            this.CUSTOMERNAME.FilteringEnabled = false;
+            this.CUSTOMERNAME.HeaderText = "客户名称";
+            this.CUSTOMERNAME.Name = "CUSTOMERNAME";
+            this.CUSTOMERNAME.ReadOnly = true;
+            this.CUSTOMERNAME.Width = 140;
+            // 
+            // MAINQUANTITY
+            // 
+            this.MAINQUANTITY.DataPropertyName = "QUANTITY";
+            this.MAINQUANTITY.FilteringEnabled = false;
+            this.MAINQUANTITY.HeaderText = "通道机数量";
+            this.MAINQUANTITY.Name = "MAINQUANTITY";
+            this.MAINQUANTITY.ReadOnly = true;
+            this.MAINQUANTITY.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MAINQUANTITY.Visible = false;
+            // 
+            // QUANTITY1
+            // 
+            this.QUANTITY1.DataPropertyName = "QUANTITY1";
+            this.QUANTITY1.FilteringEnabled = false;
+            this.QUANTITY1.HeaderText = "数量";
+            this.QUANTITY1.Name = "QUANTITY1";
+            this.QUANTITY1.ReadOnly = true;
+            this.QUANTITY1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QUANTITY1.Width = 80;
+            // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STATUS.DefaultCellStyle = dataGridViewCellStyle3;
+            this.STATUS.FilteringEnabled = false;
+            this.STATUS.HeaderText = "通道机下单";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.ReadOnly = true;
+            this.STATUS.Visible = false;
+            this.STATUS.Width = 110;
+            // 
+            // STATUS1
+            // 
+            this.STATUS1.DataPropertyName = "STATUS1";
+            this.STATUS1.FilteringEnabled = false;
+            this.STATUS1.HeaderText = "下单";
+            this.STATUS1.Name = "STATUS1";
+            this.STATUS1.ReadOnly = true;
+            this.STATUS1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.STATUS1.Width = 80;
+            // 
+            // PACKAGE
+            // 
+            this.PACKAGE.DataPropertyName = "STATUS2";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PACKAGE.DefaultCellStyle = dataGridViewCellStyle4;
+            this.PACKAGE.FilteringEnabled = false;
+            this.PACKAGE.HeaderText = "状态";
+            this.PACKAGE.Name = "PACKAGE";
+            this.PACKAGE.ReadOnly = true;
+            this.PACKAGE.Width = 80;
             // 
             // OrderQueryForm
             // 

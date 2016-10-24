@@ -261,7 +261,7 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.Width = 60;
+            this.Column3.Width = 80;
             // 
             // Column7
             // 
@@ -325,7 +325,7 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.Width = 150;
+            this.Column6.Width = 70;
             // 
             // Column8
             // 
@@ -335,6 +335,7 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.Width = 80;
             // 
             // frmProduct
             // 

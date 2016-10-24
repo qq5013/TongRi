@@ -38,8 +38,8 @@ namespace Sorting.Dispatching.View
             this.ROWID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDERDATE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.BATCHNO = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.Column1 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
-            this.Column2 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.PRODUCTCODE = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
+            this.PRODUCTNAME = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column3 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column4 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
             this.Column5 = new DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn();
@@ -117,8 +117,8 @@ namespace Sorting.Dispatching.View
             this.ROWID,
             this.ORDERDATE,
             this.BATCHNO,
-            this.Column1,
-            this.Column2,
+            this.PRODUCTCODE,
+            this.PRODUCTNAME,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -168,7 +168,6 @@ namespace Sorting.Dispatching.View
             this.ORDERDATE.Name = "ORDERDATE";
             this.ORDERDATE.ReadOnly = true;
             this.ORDERDATE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ORDERDATE.Width = 80;
             // 
             // BATCHNO
             // 
@@ -180,23 +179,24 @@ namespace Sorting.Dispatching.View
             this.BATCHNO.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BATCHNO.Width = 110;
             // 
-            // Column1
+            // PRODUCTCODE
             // 
-            this.Column1.DataPropertyName = "PRODUCTCODE";
-            this.Column1.FilteringEnabled = false;
-            this.Column1.HeaderText = "产品编号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PRODUCTCODE.DataPropertyName = "PRODUCTCODE";
+            this.PRODUCTCODE.FilteringEnabled = false;
+            this.PRODUCTCODE.HeaderText = "产品编号";
+            this.PRODUCTCODE.Name = "PRODUCTCODE";
+            this.PRODUCTCODE.ReadOnly = true;
+            this.PRODUCTCODE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // Column2
+            // PRODUCTNAME
             // 
-            this.Column2.DataPropertyName = "PRODUCTNAME";
-            this.Column2.FilteringEnabled = false;
-            this.Column2.HeaderText = "产品名称";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PRODUCTNAME.DataPropertyName = "PRODUCTNAME";
+            this.PRODUCTNAME.FilteringEnabled = false;
+            this.PRODUCTNAME.HeaderText = "产品名称";
+            this.PRODUCTNAME.Name = "PRODUCTNAME";
+            this.PRODUCTNAME.ReadOnly = true;
+            this.PRODUCTNAME.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PRODUCTNAME.Width = 120;
             // 
             // Column3
             // 
@@ -267,8 +267,8 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridViewTextBoxColumn ROWID;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn ORDERDATE;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn BATCHNO;
-        private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column1;
-        private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column2;
+        private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn PRODUCTCODE;
+        private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn PRODUCTNAME;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column3;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column4;
         private DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn Column5;

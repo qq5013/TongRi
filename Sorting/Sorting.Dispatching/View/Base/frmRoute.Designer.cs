@@ -197,6 +197,7 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.Width = 80;
             // 
             // Column4
             // 
@@ -206,7 +207,7 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.Width = 250;
+            this.Column4.Width = 200;
             // 
             // Column10
             // 
@@ -214,7 +215,7 @@
             this.Column10.HeaderText = "配送顺序";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            this.Column10.Width = 70;
+            this.Column10.Width = 60;
             // 
             // Column11
             // 
@@ -222,7 +223,7 @@
             this.Column11.HeaderText = "是否分拣";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
-            this.Column11.Width = 70;
+            this.Column11.Width = 60;
             // 
             // Column3
             // 
@@ -232,7 +233,6 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.Visible = false;
             this.Column3.Width = 80;
             // 
             // Column7
@@ -243,8 +243,7 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.Visible = false;
-            this.Column7.Width = 200;
+            this.Column7.Width = 150;
             // 
             // Column5
             // 
@@ -261,6 +260,7 @@
             this.Column1.HeaderText = "车辆注册号";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
             // 
             // Column8
             // 
@@ -286,6 +286,7 @@
             this.Column6.HeaderText = "分拣线";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
             // 
             // frmRoute
             // 

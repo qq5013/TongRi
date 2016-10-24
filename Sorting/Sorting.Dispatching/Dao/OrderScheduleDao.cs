@@ -242,8 +242,9 @@ namespace Sorting.Dispatching.Dao
                 sql.Append("QUANTITY", orderRow["QUANTITY"]);
                 sql.Append("CHANNELGROUP", orderRow["CHANNELGROUP"]);
                 sql.Append("CHANNELORDER", orderRow["CHANNELORDER"]);
-                sql.Append("EXPORTNO", orderRow["EXPORTNO"]);
-                sql.AppendQuote("PACKNO", orderRow["PACKNO"]);
+                sql.Append("GroupNo", orderRow["GroupNo"]);
+                //sql.Append("EXPORTNO", orderRow["EXPORTNO"]);
+                //sql.AppendQuote("PACKNO", orderRow["PACKNO"]);
                 ExecuteNonQuery(sql.GetSQL());
             }
         }

@@ -41,9 +41,10 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.Location = new System.Drawing.Point(225, 132);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // 
             // btnOK
             // 
+            this.btnOK.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.Location = new System.Drawing.Point(132, 132);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(75, 33);
             this.btnOK.TabIndex = 27;
             this.btnOK.Text = "确定";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -61,55 +63,61 @@
             // 
             // txtAreaName
             // 
-            this.txtAreaName.Location = new System.Drawing.Point(76, 42);
+            this.txtAreaName.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtAreaName.Location = new System.Drawing.Point(100, 44);
             this.txtAreaName.MaxLength = 20;
             this.txtAreaName.Name = "txtAreaName";
             this.txtAreaName.ReadOnly = true;
-            this.txtAreaName.Size = new System.Drawing.Size(296, 21);
+            this.txtAreaName.Size = new System.Drawing.Size(259, 29);
             this.txtAreaName.TabIndex = 25;
             // 
             // txtAreaCode
             // 
-            this.txtAreaCode.Location = new System.Drawing.Point(76, 10);
+            this.txtAreaCode.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtAreaCode.Location = new System.Drawing.Point(100, 10);
             this.txtAreaCode.MaxLength = 3;
             this.txtAreaCode.Name = "txtAreaCode";
             this.txtAreaCode.ReadOnly = true;
-            this.txtAreaCode.Size = new System.Drawing.Size(92, 21);
+            this.txtAreaCode.Size = new System.Drawing.Size(92, 29);
             this.txtAreaCode.TabIndex = 24;
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(18, 79);
+            this.lblType.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblType.Location = new System.Drawing.Point(18, 82);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(53, 12);
+            this.lblType.Size = new System.Drawing.Size(74, 21);
             this.lblType.TabIndex = 19;
             this.lblType.Text = "配送顺序";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(18, 48);
+            this.lblName.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblName.Location = new System.Drawing.Point(18, 50);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(53, 12);
+            this.lblName.Size = new System.Drawing.Size(74, 21);
             this.lblName.TabIndex = 18;
             this.lblName.Text = "区域名称";
             // 
             // lblCode
             // 
             this.lblCode.AutoSize = true;
+            this.lblCode.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCode.Location = new System.Drawing.Point(18, 16);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(53, 12);
+            this.lblCode.Size = new System.Drawing.Size(74, 21);
             this.lblCode.TabIndex = 17;
             this.lblCode.Text = "区域编码";
             // 
             // txtSortId
             // 
-            this.txtSortId.Location = new System.Drawing.Point(77, 75);
+            this.txtSortId.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSortId.Location = new System.Drawing.Point(101, 78);
             this.txtSortId.MaxLength = 3;
             this.txtSortId.Name = "txtSortId";
-            this.txtSortId.Size = new System.Drawing.Size(92, 21);
+            this.txtSortId.Size = new System.Drawing.Size(92, 29);
             this.txtSortId.TabIndex = 29;
             // 
             // frmAreaEdit

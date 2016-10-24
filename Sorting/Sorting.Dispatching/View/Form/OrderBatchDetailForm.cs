@@ -42,8 +42,8 @@ namespace Sorting.Dispatching.View
         {
             if (dgvDetail.DataSource == null)
                 return;
-            //OpView.ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
-            OpView.ExcelHelper.DoExport((DataTable)dgvDetail.DataSource);
+            //ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
+            ExcelHelper.DoExport((DataTable)dgvDetail.DataSource);
         }
     }
 }

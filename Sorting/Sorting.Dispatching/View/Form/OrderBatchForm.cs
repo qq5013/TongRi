@@ -54,8 +54,8 @@ namespace Sorting.Dispatching.View
         {
             if (dgvMain.DataSource == null)
                 dgvMain.DataSource = dal.GetAll();
-            //OpView.ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
-            OpView.ExcelHelper.DoExport((DataTable)dgvMain.DataSource);
+            //ExcelHelper.DataTabletoExcel((DataTable)bsMain.DataSource, @"C\ss.xls");
+            ExcelHelper.DoExport((DataTable)dgvMain.DataSource);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

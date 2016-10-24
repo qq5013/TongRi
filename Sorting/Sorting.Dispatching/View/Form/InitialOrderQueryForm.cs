@@ -16,6 +16,13 @@ namespace Sorting.Dispatching.View
         public InitialOrderQueryForm()
         {
             InitializeComponent();
+            this.ORDERDATE.FilteringEnabled = true;
+            this.BATCHNO.FilteringEnabled = true;
+            this.DELIVERYDATE.FilteringEnabled = true;
+            this.ROUTECODE.FilteringEnabled = true;
+            this.ROUTENAME.FilteringEnabled = true;
+            this.CUSTOMERCODE.FilteringEnabled = true;
+            this.CUSTOMERDESC.FilteringEnabled = true;
             Util.GridUtil.EnableFilter(dgvDetail);
             this.dgvDetail.AutoGenerateColumns = false;
         }

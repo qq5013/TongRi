@@ -13,6 +13,11 @@ namespace Sorting.Dispatching.Dao
             string sql = "SELECT * FROM V_CMD_Channel ";
             return ExecuteQuery(sql, "CMD_CHANNEL").Tables[0];
         }
+        public DataTable FindAllChannel()
+        {
+            string sql = "SELECT * FROM V_CMD_Channel Order by GroupNo,ChannelCode";
+            return ExecuteQuery(sql, "CMD_CHANNEL").Tables[0];
+        }
         public DataTable FindAll(string filter)
         {
             string where = " ";

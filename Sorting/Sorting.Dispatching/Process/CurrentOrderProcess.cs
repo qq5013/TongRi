@@ -30,7 +30,8 @@ namespace Sorting.Dispatching.Process
         {
             try
             {
-                string channelType = stateItem.ItemName.Substring(11, 1);
+                //string channelType = stateItem.ItemName.Substring(11, 1);
+                string channelType = "2";
 
                 object o = ObjectUtil.GetObject(stateItem.State);
                 if (o == null)
@@ -45,7 +46,7 @@ namespace Sorting.Dispatching.Process
                     //判断此流水号是否分拣完成
                     
                     string channelName = channelType == "3" ? "通道机" : "立式机";
-                    Logger.Info("订单序号" + sortNo + channelName + "已完成");
+                    Logger.Info("订单序号[" + sortNo + "]已完成");
                 }
             }
 
@@ -67,16 +68,7 @@ namespace Sorting.Dispatching.Process
                     
                     //更新完成时间
                     string maxSortNo = orderDao.FindLastSortNo();
-                    orderDao.UpdateFinishTime(sortNo, channelType, maxSortNo);
-
-                    
-                    //if (sortNo !="-1")
-                    //{
-                    //    if (Convert.ToInt32(sortNo) >= Convert.ToInt32(orderDao.FindLastCustomerSortNo(channelType)))
-                    //    {
-                    //        orderDao.UpdateAllFinishTime(sortNo, channelType);
-                    //    }
-                    //}                    
+                    orderDao.UpdateFinishTime(sortNo, channelType, maxSortNo);           
 
                     //刷新主界面分拣状态
                     DataTable infoTable = orderDao.FindOrderInfo(null);
@@ -93,39 +85,9 @@ namespace Sorting.Dispatching.Process
                     refreshData.CompleteCustomer = Convert.ToInt32(infoTable.Rows[0]["CUSTOMERNUM"]);
                     refreshData.CompleteRoute = Convert.ToInt32(infoTable.Rows[0]["ROUTENUM"]);
                     refreshData.CompleteQuantity = Convert.ToInt32(infoTable.Rows[0]["QUANTITY"]) + Convert.ToInt32(infoTable.Rows[0]["QUANTITY1"]);
-                    refreshData.Average = orderDao.FindDispatchingAverage();
+                    //refreshData.Average = orderDao.FindDispatchingAverage();
 
-                    WriteToProcess("SortingStatus", "RefreshData", refreshData);
-                    //messageUtil.SendToSortLed(sortNo, refreshData);
-                    //上报物流系统
-                    //判断当前流水号是否都已完成
-                    //if (orderDao.SortNoFinished(sortNo) > 0)
-                    //{
-                        DataSet ds = orderDao.FindOrderProcess(batchNo, sortNo);
-                        if (ds.Tables[0].Rows.Count > 0)
-                        {
-                            try
-                            {
-                                string url = Context.Attributes["LogisticsUrl"].ToString();
-                                DRProxy.LmsSortDataServiceService client = new DRProxy.LmsSortDataServiceService(url);
-                                string xml = XmlDatasetConvert.ConvertDataTableToXml(ds.Tables[0]);
-                                string returnXml = client.transSortProcess(xml, "0");
-                                if (returnXml.Substring(0, 1) == "Y")
-                                {
-                                    Logger.Info(string.Format("上传物流订单进度成功,流水号:{0}", sortNo));
-                                }
-                                else
-                                {
-                                    Logger.Info(string.Format("上传物流订单进度失败,流水号:{0},返回信息{1}", sortNo, returnXml));
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                Logger.Error(string.Format("订单流水号[{0}]完成上报物流系统时出错，原因:{1}",sortNo, e.Message));
-                            }
-                            
-                        }
-                    //}
+                    WriteToProcess("SortingStatus", "RefreshData", refreshData);                    
                 }
             }
             catch (Exception e)

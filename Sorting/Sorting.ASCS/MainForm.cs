@@ -93,7 +93,7 @@ namespace Sorting.ASCS
                                 this.txtRouteName1.Text = dt1.Rows[0]["ROUTENAME"].ToString();
                                 this.txtOrderID1.Text = dt1.Rows[0]["ORDERID"].ToString();
                                 this.txtSortNo1.Text = dt1.Rows[0]["SORTNO"].ToString();
-                                this.txtQty1.Text = dt1.Rows[0]["QUANTITY"].ToString();
+                                this.txtAreaName1.Text = dt1.Rows[0]["AREANAME"].ToString();
                                 this.txtQty11.Text = dt1.Rows[0]["QUANTITY1"].ToString();
                                 this.bsDetail1.DataSource = ds.Tables[1];
                             }
@@ -103,7 +103,7 @@ namespace Sorting.ASCS
                                 this.txtRouteName2.Text = dt1.Rows[0]["ROUTENAME"].ToString();
                                 this.txtOrderID2.Text = dt1.Rows[0]["ORDERID"].ToString();
                                 this.txtSortNo2.Text = dt1.Rows[0]["SORTNO"].ToString();
-                                this.txtQty2.Text = dt1.Rows[0]["QUANTITY"].ToString();
+                                this.txtAreaName2.Text = dt1.Rows[0]["AREANAME"].ToString();
                                 this.txtQty21.Text = dt1.Rows[0]["QUANTITY1"].ToString();
                                 this.bsDetail2.DataSource = ds.Tables[1];
                             }
@@ -113,7 +113,7 @@ namespace Sorting.ASCS
                                 this.txtRouteName3.Text = dt1.Rows[0]["ROUTENAME"].ToString();
                                 this.txtOrderID3.Text = dt1.Rows[0]["ORDERID"].ToString();
                                 this.txtSortNo3.Text = dt1.Rows[0]["SORTNO"].ToString();
-                                this.txtQty3.Text = dt1.Rows[0]["QUANTITY"].ToString();
+                                this.txtAreaName3.Text = dt1.Rows[0]["AREANAME"].ToString();
                                 this.txtQty31.Text = dt1.Rows[0]["QUANTITY1"].ToString();
 
                                 this.bsDetail3.DataSource = ds.Tables[1];
@@ -124,7 +124,7 @@ namespace Sorting.ASCS
                                 this.txtRouteName4.Text = dt1.Rows[0]["ROUTENAME"].ToString();
                                 this.txtOrderID4.Text = dt1.Rows[0]["ORDERID"].ToString();
                                 this.txtSortNo4.Text = dt1.Rows[0]["SORTNO"].ToString();
-                                this.txtQty4.Text = dt1.Rows[0]["QUANTITY"].ToString();
+                                this.txtAreaName4.Text = dt1.Rows[0]["AREANAME"].ToString();
                                 this.txtQty41.Text = dt1.Rows[0]["QUANTITY1"].ToString();
                                 this.bsDetail4.DataSource = ds.Tables[1];
                             }
@@ -169,7 +169,7 @@ namespace Sorting.ASCS
 
                     context.RegisterProcessControl(monitorView);
                     context.RegisterProcessControl(buttonArea);
-                    context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "OrderFinish3", new int[] { -1 });
+                    context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "OrderFinish2", new int[] { -1 });
 
                     tmWorkTimer.Interval = 3000;
                     tmWorkTimer.Elapsed += new ElapsedEventHandler(tmWorker);

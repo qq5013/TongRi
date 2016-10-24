@@ -121,7 +121,7 @@ namespace Sorting.Dispatching.View.Base
                 else if (e.Value.ToString() == "3")
                     e.Value = "通道机";
             }
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 8)
             {
                 if (e.Value.ToString() == "0")
                     e.Value = "禁用";

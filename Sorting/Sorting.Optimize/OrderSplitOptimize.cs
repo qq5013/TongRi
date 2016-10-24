@@ -201,8 +201,8 @@ namespace Sorting.Optimize
                 int channelQuantity = int.Parse(channelRows[0]["GroupTotal"].ToString());                
 
                 //每个通道整件数数量,尾数分配在一个通道
-                int channelBoxes = channelQuantity / channelCount;
-                int channelReset = channelQuantity - channelBoxes * channelCount;
+                int channelBoxes = quantity / channelCount;
+                int channelReset = quantity - channelBoxes * channelCount;
                 
                 if (channelType == "2")
                 {
@@ -976,8 +976,9 @@ namespace Sorting.Optimize
             table.Columns.Add("CHANNELGROUP", typeof(Int32));
             table.Columns.Add("CHANNELORDER", typeof(Int32));
             table.Columns.Add("CHANNELTYPE");
-            table.Columns.Add("EXPORTNO", typeof(Int32));
-            table.Columns.Add("PACKNO", typeof(Int32));
+            table.Columns.Add("GroupNo", typeof(Int32));
+            //table.Columns.Add("EXPORTNO", typeof(Int32));
+            //table.Columns.Add("PACKNO", typeof(Int32));
             return table;
         }
 
@@ -1048,12 +1049,13 @@ namespace Sorting.Optimize
                 newRow["CHANNELGROUP"] = channelRow["CHANNELGROUP"];
                 newRow["CHANNELORDER"] = channelRow["CHANNELORDER"];
                 newRow["CHANNELTYPE"] = channelRow["CHANNELTYPE"];
+                newRow["GroupNo"] = channelRow["GroupNo"];
                 //if (sortNo != -1)
                 //    newRow["EXPORTNO"] = channelRow["EXPORTNO"];
                 //if (sortNo != -1)
                 //    newRow["PACKNO"] = channelRow["PACKNO"];
-                newRow["EXPORTNO"] = 1;
-                newRow["PACKNO"] = 1;
+                //newRow["EXPORTNO"] = 1;
+                //newRow["PACKNO"] = 1;
 
                 detailTable.Rows.Add(newRow);
             }

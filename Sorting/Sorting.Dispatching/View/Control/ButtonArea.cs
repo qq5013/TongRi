@@ -146,50 +146,57 @@ namespace Sorting.Dispatching.View
         {
             try
             {
-                int Flag = 5;
-                if (!ShowDialog(Flag))
-                    return;
+                OrderDal orderDal = new OrderDal();
+                orderDal.UpdateMissOrderStatus("0");
 
-                Sorting.Dispatching.Schedule.UploadData uploadData = new Sorting.Dispatching.Schedule.UploadData();
-                Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("创建文件", 5, 1));
-                if (uploadData.CreateDataFile(OrderDate, BatchNo))
-                {
-                    Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("压缩文件", 5, 2));
-                    uploadData.CreateZipFile();
+                Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
+                Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "OrderFinish2", new int[] { -1 });
 
-                    Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("上传文件", 5, 3));
-                    uploadData.SendZipFile();
-                }
+                MessageBox.Show("优化数据状态初始化完成", "提示",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //int Flag = 5;
+                //if (!ShowDialog(Flag))
+                //    return;
 
-                Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("更新状态", 5, 4));
-                uploadData.SaveUploadStatus(BatchNo);
-
-                Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除文件", 5, 5));
-                uploadData.DeleteFiles();
-
-                //Sorting.Dispatching.Schedule.UploadData uploadData1 = new Sorting.Dispatching.Schedule.UploadData(true);
+                //Sorting.Dispatching.Schedule.UploadData uploadData = new Sorting.Dispatching.Schedule.UploadData();
                 //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("创建文件", 5, 1));
-                //if (uploadData1.CreateDataFile(OrderDate, BatchNo))
+                //if (uploadData.CreateDataFile(OrderDate, BatchNo))
                 //{
-
                 //    Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("压缩文件", 5, 2));
-                //    uploadData1.CreateZipFile();
+                //    uploadData.CreateZipFile();
 
                 //    Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("上传文件", 5, 3));
-                //    uploadData1.SendZipFile();
+                //    uploadData.SendZipFile();
                 //}
 
                 //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("更新状态", 5, 4));
-                //uploadData1.SaveUploadStatus(BatchNo);
+                //uploadData.SaveUploadStatus(BatchNo);
 
                 //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除文件", 5, 5));
-                //uploadData1.DeleteFiles();
+                //uploadData.DeleteFiles();
 
-                Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
+                ////Sorting.Dispatching.Schedule.UploadData uploadData1 = new Sorting.Dispatching.Schedule.UploadData(true);
+                ////Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("创建文件", 5, 1));
+                ////if (uploadData1.CreateDataFile(OrderDate, BatchNo))
+                ////{
 
-                //更新上传状态
-                BatchDal dal = new BatchDal();
-                dal.UpdateNoOnePro(BatchNo, "Admin");
+                ////    Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("压缩文件", 5, 2));
+                ////    uploadData1.CreateZipFile();
+
+                ////    Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("上传文件", 5, 3));
+                ////    uploadData1.SendZipFile();
+                ////}
+
+                ////Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("更新状态", 5, 4));
+                ////uploadData1.SaveUploadStatus(BatchNo);
+
+                ////Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("删除文件", 5, 5));
+                ////uploadData1.DeleteFiles();
+
+                //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
+
+                ////更新上传状态
+                //BatchDal dal = new BatchDal();
+                //dal.UpdateNoOnePro(BatchNo, "Admin");
             }
             catch (Exception ex)
             {
@@ -199,21 +206,14 @@ namespace Sorting.Dispatching.View
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            Context.ProcessDispatcher.WriteToProcess("LEDProcess", "Start", null);
+            
             if (Context.Processes["OrderRequestProcess"] != null)
             {
                 Context.Processes["OrderRequestProcess"].Resume();
             }
 
-            if (Context.Processes["MergeRequestProcess"] != null)
-            {
-                Context.Processes["MergeRequestProcess"].Resume();
-            }
+            Context.ProcessDispatcher.WriteToProcess("OrderRequestProcess", "Start", 1);
 
-            //if (Context.Processes["BreakRecordProcess"] != null)
-            //{
-            //    Context.Processes["BreakRecordProcess"].Resume();
-            //}
             //Context.ProcessDispatcher.WriteToProcess("OrderRequestProcess", "OrderRequest3", 0);
             //Context.ProcessDispatcher.WriteToProcess("OrderRequestProcess", "OrderRequest2", 0);
             //Context.ProcessDispatcher.WriteToProcess("MergeRequestProcess", "MergeRequest", 0);
@@ -221,29 +221,19 @@ namespace Sorting.Dispatching.View
             //Context.ProcessDispatcher.WriteToProcess("OrderTimeRequestProcess", "OrderRequest", 1);
             
             //给PLC结束标志
-            Context.ProcessDispatcher.WriteToService("SortPLC", "StopOrderRequest", 0);
+            //Context.ProcessDispatcher.WriteToService("SortPLC", "StopOrderRequest", 0);
             SwitchStatus(true);
-            tmWorkTimer.Start();
+            //tmWorkTimer.Start();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            if (Context.Processes["OrderRequestProcess"] != null)
-            {
-                Context.Processes["OrderRequestProcess"].Suspend();
-            }
-
-            if (Context.Processes["MergeRequestProcess"] != null)
-            {
-                Context.Processes["MergeRequestProcess"].Suspend();
-            }
-            //if (Context.Processes["BreakRecordProcess"] != null)
+            Context.ProcessDispatcher.WriteToProcess("OrderRequestProcess", "Stop", 1);
+            //if (Context.Processes["OrderRequestProcess"] != null)
             //{
-            //    Context.Processes["BreakRecordProcess"].Suspend();
+            //    Context.Processes["OrderRequestProcess"].Suspend();
             //}
-            //给PLC结束标志
-            Context.ProcessDispatcher.WriteToService("SortPLC", "StopOrderRequest", 1);
-            Context.ProcessDispatcher.WriteToProcess("OrderTimeRequestProcess", "OrderRequest", 0);
+            
             SwitchStatus(false);
             tmWorkTimer.Stop();
         }
@@ -261,8 +251,8 @@ namespace Sorting.Dispatching.View
 
         private void SwitchStatus(bool isStart)
         {
-            btnDownload.Enabled = !isStart;
-            this.btnUploadLogistics.Enabled = !isStart;
+            //btnDownload.Enabled = !isStart;
+            //this.btnUploadLogistics.Enabled = !isStart;
             //btnHandSort.Enabled = !isStart;
             btnUpload.Enabled = !isStart;
             btnStart.Enabled = !isStart;
@@ -546,24 +536,12 @@ namespace Sorting.Dispatching.View
                 {
                     if (MessageBox.Show("是否要清除上批的余量?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        int bno = int.Parse(preBatchNo.Substring(10, 3));
-                        string firstBatchNo = BatchNo.Substring(0, 10) + "001";
+                        int bno = int.Parse(preBatchNo.Substring(6, 3));
+                        string firstBatchNo = BatchNo.Substring(0, 6) + "001";
                         ChannelDal cdal = new ChannelDal();
                         cdal.ClearChannelBalance(bno, firstBatchNo);
                     }
                 }
-
-                //int bno = int.Parse(BatchNo.Substring(10, 3));
-                //string firstBatchNo = BatchNo.Substring(0, 10) + "001";
-                //if (bno > 1)
-                //{
-                //    if (MessageBox.Show("是否要清除上批的余量?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                //    {
-                //        ChannelDal cdal = new ChannelDal();
-                //        cdal.ClearChannelBalance(bno-1, firstBatchNo);
-                //    }
-                //}
-
                 
                 Optimize();
 
@@ -597,10 +575,11 @@ namespace Sorting.Dispatching.View
 
                 Logger.Info("数据优化完成");
 
-                //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
-                //Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
+                Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
+                Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
                 //Context.ProcessDispatcher.WriteToProcess("CreatePackAndPrintDataProcess", "NewData", null);
-                //Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "RestartSign", new int[] { 1 });
+                Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "OrderFinish2", new int[] { -1 });
+                //Context.ProcessDispatcher.WriteToService("SortPLC", "RestartSign", 1);
                 //Context.ProcessDispatcher.WriteToProcess("SortingOrderProcess", "OrderInfo", new string[] { OrderDate, BatchNo });
             }
             catch (Exception ex)
@@ -617,19 +596,19 @@ namespace Sorting.Dispatching.View
             //临时表清除
             schedule.ClearSchedule(OrderDate, BatchNo);
 
-            //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("分拣线优化", 7, 1));
+            Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("分拣线优化", 4, 1));
             schedule.GenLineSchedule(OrderDate, BatchNo);
 
-            //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("分拣货仓优化", 7, 2));
+            Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("分拣货仓优化", 4, 2));
             schedule.GenChannelSchedule(OrderDate, BatchNo);
 
-            //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("拆分订单", 7, 3));
+            Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("拆分订单", 4, 3));
             schedule.GenSplitOrder(OrderDate, BatchNo);
 
             //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("订单优化", 7, 4));
             //schedule.GenOrderSchedule(OrderDate, BatchNo);
 
-            //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("备货站台优化", 7, 5));
+            Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("备货优化", 4, 4));
             schedule.GenStockChannelSchedule(OrderDate, BatchNo);
 
             //Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState("补货优化", 7, 6));

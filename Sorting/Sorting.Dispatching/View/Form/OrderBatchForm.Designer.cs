@@ -37,12 +37,6 @@ namespace Sorting.Dispatching.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMain = new System.Windows.Forms.DataGridView();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +50,12 @@ namespace Sorting.Dispatching.View
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.pnlTool.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -64,11 +64,11 @@ namespace Sorting.Dispatching.View
             // 
             // pnlTool
             // 
+            this.pnlTool.Controls.Add(this.btnExit);
+            this.pnlTool.Controls.Add(this.btnPrint);
             this.pnlTool.Controls.Add(this.btnClear);
             this.pnlTool.Controls.Add(this.btnDelete);
-            this.pnlTool.Controls.Add(this.btnPrint);
             this.pnlTool.Controls.Add(this.btnModify);
-            this.pnlTool.Controls.Add(this.btnExit);
             this.pnlTool.Controls.Add(this.btnRefresh);
             this.pnlTool.Size = new System.Drawing.Size(877, 53);
             // 
@@ -120,90 +120,6 @@ namespace Sorting.Dispatching.View
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(877, 409);
             this.dgvMain.TabIndex = 0;
-            // 
-            // btnModify
-            // 
-            this.btnModify.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnModify.Image = global::Sorting.Dispatching.Properties.Resources.document_edit;
-            this.btnModify.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnModify.Location = new System.Drawing.Point(96, 0);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(48, 51);
-            this.btnModify.TabIndex = 60;
-            this.btnModify.Text = "修改";
-            this.btnModify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnModify.UseVisualStyleBackColor = true;
-            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExit.Image = global::Sorting.Dispatching.Properties.Resources.close;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(48, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(48, 51);
-            this.btnExit.TabIndex = 15;
-            this.btnExit.Text = "退出";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRefresh.Image = global::Sorting.Dispatching.Properties.Resources.refresh;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(48, 51);
-            this.btnRefresh.TabIndex = 14;
-            this.btnRefresh.Text = "刷新";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPrint.Image = global::Sorting.Dispatching.Properties.Resources.printer;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(144, 0);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(48, 51);
-            this.btnPrint.TabIndex = 61;
-            this.btnPrint.Text = "打印";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDelete.Image = global::Sorting.Dispatching.Properties.Resources.close;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(192, 0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(48, 51);
-            this.btnDelete.TabIndex = 62;
-            this.btnDelete.Text = "删除";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnClear.Image = global::Sorting.Dispatching.Properties.Resources.delete;
-            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClear.Location = new System.Drawing.Point(240, 0);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(48, 51);
-            this.btnClear.TabIndex = 63;
-            this.btnClear.Text = "清理";
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Column18
             // 
@@ -313,6 +229,92 @@ namespace Sorting.Dispatching.View
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefresh.Image = global::Sorting.Dispatching.Properties.Resources.refresh;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(48, 51);
+            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnModify
+            // 
+            this.btnModify.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnModify.Image = global::Sorting.Dispatching.Properties.Resources.document_edit;
+            this.btnModify.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnModify.Location = new System.Drawing.Point(48, 0);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(48, 51);
+            this.btnModify.TabIndex = 64;
+            this.btnModify.Text = "修改";
+            this.btnModify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDelete.Image = global::Sorting.Dispatching.Properties.Resources.close;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.Location = new System.Drawing.Point(96, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(48, 51);
+            this.btnDelete.TabIndex = 65;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClear.Image = global::Sorting.Dispatching.Properties.Resources.delete;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClear.Location = new System.Drawing.Point(144, 0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(48, 51);
+            this.btnClear.TabIndex = 66;
+            this.btnClear.Text = "清理";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Visible = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExit.Image = global::Sorting.Dispatching.Properties.Resources.close;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(240, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 51);
+            this.btnExit.TabIndex = 68;
+            this.btnExit.Text = "退出";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPrint.Image = global::Sorting.Dispatching.Properties.Resources.printer;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrint.Location = new System.Drawing.Point(192, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(48, 51);
+            this.btnPrint.TabIndex = 67;
+            this.btnPrint.Text = "打印";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // OrderBatchForm
             // 
             this.ClientSize = new System.Drawing.Size(877, 462);
@@ -329,11 +331,6 @@ namespace Sorting.Dispatching.View
 
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnExit;
-        protected System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
@@ -347,5 +344,10 @@ namespace Sorting.Dispatching.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDelete;
+        protected System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

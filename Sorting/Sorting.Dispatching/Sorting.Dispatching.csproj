@@ -70,8 +70,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\Lib\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MCP">
       <HintPath>..\..\Lib\MCP.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.office.interop.excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Lib\microsoft.office.interop.excel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="OpView">
@@ -164,23 +173,16 @@
     <Compile Include="Dao\UploadDataDao.cs" />
     <Compile Include="Dao\UploadSortingDao.cs" />
     <Compile Include="DRProxy.cs" />
+    <Compile Include="ExcelHelper.cs" />
     <Compile Include="Parameter.cs" />
-    <Compile Include="Process\CacheOrderProcess.cs" />
     <Compile Include="Process\BreakRecordProcess.cs" />
+    <Compile Include="Process\NormalStopProcess.cs" />
     <Compile Include="Process\OrderTimeRequestProcess.cs" />
-    <Compile Include="Process\MergeBreakRequestProcess.cs" />
     <Compile Include="Process\EmptyBreakProcess.cs" />
-    <Compile Include="Process\MergeRequestProcess.cs" />
-    <Compile Include="Process\CreatePackAndPrintDataProcess.cs" />
     <Compile Include="Process\CurrentOrderProcess.cs" />
     <Compile Include="Process\LEDProcess.cs" />
     <Compile Include="Process\BreakSortingProcess.cs" />
     <Compile Include="Process\OrderRequestProcess.cs" />
-    <Compile Include="Process\PackRequestProcess.cs" />
-    <Compile Include="Process\SortingOrderProcess.cs" />
-    <Compile Include="Process\SortRunStatusProcess.cs" />
-    <Compile Include="Process\SortStatusProcess.cs" />
-    <Compile Include="Process\ViewProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -685,7 +687,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Image\banner.jpg" />
-    <Content Include="Image\indicator.png" />
+    <Content Include="Image\folder.png" />
+    <Content Include="Image\indicator.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\add.png" />
     <Content Include="Resources\applications.png" />
     <Content Include="Resources\back.png" />
